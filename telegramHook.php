@@ -208,14 +208,3 @@ if(strtolower($text) == "/help") {
     $telegram->sendMessage($content);
 
 }
-
-if($chat['admin']){
-    if(strtolower($text) == "/send") {
-
-
-        $reply = "Ig bi admin und cha das :-)";
-        $content = array('chat_id' => $chat_id, 'text' => $reply);
-        $telegram->sendMessage($content);
-
-    }
-}
