@@ -19,7 +19,7 @@ $chat_id = $update["message"]["chat"]["id"];
  * Bot Starten
  */
 
-$helptext = "Du chasch säuber istelle wasde für Benachrichtigunge wosch.\n\n/add Hinzuefüege\n/delete = Löschä\n/list = Benachrichtigungslischte\n/stop = Benachrichtigungen beenden\n";
+$helptext = "Du chasch säuber istelle wasde für Benachrichtigunge wosch.\n\n/add Hinzuefüege\n/delete = Löschä\n/list = Benachrichtigungslischte\n/stop = Benachrichtigungen beenden\n\n";
 $helptext .="Wende mehreri Pokémons wosch lösche oder hinzuefüege muesch immer es ',' zwüsche de Pokémons schribe.\n";
 $helptext .= "Es Bispil:\n/add Glumanda\n/add Glumanda, Glurak\n";
 
@@ -198,4 +198,10 @@ if($text == "/list") {
     $telegram->sendMessage($content);
 
 }
+
+if($text == "/help") {
+
+    $reply = $helptext;
+    $content = array('chat_id' => $chat_id, 'text' => $reply);
+    $telegram->sendMessage($content);
 
