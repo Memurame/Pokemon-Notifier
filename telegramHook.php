@@ -19,12 +19,12 @@ $chat_id = $update["message"]["chat"]["id"];
  * Bot Starten
  */
 
-$helptext = "Du chasch säuber istelle wasde für Benachrichtigunge wosch.\n\n/add Hinzuefüege\n/delete = Löschä\n/list = Benachrichtigungslischte\n/stop = Benachrichtigungen beenden\n/help = Hilfe\n\n";
+$helptext = "Du chasch säuber istelle wasde für Benachrichtigunge wosch.\n\n/add Hinzuefüege\n/remove = Löschä\n/list = Benachrichtigungslischte\n/stop = Benachrichtigungen beenden\n/help = Hilfe\n\n";
 $helptext .="Wende mehreri Pokémons wosch lösche oder hinzuefüege muesch immer es ',' zwüsche de Pokémons schribe.\n";
 $helptext .= "Es Bispil:\n/add Glumanda\n/add Glumanda, Glurak\n";
 
 
-if ($text == "/start") {
+if (strtolower($text) == "/start") {
 
 
     $notify = array();
@@ -75,7 +75,7 @@ if ($text == "/start") {
 /**
  * Bot Beenden
  */
-if($text == "/stop"){
+if(strtolower($text) == "/stop"){
     $sth = $dbc->prepare("DELETE FROM chats WHERE chat_id = :chat_id");
     $sth->bindParam("chat_id", $chat_id);
     $sth->execute();
@@ -88,7 +88,7 @@ if($text == "/stop"){
 /**
  * Ein Pokemon zur Benachrichtigungsliuste himzufügen
  */
-if(substr($text, 0, 4) == "/add"){
+if(substr(strtolower($text), 0, 4) == "/add"){
     $sth = $dbc->prepare("SELECT notify_pokemon FROM chats WHERE chat_id = :chat_id");
     $sth->bindParam("chat_id", $chat_id);
     $sth->execute();
@@ -100,8 +100,8 @@ if(substr($text, 0, 4) == "/add"){
     $reply = "";
     foreach($selected as $select){
         foreach($pokemon->pokemonArray() as $id => $value){
-            $select = trim($select);
-            if($value['Name'] == $select){
+            $select = trim(strtolower($select));
+            if(strtolower($value['Name']) == $select){
                 if(!in_array($id, $notify)){
                     array_push($notify, $id);
                     $reply .= $value['Name']."\n";
@@ -127,7 +127,7 @@ if(substr($text, 0, 4) == "/add"){
 /**
  * Pokemon aus Benachrichtigungsliste löschen
  */
-if(substr($text, 0, 7) == "/delete"){
+if(substr(strtolower($text), 0, 7) == "/remove"){
     $sth = $dbc->prepare("SELECT notify_pokemon FROM chats WHERE chat_id = :chat_id");
     $sth->bindParam("chat_id", $chat_id);
     $sth->execute();
@@ -140,7 +140,6 @@ if(substr($text, 0, 7) == "/delete"){
     $reply = "";
     $i = 0;
     foreach($selected as $select){
-        $select = trim($select);
         $id = $pokemon->getID($select);
         echo $select." - ".$id."\n";
         if(in_array($id, $notify)) {
@@ -177,7 +176,7 @@ if(substr($text, 0, 7) == "/delete"){
  * Komplete Liste ausgeben welche Pokemons Benachritigt werden
  */
 
-if($text == "/list") {
+if(strtolower($text) == "/list") {
     $sth = $dbc->prepare("SELECT notify_pokemon FROM chats WHERE chat_id = :chat_id");
     $sth->bindParam("chat_id", $chat_id);
     $sth->execute();
@@ -199,7 +198,7 @@ if($text == "/list") {
 
 }
 
-if($text == "/help") {
+if(strtolower($text) == "/help") {
 
     $reply = $helptext;
     $content = array('chat_id' => $chat_id, 'text' => $reply);
