@@ -1,0 +1,757 @@
+{
+  "1": {
+    "Name": "Bisasam",
+    "Sticker": "BQADBAADfwQAAjZHEwABnO68QzZgsfMC",
+    "Notify": true
+  },
+  "2": {
+    "Name": "Bisaknosp",
+    "Sticker": "BQADBAADKQADA6ZnAd09yoh66pIfAg",
+    "Notify": true
+  },
+  "3": {
+    "Name": "Bisaflor",
+    "Sticker": "BQADBAADKwADA6ZnAdELYlYwzKbIAg",
+    "Notify": true
+  },
+  "4": {
+    "Name": "Glumanda",
+    "Sticker": "BQADBAADgQQAAjZHEwABFqCiENEvMnwC",
+    "Notify": true
+  },
+  "5": {
+    "Name": "Glutexo",
+    "Sticker": "BQADBAADLwADA6ZnAch60dZ72R0AAQI",
+    "Notify": true
+  },
+  "6": {
+    "Name": "Glurak",
+    "Sticker": "BQADBAADMQADA6ZnAYFZ_5qjNAytAg",
+    "Notify": true
+  },
+  "7": {
+    "Name": "Schiggy",
+    "Sticker": "BQADBAADMwADA6ZnAY9noVGNdiDVAg",
+    "Notify": true
+  },
+  "8": {
+    "Name": "Schillok",
+    "Sticker": "BQADBAADNQADA6ZnAZpcNOcyNj1PAg",
+    "Notify": true
+  },
+  "9": {
+    "Name": "Turtok",
+    "Sticker": "BQADBAADNwADA6ZnAUhWLdtsQ7q9Ag",
+    "Notify": true
+  },
+  "10": {
+    "Name": "Raupy",
+    "Sticker": "BQADBAADOQADA6ZnARvXmxliihkVAg",
+    "Notify": false
+  },
+  "11": {
+    "Name": "Safcon",
+    "Sticker": "BQADBAADOwADA6ZnASym7G_LJ1tkAg",
+    "Notify": false
+  },
+  "12": {
+    "Name": "Smettbo",
+    "Sticker": "BQADBAADPQADA6ZnAa2iOXvsY3aCAg",
+    "Notify": false
+  },
+  "13": {
+    "Name": "Hornliu",
+    "Sticker": "BQADBAADPwADA6ZnAb_csYpSRfRTAg",
+    "Notify": false
+  },
+  "14": {
+    "Name": "Kokuna",
+    "Sticker": "BQADBAADQQADA6ZnAfTUFQcCDmUNAg",
+    "Notify": false
+  },
+  "15": {
+    "Name": "Bibor",
+    "Sticker": "BQADBAADQwADA6ZnAT_h8QyLW6DVAg",
+    "Notify": false
+  },
+  "16": {
+    "Name": "Taubsi",
+    "Sticker": "BQADBAADRQADA6ZnAVLPw-jNWf5_Ag",
+    "Notify": false
+  },
+  "17": {
+    "Name": "Tauboga",
+    "Sticker": "BQADBAADRwADA6ZnAdE1sU4M-3SQAg",
+    "Notify": false
+  },
+  "18": {
+    "Name": "Tauboss",
+    "Sticker": "BQADBAADSQADA6ZnARgu9mEkMLquAg",
+    "Notify": false
+  },
+  "19": {
+    "Name": "Rattfratz",
+    "Sticker": "BQADBAADSwADA6ZnAV9fPY_XhW5_Ag",
+    "Notify": false
+  },
+  "20": {
+    "Name": "Rattikarl",
+    "Sticker": "BQADBAADTQADA6ZnAZ3-Y-eQocbyAg",
+    "Notify": false
+  },
+  "21": {
+    "Name": "Habitak",
+    "Sticker": "BQADBAADTwADA6ZnAfk9lxoXOwZ_Ag",
+    "Notify": false
+  },
+  "22": {
+    "Name": "Ibitak",
+    "Sticker": "BQADBAADUQADA6ZnAShVKm8X2wgSAg",
+    "Notify": false
+  },
+  "23": {
+    "Name": "Rettan",
+    "Sticker": "BQADBAADUwADA6ZnARauEgMgbEB9Ag",
+    "Notify": false
+  },
+  "24": {
+    "Name": "Arbok",
+    "Sticker": "BQADBAADVQADA6ZnARtDICyQZuaiAg",
+    "Notify": true
+  },
+  "25": {
+    "Name": "Pikachu",
+    "Sticker": "BQADBAADVwADA6ZnAczvFE7dfBYLAg",
+    "Notify": true
+  },
+  "26": {
+    "Name": "Raichu",
+    "Sticker": "BQADBAADWQADA6ZnAc_Lh0IvZdxqAg",
+    "Notify": true
+  },
+  "27": {
+    "Name": "Sandan",
+    "Sticker": "BQADBAADWwADA6ZnAXwre3efyX0kAg",
+    "Notify": true
+  },
+  "28": {
+    "Name": "Sandamer",
+    "Sticker": "BQADBAADXQADA6ZnAZQssQGzd6_qAg",
+    "Notify": true
+  },
+  "29": {
+    "Name": "Nidoran (weiblich)",
+    "Sticker": "BQADBAADXwADA6ZnAdb_etFcQm7QAg",
+    "Notify": false
+  },
+  "30": {
+    "Name": "Nidorina",
+    "Sticker": "BQADBAADYQADA6ZnAdrCKGPIRCLTAg",
+    "Notify": false
+  },
+  "31": {
+    "Name": "Nidoqueen",
+    "Sticker": "BQADBAADYwADA6ZnAQm3s1oUdXs_Ag",
+    "Notify": true
+  },
+  "32": {
+    "Name": "Nidoran (männlich)",
+    "Sticker": "BQADBAADZQADA6ZnAfZdxDqZduP0Ag",
+    "Notify": false
+  },
+  "33": {
+    "Name": "Nidorino",
+    "Sticker": "BQADBAADZwADA6ZnAWtHR2JimNBEAg",
+    "Notify": false
+  },
+  "34": {
+    "Name": "Nidoking",
+    "Sticker": "BQADBAADaQADA6ZnAUhBuBB0KHolAg",
+    "Notify": true
+  },
+  "35": {
+    "Name": "Piepi",
+    "Sticker": "BQADBAADawADA6ZnAe4Ky5ABuoufAg",
+    "Notify": false
+  },
+  "36": {
+    "Name": "Pixi",
+    "Sticker": "BQADBAADbQADA6ZnAZxHQ-pwTVpeAg",
+    "Notify": false
+  },
+  "37": {
+    "Name": "Vulpix",
+    "Sticker": "BQADBAADbwADA6ZnAQaiwVEnAsQAAQI",
+    "Notify": true
+  },
+  "38": {
+    "Name": "Vulnona",
+    "Sticker": "BQADBAADcQADA6ZnATXHBNQUYTd4Ag",
+    "Notify": true
+  },
+  "39": {
+    "Name": "Pummeluff",
+    "Sticker": "BQADBAADcwADA6ZnAWOU_YY2d7V0Ag",
+    "Notify": false
+  },
+  "40": {
+    "Name": "Knuddeluff",
+    "Sticker": "BQADBAADdQADA6ZnAdGnBQjf7dvLAg",
+    "Notify": false
+  },
+  "41": {
+    "Name": "Zubat",
+    "Sticker": "BQADBAADdwADA6ZnAYIOutGsHR2iAg",
+    "Notify": false
+  },
+  "42": {
+    "Name": "Golbat",
+    "Sticker": "BQADBAADeQADA6ZnAYlGQQR6zqK8Ag",
+    "Notify": false
+  },
+  "43": {
+    "Name": "Myrapla",
+    "Sticker": "BQADBAADewADA6ZnAYXXJSAdu6WwAg",
+    "Notify": false
+  },
+  "44": {
+    "Name": "Duflor",
+    "Sticker": "BQADBAADfQADA6ZnAZltrfQww-etAg",
+    "Notify": true
+  },
+  "45": {
+    "Name": "Giflor",
+    "Sticker": "BQADBAADfwADA6ZnAYtRA7ak5aE_Ag",
+    "Notify": true
+  },
+  "46": {
+    "Name": "Paras",
+    "Sticker": "BQADBAADgwADA6ZnAaDpym5nwE-ZAg",
+    "Notify": false
+  },
+  "47": {
+    "Name": "Parasek",
+    "Sticker": "BQADBAADhQADA6ZnAczzQQaLLLeVAg",
+    "Notify": false
+  },
+  "48": {
+    "Name": "Bluzuk",
+    "Sticker": "BQADBAADhwADA6ZnASegVAKAdmKQAg",
+    "Notify": false
+  },
+  "49": {
+    "Name": "Omot",
+    "Sticker": "BQADBAADiQADA6ZnASx88dHmKk9MAg",
+    "Notify": false
+  },
+  "50": {
+    "Name": "Digda",
+    "Sticker": "BQADBAADiwADA6ZnAdYkifTqrBHhAg",
+    "Notify": true
+  },
+  "51": {
+    "Name": "Digdri",
+    "Sticker": "BQADBAADjQADA6ZnAb5iLRuZ-MT7Ag",
+    "Notify": true
+  },
+  "52": {
+    "Name": "Mauzi",
+    "Sticker": "BQADBAADjwADA6ZnAUXZy7haaa38Ag",
+    "Notify": false
+  },
+  "53": {
+    "Name": "Snobilikat",
+    "Sticker": "BQADBAADkQADA6ZnAfYI5xOxllwNAg",
+    "Notify": true
+  },
+  "54": {
+    "Name": "Enton",
+    "Sticker": "BQADBAADkwADA6ZnAR4w9K2ezyuhAg",
+    "Notify": false
+  },
+  "55": {
+    "Name": "Entoron",
+    "Sticker": "BQADBAADlQADA6ZnAWIuwUz5NlbVAg",
+    "Notify": true
+  },
+  "56": {
+    "Name": "Menki",
+    "Sticker": "BQADBAADlwADA6ZnAQ6i5D8LOvWuAg",
+    "Notify": true
+  },
+  "57": {
+    "Name": "Rasaff",
+    "Sticker": "BQADBAADmQADA6ZnAR_MKmfUQLE2Ag",
+    "Notify": true
+  },
+  "58": {
+    "Name": "Fukano",
+    "Sticker": "BQADBAADmwADA6ZnAfLEuQot6KjjAg",
+    "Notify": true
+  },
+  "59": {
+    "Name": "Arkani",
+    "Sticker": "BQADBAADnQADA6ZnAUDhsV5f7YZGAg",
+    "Notify": true
+  },
+  "60": {
+    "Name": "Quapsel",
+    "Sticker": "BQADBAADnwADA6ZnARTW2z_2HCD1Ag",
+    "Notify": false
+  },
+  "61": {
+    "Name": "Quaputzi",
+    "Sticker": "BQADBAADoQADA6ZnAVARDDhpUG3yAg",
+    "Notify": false
+  },
+  "62": {
+    "Name": "Quappo",
+    "Sticker": "BQADBAADowADA6ZnARH-XrV88RQ8Ag",
+    "Notify": true
+  },
+  "63": {
+    "Name": "Abra",
+    "Sticker": "BQADBAADpQADA6ZnAZCJIefeAAEmfgI",
+    "Notify": true
+  },
+  "64": {
+    "Name": "Kadabra",
+    "Sticker": "BQADBAADpwADA6ZnAZ0Uk9tIQ6NiAg",
+    "Notify": true
+  },
+  "65": {
+    "Name": "Simsala",
+    "Sticker": "BQADBAADqQADA6ZnAbfKD0i88yCRAg",
+    "Notify": true
+  },
+  "66": {
+    "Name": "Machollo",
+    "Sticker": "BQADBAADqwADA6ZnAbQ1d0JRxcUNAg",
+    "Notify": true
+  },
+  "67": {
+    "Name": "Maschock",
+    "Sticker": "BQADBAADrQADA6ZnAR5fcBQMcOxzAg",
+    "Notify": true
+  },
+  "68": {
+    "Name": "Machomei",
+    "Sticker": "BQADBAADrwADA6ZnATmnBCXu9W1iAg",
+    "Notify": true
+  },
+  "69": {
+    "Name": "Knofensa",
+    "Sticker": "BQADBAADsQADA6ZnAZVmTiH9CziuAg",
+    "Notify": false
+  },
+  "70": {
+    "Name": "Ultrigaria",
+    "Sticker": "BQADBAADswADA6ZnAeLr9NrxPNyeAg",
+    "Notify": false
+  },
+  "71": {
+    "Name": "Sarzenia",
+    "Sticker": "BQADBAADtQADA6ZnAS3peyUC2wGZAg",
+    "Notify": true
+  },
+  "72": {
+    "Name": "Tentacha",
+    "Sticker": "BQADBAADtwADA6ZnAV1BjJAGRZVyAg",
+    "Notify": false
+  },
+  "73": {
+    "Name": "Tentoxa",
+    "Sticker": "BQADBAADuQADA6ZnAVd-oIO7g8KtAg",
+    "Notify": false
+  },
+  "74": {
+    "Name": "Kleinstein",
+    "Sticker": "BQADBAADuwADA6ZnAXgaugJm0yQlAg",
+    "Notify": true
+  },
+  "75": {
+    "Name": "Georok",
+    "Sticker": "BQADBAADvQADA6ZnAQiU9hGdGHuZAg",
+    "Notify": true
+  },
+  "76": {
+    "Name": "Geowaz",
+    "Sticker": "BQADBAADvwADA6ZnAdfGBGghX3STAg",
+    "Notify": true
+  },
+  "77": {
+    "Name": "Ponita",
+    "Sticker": "BQADBAADwQADA6ZnAQNiLcVCAZL4Ag",
+    "Notify": true
+  },
+  "78": {
+    "Name": "Gallopa",
+    "Sticker": "BQADBAADwwADA6ZnAR3Rw1pdnw1xAg",
+    "Notify": true
+  },
+  "79": {
+    "Name": "Flegmon",
+    "Sticker": "BQADBAADxQADA6ZnAYpnLOW8sg5IAg",
+    "Notify": false
+  },
+  "80": {
+    "Name": "Lahmus",
+    "Sticker": "BQADBAADxwADA6ZnAdglk9tiIFj5Ag",
+    "Notify": true
+  },
+  "81": {
+    "Name": "Magnetilo",
+    "Sticker": "BQADBAADyQADA6ZnAc6qChQtQtWkAg",
+    "Notify": true
+  },
+  "82": {
+    "Name": "Magneton",
+    "Sticker": "BQADBAADywADA6ZnAcT80CaV62YoAg",
+    "Notify": true
+  },
+  "83": {
+    "Name": "Porenta",
+    "Sticker": "BQADBAADzQADA6ZnAZDUR-BgCwEvAg",
+    "Notify": true
+  },
+  "84": {
+    "Name": "Dodu",
+    "Sticker": "BQADBAADzwADA6ZnATD0sBYypMYJAg",
+    "Notify": true
+  },
+  "85": {
+    "Name": "Dodri",
+    "Sticker": "BQADBAAD0QADA6ZnAY3-Cyah9zVlAg",
+    "Notify": true
+  },
+  "86": {
+    "Name": "Jurob",
+    "Sticker": "BQADBAAD0wADA6ZnAYbqNqa5KKO7Ag",
+    "Notify": false
+  },
+  "87": {
+    "Name": "Jugong",
+    "Sticker": "BQADBAAD1QADA6ZnAbZfqdPcBtliAg",
+    "Notify": true
+  },
+  "88": {
+    "Name": "Sleima",
+    "Sticker": "BQADBAAD1wADA6ZnAfC9p8aaxoIDAg",
+    "Notify": true
+  },
+  "89": {
+    "Name": "Sleimok",
+    "Sticker": "BQADBAAD2QADA6ZnAeTuuVW1rAPoAg",
+    "Notify": true
+  },
+  "90": {
+    "Name": "Muschas",
+    "Sticker": "BQADBAAD2wADA6ZnAWik5KbprDonAg",
+    "Notify": false
+  },
+  "91": {
+    "Name": "Austos",
+    "Sticker": "BQADBAAD3QADA6ZnASfqqi93beFFAg",
+    "Notify": false
+  },
+  "92": {
+    "Name": "Nebulak",
+    "Sticker": "BQADBAAD3wADA6ZnAW5e6QABKyvL2gI",
+    "Notify": false
+  },
+  "93": {
+    "Name": "Alpollo",
+    "Sticker": "BQADBAAD4QADA6ZnAQO3sab51TBQAg",
+    "Notify": false
+  },
+  "94": {
+    "Name": "Gengar",
+    "Sticker": "BQADBAAD4wADA6ZnAcbzlaR74bh1Ag",
+    "Notify": true
+  },
+  "95": {
+    "Name": "Onix",
+    "Sticker": "BQADBAAD5QADA6ZnAeaHKtrdS1ieAg",
+    "Notify": true
+  },
+  "96": {
+    "Name": "Traumato",
+    "Sticker": "BQADBAAD5wADA6ZnAZOxZx2CQbenAg",
+    "Notify": false
+  },
+  "97": {
+    "Name": "Hypno",
+    "Sticker": "BQADBAAD6QADA6ZnAcPZQIXfUCofAg",
+    "Notify": false
+  },
+  "98": {
+    "Name": "Krabby",
+    "Sticker": "BQADBAAD6wADA6ZnAW7_9VABjZC7Ag",
+    "Notify": false
+  },
+  "99": {
+    "Name": "Kingler",
+    "Sticker": "BQADBAAD7QADA6ZnARahOsYP9y_iAg",
+    "Notify": false
+  },
+  "100": {
+    "Name": "Voltobal",
+    "Sticker": "BQADBAAD7wADA6ZnAf5IfBcs43EnAg",
+    "Notify": true
+  },
+  "101": {
+    "Name": "Lektrobal",
+    "Sticker": "BQADBAAD8QADA6ZnAYJzl8obPhdiAg",
+    "Notify": true
+  },
+  "102": {
+    "Name": "Owei",
+    "Sticker": "BQADBAAD8wADA6ZnAW4EaA1_40PUAg",
+    "Notify": true
+  },
+  "103": {
+    "Name": "Kokowei",
+    "Sticker": "BQADBAAD9QADA6ZnASfbL8QOivbLAg",
+    "Notify": true
+  },
+  "104": {
+    "Name": "Tragosso",
+    "Sticker": "BQADBAAD9wADA6ZnAVFRHQIyyyCTAg",
+    "Notify": true
+  },
+  "105": {
+    "Name": "Knogga",
+    "Sticker": "BQADBAAD-QADA6ZnAe18tSbN3mg9Ag",
+    "Notify": true
+  },
+  "106": {
+    "Name": "Kicklee",
+    "Sticker": "BQADBAAD-wADA6ZnAYprm88bDRBPAg",
+    "Notify": true
+  },
+  "107": {
+    "Name": "Nockchan",
+    "Sticker": "BQADBAAD_QADA6ZnAVhB3fE3vG3pAg",
+    "Notify": true
+  },
+  "108": {
+    "Name": "Schlurp",
+    "Sticker": "BQADBAAD_wADA6ZnAVoEJINLedE1Ag",
+    "Notify": true
+  },
+  "109": {
+    "Name": "Smogon",
+    "Sticker": "BQADBAADAQEAAgOmZwE-d2b4Nxg6LwI",
+    "Notify": false
+  },
+  "110": {
+    "Name": "Smogmog",
+    "Sticker": "BQADBAADAwEAAgOmZwGH2IdZFV8JXQI",
+    "Notify": true
+  },
+  "111": {
+    "Name": "Rihorn",
+    "Sticker": "BQADBAADBQEAAgOmZwH1F1U5livuSQI",
+    "Notify": true
+  },
+  "112": {
+    "Name": "Rizeros",
+    "Sticker": "BQADBAADBwEAAgOmZwEu1poyBbPzXAI",
+    "Notify": true
+  },
+  "113": {
+    "Name": "Chaneira",
+    "Sticker": "BQADBAADCQEAAgOmZwHRVMUpYv-MnQI",
+    "Notify": true
+  },
+  "114": {
+    "Name": "Tangela",
+    "Sticker": "BQADBAADCwEAAgOmZwFZ6eS2xms8GgI",
+    "Notify": true
+  },
+  "115": {
+    "Name": "Kangama",
+    "Sticker": "BQADBAADDQEAAgOmZwFbl03M95cnBQI",
+    "Notify": true
+  },
+  "116": {
+    "Name": "Seeper",
+    "Sticker": "BQADBAADDwEAAgOmZwH5q7bPIgfzIwI",
+    "Notify": false
+  },
+  "117": {
+    "Name": "Seemon",
+    "Sticker": "BQADBAADEQEAAgOmZwF9_sqDyPjSFAI",
+    "Notify": false
+  },
+  "118": {
+    "Name": "Goldini",
+    "Sticker": "BQADBAADEwEAAgOmZwHguDaRDVS_GwI",
+    "Notify": false
+  },
+  "119": {
+    "Name": "Golking",
+    "Sticker": "BQADBAADFQEAAgOmZwFMvdJ3CJDpBgI",
+    "Notify": false
+  },
+  "120": {
+    "Name": "Sterndu",
+    "Sticker": "BQADBAADEAIAAhbdEgPS6vJ8Wy4Q3wI",
+    "Notify": false
+  },
+  "121": {
+    "Name": "Starmie",
+    "Sticker": "BQADBAADEgIAAhbdEgPBtxRxYkFR8gI",
+    "Notify": false
+  },
+  "122": {
+    "Name": "Pantimos",
+    "Sticker": "BQADBAADFAIAAhbdEgM2Yd4tjDwvZAI",
+    "Notify": true
+  },
+  "123": {
+    "Name": "Sichlor",
+    "Sticker": "BQADBAADFgIAAhbdEgOSgLuaWfxPMQI",
+    "Notify": true
+  },
+  "124": {
+    "Name": "Rossana",
+    "Sticker": "BQADBAADGAIAAhbdEgOAzpWgCjhZLwI",
+    "Notify": false
+  },
+  "125": {
+    "Name": "Elektek",
+    "Sticker": "BQADBAADGgIAAhbdEgPKZ168UMN0UgI",
+    "Notify": true
+  },
+  "126": {
+    "Name": "Magmar",
+    "Sticker": "BQADBAADHAIAAhbdEgMx3TjFCMSa4AI",
+    "Notify": true
+  },
+  "127": {
+    "Name": "Pinsir",
+    "Sticker": "BQADBAADHgIAAhbdEgOiTdTfuv7uNwI",
+    "Notify": true
+  },
+  "128": {
+    "Name": "Tauros",
+    "Sticker": "BQADBAADIgIAAhbdEgNfzZ0u8SwImgI",
+    "Notify": true
+  },
+  "129": {
+    "Name": "Karpador",
+    "Sticker": "BQADBAADJAIAAhbdEgOxAyjSXMHWzwI",
+    "Notify": false
+  },
+  "130": {
+    "Name": "Garados",
+    "Sticker": "BQADBAADJgIAAhbdEgMPYrHEq8FAqQI",
+    "Notify": true
+  },
+  "131": {
+    "Name": "Lapras",
+    "Sticker": "BQADBAADKgIAAhbdEgOrSKvk6_TzKwI",
+    "Notify": true
+  },
+  "132": {
+    "Name": "Ditto",
+    "Sticker": "BQADBAADLAIAAhbdEgMfTgxuerqE2AI",
+    "Notify": true
+  },
+  "133": {
+    "Name": "Evoli",
+    "Sticker": "BQADBAADLgIAAhbdEgNMQBwVcosD3gI",
+    "Notify": false
+  },
+  "134": {
+    "Name": "Aquana",
+    "Sticker": "BQADBAADMAIAAhbdEgP8wxhwlmaGUAI",
+    "Notify": true
+  },
+  "135": {
+    "Name": "Blitza",
+    "Sticker": "BQADBAADMgIAAhbdEgP1Si4lYRrmFgI",
+    "Notify": true
+  },
+  "136": {
+    "Name": "Flamara",
+    "Sticker": "BQADBAADNAIAAhbdEgOsjt7XNfs2xwI",
+    "Notify": true
+  },
+  "137": {
+    "Name": "Porygon",
+    "Sticker": "BQADBAADNgIAAhbdEgM3d-DFjAyyPAI",
+    "Notify": true
+  },
+  "138": {
+    "Name": "Amonitas",
+    "Sticker": "BQADBAADOAIAAhbdEgPZjh9Sk-YWswI",
+    "Notify": true
+  },
+  "139": {
+    "Name": "Amoroso",
+    "Sticker": "BQADBAADOgIAAhbdEgMd_WOs4CFIdQI",
+    "Notify": true
+  },
+  "140": {
+    "Name": "Kabuto",
+    "Sticker": "BQADBAADPAIAAhbdEgMSH4Br7UJq7gI",
+    "Notify": true
+  },
+  "141": {
+    "Name": "Kabutops",
+    "Sticker": "BQADBAADPgIAAhbdEgN8Odihah2YMwI",
+    "Notify": true
+  },
+  "142": {
+    "Name": "Aerodactyl",
+    "Sticker": "BQADBAADQAIAAhbdEgPW_0P0AYO9EQI",
+    "Notify": true
+  },
+  "143": {
+    "Name": "Relaxo",
+    "Sticker": "BQADBAADRAIAAhbdEgOxL5yLxhdN4gI",
+    "Notify": true
+  },
+  "144": {
+    "Name": "Arktos",
+    "Sticker": "BQADBAADRgIAAhbdEgPnLvayG8FciwI",
+    "Notify": true
+  },
+  "145": {
+    "Name": "Zapdos",
+    "Sticker": "BQADBAADSAIAAhbdEgN2p-nITb6HFAI",
+    "Notify": true
+  },
+  "146": {
+    "Name": "Lavados",
+    "Sticker": "BQADBAADSgIAAhbdEgOu7HEzEJylbAI",
+    "Notify": true
+  },
+  "147": {
+    "Name": "Dratini",
+    "Sticker": "BQADBAADTAIAAhbdEgOH-WchMCa0XQI",
+    "Notify": true
+  },
+  "148": {
+    "Name": "Dragonir",
+    "Sticker": "BQADBAADTgIAAhbdEgNAD7ORpXu9gwI",
+    "Notify": true
+  },
+  "149": {
+    "Name": "Dragoran",
+    "Sticker": "BQADBAADUAIAAhbdEgMK7jgCDtnu5gI",
+    "Notify": true
+  },
+  "150": {
+    "Name": "Mewtu",
+    "Sticker": "BQADBAADUgIAAhbdEgNCY7bbmFdbIQI",
+    "Notify": true
+  },
+  "151": {
+    "Name": "Mew",
+    "Sticker": "BQADBAADWAIAAhbdEgOEUoZVIm9S-wI",
+    "Notify": true
+  }
+}

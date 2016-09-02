@@ -1,0 +1,10 @@
+
+[database]
+host = localhost
+user = homestead
+pass = secret
+dbname = pokenotifier
+
+[telegram]
+bot-id = "APIKEY"
+
