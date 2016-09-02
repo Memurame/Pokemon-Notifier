@@ -20,8 +20,8 @@ $chat_id = $update["message"]["chat"]["id"];
  */
 
 $helptext = "Du chasch säuber istelle wasde für Benachrichtigunge wosch.\n\n/add Hinzuefüege\n/delete = Löschä\n/list = Benachrichtigungslischte\n/stop = Benachrichtigungen beenden\n";
-$helptext .="Wende mehreri Pokémons wosch lösche oder hinzuefüege muesch immer es ',' zwüsche de Pokémons schribe.\n"
-$helptext .= "Es Bispil:\n/add Glumanda\n/add Glumanda, Glurak\n"
+$helptext .="Wende mehreri Pokémons wosch lösche oder hinzuefüege muesch immer es ',' zwüsche de Pokémons schribe.\n";
+$helptext .= "Es Bispil:\n/add Glumanda\n/add Glumanda, Glurak\n";
 
 
 if ($text == "/start") {
