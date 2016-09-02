@@ -210,7 +210,7 @@ if(strtolower($text) == "/help") {
 }
 
 if($chat['admin']){
-    if(strtolower($text) == "/list") {
+    if(strtolower($text) == "/send") {
 
 
         $reply = "Ig bi admin und cha das :-)";
