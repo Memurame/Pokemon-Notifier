@@ -12,7 +12,7 @@ require_once(__DIR__."/init.php");
 
 
 
-$req = $telegram->getWebhookUpdates();
+$req = $telegram->getUpdates();
 for ($i = 0; $i < $telegram-> UpdateCount(); $i++) {
 
     $telegram->serveUpdate($i);
