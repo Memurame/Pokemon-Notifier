@@ -34,7 +34,7 @@ class Pokemon
 
     public function getID($pokemonname){
         foreach($this->pokemonArray() as $id => $value){
-            if($value['Name'] == $pokemonname){
+            if(strtolower($value['Name']) == trim(strtolower($pokemonname))){
                 return $id;
             }
         }
