@@ -205,3 +205,4 @@ if($text == "/help") {
     $content = array('chat_id' => $chat_id, 'text' => $reply);
     $telegram->sendMessage($content);
 
+}
