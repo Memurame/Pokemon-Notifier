@@ -9,16 +9,14 @@
  * Erforderliche Dateien einbinden und Klassen laden
  */
 require_once(__DIR__."/init.php");
+$content = file_get_contents("php://input");
+$update = json_decode($content, true);
+$chatID = $update["message"]["chat"]["id"];
 
 
 
-$req = $telegram->getUpdates();
-for ($i = 0; $i < $telegram-> UpdateCount(); $i++) {
-
-    $telegram->serveUpdate($i);
-    $text = $telegram->Text();
-    $chat_id = $telegram->ChatID();
-    $username = $telegram->Username();
+    $text = $update["message"]["text"];
+    $chat_id = $update["message"]["chat"]["id"];
 
     /**
      * Bot Starten
@@ -197,4 +195,4 @@ for ($i = 0; $i < $telegram-> UpdateCount(); $i++) {
         $telegram->sendMessage($content);
 
     }
-}
+
