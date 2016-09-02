@@ -15,15 +15,15 @@ $update = json_decode($content, true);
 $text = $update["message"]["text"];
 $chat_id = $update["message"]["chat"]["id"];
 
-/**
- * Bot Starten
- */
+
 
 $helptext = "Du chasch säuber istelle wasde für Benachrichtigunge wosch.\n\n/add Hinzuefüege\n/remove = Löschä\n/list = Benachrichtigungslischte\n/stop = Benachrichtigungen beenden\n/help = Hilfe\n\n";
 $helptext .="Wende mehreri Pokémons wosch lösche oder hinzuefüege muesch immer es ',' zwüsche de Pokémons schribe.\n";
 $helptext .= "Es Bispil:\n/add Glumanda\n/add Glumanda, Glurak\n";
 
-
+/**
+ * Bot Starten
+ */
 if (strtolower($text) == "/start") {
 
 
@@ -198,10 +198,24 @@ if(strtolower($text) == "/list") {
 
 }
 
+/**
+ * Alle Befehle erneut anzeigen
+ */
 if(strtolower($text) == "/help") {
 
     $reply = $helptext;
     $content = array('chat_id' => $chat_id, 'text' => $reply);
     $telegram->sendMessage($content);
 
+}
+
+if($chat['admin']){
+    if(strtolower($text) == "/list") {
+
+
+        $reply = "Ig bi admin und cha das :-)";
+        $content = array('chat_id' => $chat_id, 'text' => $reply);
+        $telegram->sendMessage($content);
+
+    }
 }
