@@ -53,6 +53,8 @@ if($typ == "pokemon"){
 $db->bind("disappear_time", time());
 $result   =  $db->query("SELECT * FROM pokemon WHERE disappear_time > :disappear_time");
 
+print_r($result);
+die();
 foreach($result as $notifier){
 
     $chats = $cChat->all();
