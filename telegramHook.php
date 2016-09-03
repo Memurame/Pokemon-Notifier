@@ -18,7 +18,7 @@ $chat_id = $update["message"]["chat"]["id"];
 $cChat->chat_id = $chat_id;
 $chat = $cChat->Search();
 
-$helptext = "Du chasch säuber istelle wasde für Benachrichtigunge wosch.\n\n/add = Hinzuefüege\n/remove = Löschä\n/list = Benachrichtigungslischte\n/stop = Chat beände\n/help = Hilfe\n\n";
+$helptext = "Du chasch säuber istelle wasde für Benachrichtigunge wosch.\n\n/add = Hinzuefüege\n/remove = Löschä\n/list = Benachrichtigungslischte\n/reset = Istellige zuüggsetze\n/stop = Chat beände\n/help = Hilfe\n\n";
 $helptext .="Wende mehreri Pokémons wosch lösche oder hinzuefüege muesch immer es ',' zwüsche de Pokémons schribe.\n";
 $helptext .= "Es Bispil:\n/add Glumanda\n/add Glumanda, Glurak\n";
 
@@ -177,6 +177,33 @@ if(strtolower($text) == "/list") {
     $telegram->sendMessage($content);
 
 }
+
+
+if(strtolower($text) == "/reset") {
+
+    $notify_pokemon = Array();
+
+    $cNotifylist->chat_id = $chat_id;
+    $delete = $cNotifylist->Delete();
+
+    $notify_pokemon = array();
+    for($i=1; $i <= count($pokemon->pokemonArray()); $i++){
+        if($pokemon->getNotify($i)){
+            array_push($notify_pokemon, $pokemon->getName($i));
+
+            $cNotifylist->chat_id       = $chat_id;
+            $cNotifylist->pokemon_id    = $i;
+            $create = $cNotifylist->Create();
+        }
+    }
+
+
+    $reply = "Benachrichtigungs Pokémon si zurüggsetzt worde.\n";
+    $content = array('chat_id' => $chat_id, 'text' => $reply);
+    $telegram->sendMessage($content);
+
+}
+
 
 /**
  * Alle Befehle erneut anzeigen

@@ -14,8 +14,6 @@ $json_decode = json_decode($data);
 $msg = $json_decode->message;
 $typ = $json_decode->type;
 
-die();
-
 require_once(__DIR__."/init.php");
 
 
