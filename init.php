@@ -27,7 +27,8 @@ $cNotified = new cNotified();
 
 
 
-
+require_once(__DIR__."/libs/database.php");
+$db = new DB();
 
 
 

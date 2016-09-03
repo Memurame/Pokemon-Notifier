@@ -49,7 +49,10 @@ if($typ == "pokemon"){
  * Suche Nach Pokemons die noch immer auf der Map sind.
  */
 
-$result = $cPokemon->all();
+
+$db->bind("disappear_time", time());
+$result   =  $db->query("SELECT * FROM pokemon WHERE disappear_time > :disappear_time");
+
 foreach($result as $notifier){
 
     $chats = $cChat->all();
@@ -98,5 +101,6 @@ foreach($result as $notifier){
     }
 
 }
+
 
 ?>
