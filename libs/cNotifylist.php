@@ -1,7 +1,8 @@
 <?php
 /**
- *
+ * @titel Class für Tabelle der Benachrichtigungen
  * @author Thomas Hirter <t.hirter@outlook.com>
+ * @git https://github.com/n30nl1ght/Pokemon-Notifier
  */
 require_once("easyCRUD.php");
 

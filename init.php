@@ -1,7 +1,8 @@
 <?php
 /**
- *
+ * Initialisierung aller benötigten resourcen und classen
  * @author Thomas Hirter <t.hirter@outlook.com>
+ * @git https://github.com/n30nl1ght/Pokemon-Notifier
  */
 
 /**
@@ -19,24 +20,13 @@ require_once(__DIR__."/libs/cPokemon.php");
 require_once(__DIR__."/libs/cChat.php");
 require_once(__DIR__."/libs/cNotifylist.php");
 require_once(__DIR__."/libs/cNotified.php");
+require_once(__DIR__."/libs/database.php");
 
 $cPokemon = new cPokemon();
 $cChat = new cChat();
 $cNotifylist = new cNotifylist();
 $cNotified = new cNotified();
-
-
-
-require_once(__DIR__."/libs/database.php");
 $db = new DB();
-
-
-
-
-
-
-
-
 
 
 $cfg = parse_ini_file(__DIR__."/config/config.ini", TRUE);
