@@ -8,29 +8,37 @@
  * Zeitzone festlegen
  */
 date_default_timezone_set('Europe/Zurich');
-
+define("ROOT", __DIR__);
 
 /**
  * Erforderliche Dateien einbinden und Klassen laden
  */
-require_once(__DIR__."/libs/Pokemon.php");
-require_once(__DIR__."/libs/Telegram.php");
+require_once(__DIR__."/libs/pokemon.php");
+require_once(__DIR__."/libs/telegram.php");
+require_once(__DIR__."/libs/cPokemon.php");
+require_once(__DIR__."/libs/cChat.php");
+require_once(__DIR__."/libs/cNotifylist.php");
+require_once(__DIR__."/libs/cNotified.php");
+
+$cPokemon = new cPokemon();
+$cChat = new cChat();
+$cNotifylist = new cNotifylist();
+$cNotified = new cNotified();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 $cfg = parse_ini_file(__DIR__."/config/config.ini", TRUE);
 $pokemon = new Pokemon(__DIR__."/pokemon.json");
 $telegram = new Telegram($cfg['telegram']['bot-id']);
 
-
-
-
-try{
-    /**
-     * DB Verbindung aufbauen und utf-8 setzen
-     */
-    $dsn = 'mysql:dbname=' . $cfg['database']['dbname'] . ';host=' . $cfg['database']['host'] . '';
-    $dbc = new PDO($dsn, $cfg['database']['user'], $cfg['database']['pass'], array(
-        PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"
-    ));
-} catch (PDOException $pe) {
-    echo "Keine Verbindung zur DB möglich!";
-    die();
-}

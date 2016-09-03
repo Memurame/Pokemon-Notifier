@@ -18,38 +18,27 @@ $typ = $json_decode->type;
 require_once(__DIR__."/init.php");
 
 
-
 if($typ == "pokemon"){
 
     /**
      * Prüfen ob das Pokemon bereits erschienen ist und in der Db vorhanden ist
      */
-    $sth = $dbc->prepare("SELECT * FROM pokemon WHERE 
-        encounter_id = :encounter_id AND
-        spawnpoint_id = :spawnpoint_id");
-    $sth->bindParam("encounter_id", $msg->encounter_id);
-    $sth->bindParam("spawnpoint_id", $msg->spawnpoint_id);
-    $sth->execute();
-    $result = $sth->fetch(PDO::FETCH_ASSOC);
-
-    if(!$result){
+    $cPokemon->pokemon_id       = $msg->pokemon_id;
+    $cPokemon->encounter_id     = $msg->encounter_id;
+    $cPokemon->spawnpoint_id    = $msg->spawnpoint_id;
+    if(empty($cPokemon->search())) {
         /**
          * Pokemon in der DB eintragen
          */
-        $insert = $dbc->prepare("INSERT INTO pokemon
-        (pokemon_id, encounter_id, disappear_time, geo_lat, geo_lng, spawnpoint_id)
-        VALUES
-        (:pokemon_id, :encounter_id, :disappear_time, :geo_lat, :geo_lng, :spawnpoint_id)");
-        $insert->bindParam("pokemon_id", $msg->pokemon_id);
-        $insert->bindParam("encounter_id", $msg->encounter_id);
-        $insert->bindParam("disappear_time", $msg->disappear_time);
-        $insert->bindParam("geo_lat", $msg->latitude);
-        $insert->bindParam("geo_lng", $msg->longitude);
-        $insert->bindParam("spawnpoint_id", $msg->spawnpoint_id);
-        $insert->execute();
+        $cPokemon->pokemon_id       = $msg->pokemon_id;
+        $cPokemon->encounter_id     = $msg->encounter_id;
+        $cPokemon->disappear_time   = $msg->disappear_time;
+        $cPokemon->geo_lat          = $msg->latitude;
+        $cPokemon->geo_lng          = $msg->longitude;
+        $cPokemon->spawnpoint_id    = $msg->spawnpoint_id;
+        $create = $cPokemon->Create();
+
     }
-
-
 	
 } else { die(); }
 
@@ -57,28 +46,14 @@ if($typ == "pokemon"){
 
 
 /**
- * Prüft ob bereits ein Telegram Nachricht verschickt wird.
- * Es kann nur eine Versende Aktion gleichzeitig gestartet werden.
- * Dies damit die Nachricht korrekt ahgezeigt wird.
- */
-if(file_exists("blocked")){ die(); }
-$fp = fopen("blocked","wb");
-fclose($fp);
-
-
-
-/**
  * Pokemons durchschleiffen und benachrichtigung an Chat senden.
  * Suche Nach Pokemons die noch immer auf der Map sind.
  */
-$sth = $dbc->prepare("SELECT * FROM pokemon 
-    WHERE disappear_time > '".time()."'");
-$sth->execute();
-$result = $sth->fetchAll(PDO::FETCH_ASSOC);
+
+$result = $cPokemon->all();
 foreach($result as $notifier){
-    $sth = $dbc->prepare("SELECT * FROM chats");
-    $sth->execute();
-    $chats = $sth->fetchAll(PDO::FETCH_ASSOC);
+
+    $chats = $cChat->all();
     /**
      * Registrierte Chats durchschleiffen
      */
@@ -86,30 +61,27 @@ foreach($result as $notifier){
         /**
          * Prüfen ob der Aktualle Chat dieses Pokemon als Benachrichtigung festgelegt hat
          */
-        if($pokemon->getNotify($notifier['pokemon_id'], $chat['notify_pokemon'])) {
+
+        $cNotifylist->chat_id       = $chat['chat_id'];
+        $cNotifylist->pokemon_id    = $notifier['pokemon_id'];
+        if(!empty($cNotifylist->search())) {
             /**
              * Prüfen ob bereits eine Benachrichtigung zu der Chat ID und der Pokemon DB ID geschickt wurde
              */
-            $check = $dbc->prepare("SELECT * FROM notified
-                WHERE chat_id = :chat_id
-                AND pokemon_id = :pokemon_id");
-            $check->bindParam("chat_id", $chat['chat_id']);
-            $check->bindParam("pokemon_id", $notifier['id']);
-            $check->execute();
-            $result = $check->fetchAll(PDO::FETCH_ASSOC);
-            if(count($result) == 0)
+
+
+            $cNotified->chat_id     = $chat['chat_id'];
+            $cNotified->pokemon_id  = $notifier['id'];
+            if(empty($cNotified->search()))
             {
                 /**
                  * In der Datenbank eintragen das zu diesem Pokemon bereits eine Benachrichtigung an die
                  * Chat ID geschickt wurde
                  */
-                $insert = $dbc->prepare("INSERT INTO notified 
-                (chat_id, pokemon_id)
-                VALUES
-                (:chat_id, :pokemon_id)");
-                $insert->bindParam("chat_id", $chat['chat_id']);
-                $insert->bindParam("pokemon_id", $notifier['id']);
-                $insert->execute();
+                $cNotified->chat_id     = $chat['chat_id'];
+                $cNotified->pokemon_id  = $notifier['id'];
+                $create = $cNotified->Create();
+
 
                 /**
                  * Nachricht an telegram senden
@@ -128,5 +100,4 @@ foreach($result as $notifier){
 
 }
 
-unlink('blocked');
-
+?>

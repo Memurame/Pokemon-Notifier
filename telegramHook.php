@@ -15,9 +15,10 @@ $update = json_decode($content, true);
 $text = $update["message"]["text"];
 $chat_id = $update["message"]["chat"]["id"];
 
+$cChat->chat_id = $chat_id;
+$chat = $cChat->Search();
 
-
-$helptext = "Du chasch säuber istelle wasde für Benachrichtigunge wosch.\n\n/add Hinzuefüege\n/remove = Löschä\n/list = Benachrichtigungslischte\n/stop = Benachrichtigungen beenden\n/help = Hilfe\n\n";
+$helptext = "Du chasch säuber istelle wasde für Benachrichtigunge wosch.\n\n/add = Hinzuefüege\n/remove = Löschä\n/list = Benachrichtigungslischte\n/stop = Chat beände\n/help = Hilfe\n\n";
 $helptext .="Wende mehreri Pokémons wosch lösche oder hinzuefüege muesch immer es ',' zwüsche de Pokémons schribe.\n";
 $helptext .= "Es Bispil:\n/add Glumanda\n/add Glumanda, Glurak\n";
 
@@ -27,99 +28,100 @@ $helptext .= "Es Bispil:\n/add Glumanda\n/add Glumanda, Glurak\n";
 if (strtolower($text) == "/start") {
 
 
-    $notify = array();
-    $notify_pokemon = array();
-    for($i=1; $i <= count($pokemon->pokemonArray()); $i++){
-        if($pokemon->getNotify($i)){
-            array_push($notify, $i);
-            array_push($notify_pokemon, $pokemon->getName($i));
+
+
+    $cChat->chat_id = $chat_id;
+    if(!$cChat->search()){
+        $cChat->chat_id     = $chat_id;
+        $create = $cChat->Create();
+
+        $cNotifylist->chat_id = $chat_id;
+        if(empty($cNotifylist->Search())){
+            $notify_pokemon = array();
+            for($i=1; $i <= count($pokemon->pokemonArray()); $i++){
+                if($pokemon->getNotify($i)){
+                    array_push($notify_pokemon, $pokemon->getName($i));
+
+                    $cNotifylist->chat_id       = $chat_id;
+                    $cNotifylist->pokemon_id    = $i;
+                    $create = $cNotifylist->Create();
+                }
+            }
+
+            $reply = "Hallo bim PokemonBot vo Burgdorf. Mit däm Bot chasch dini benachrichtigunge säuber istelle. Zu folgende Pokémons wirsch standart mässig benachrichtigt:";
+            $content = array('chat_id' => $chat_id, 'text' => $reply);
+            $telegram->sendMessage($content);
+
+            $reply = implode(", ", $notify_pokemon);
+            $content = array('chat_id' => $chat_id, 'text' => $reply);
+            $telegram->sendMessage($content);
+
+            $reply = $helptext;
+            $content = array('chat_id' => $chat_id, 'text' => $reply);
+            $telegram->sendMessage($content);
+
+        } else {
+            $reply = "Willkommen zrüg.\nDini Istellige si immerno vorhande.";
+            $content = array('chat_id' => $chat_id, 'text' => $reply);
+            $telegram->sendMessage($content);
+
         }
-    }
-    $notify = implode(":", $notify);
 
-
-
-    $sth = $dbc->prepare("SELECT * FROM chats WHERE chat_id = :chat_id");
-    $sth->bindParam("chat_id", $chat_id);
-    $sth->execute();
-    $chat = $sth->fetch(PDO::FETCH_ASSOC);
-    if(!$chat){
-        $sth = $dbc->prepare("INSERT INTO chats 
-          (chat_id, notify_pokemon)
-          VALUES
-          (:chat_id, :notify_pokemon)");
-        $sth->bindParam("chat_id", $chat_id);
-        $sth->bindParam("notify_pokemon", $notify);
-        $sth->execute();
     } else {
         $reply = "Du hesch der chat bereits gstartet!";
         $content = array('chat_id' => $chat_id, 'text' => $reply);
         $telegram->sendMessage($content);
         die();
     }
-
-
-    $reply = "Hallo bim PokemonBot vo Burgdorf. Mit däm Bot chasch dini benachrichtigunge säuber istelle. Zu folgende Pokémons wirsch standart mässig benachrichtigt:";
-    $content = array('chat_id' => $chat_id, 'text' => $reply);
-    $telegram->sendMessage($content);
-
-    $reply = implode(", ", $notify_pokemon);
-    $content = array('chat_id' => $chat_id, 'text' => $reply);
-    $telegram->sendMessage($content);
-
-    $reply = $helptext;
-    $content = array('chat_id' => $chat_id, 'text' => $reply);
-    $telegram->sendMessage($content);
 }
+
+if(!$chat){ die(); };
 
 /**
  * Bot Beenden
  */
 if(strtolower($text) == "/stop"){
-    $sth = $dbc->prepare("DELETE FROM chats WHERE chat_id = :chat_id");
-    $sth->bindParam("chat_id", $chat_id);
-    $sth->execute();
 
-    $reply = "Du wirsch ize nüm benachrichtigt. Zum erneute starte muesch /start i chat schribe.";
-    $content = array('chat_id' => $chat_id, 'text' => $reply);
-    $telegram->sendMessage($content);
+    $cChat->chat_id = $chat_id;
+    if(!empty($cChat->Search())){
+        $cChat->chat_id = $chat_id;
+        $delete = $cChat->Delete();
+
+        $reply = "Du wirsch ize nüm benachrichtigt. Zum erneute starte muesch /start i chat schribe.";
+        $content = array('chat_id' => $chat_id, 'text' => $reply);
+        $telegram->sendMessage($content);
+    } else {
+        $reply = "Du hesch d Benachrichtigunge bereits beändet.";
+        $content = array('chat_id' => $chat_id, 'text' => $reply);
+        $telegram->sendMessage($content);
+        die();
+    }
+
 }
 
 /**
  * Ein Pokemon zur Benachrichtigungsliuste himzufügen
  */
 if(substr(strtolower($text), 0, 4) == "/add"){
-    $sth = $dbc->prepare("SELECT notify_pokemon FROM chats WHERE chat_id = :chat_id");
-    $sth->bindParam("chat_id", $chat_id);
-    $sth->execute();
-    $chat = $sth->fetch(PDO::FETCH_ASSOC);
-
-    $notify = explode(":", $chat['notify_pokemon']);
-    $selected = explode(",", substr($text, 5));
 
     $reply = "";
+    $selected = explode(",", substr($text, 5));
     foreach($selected as $select){
-        foreach($pokemon->pokemonArray() as $id => $value){
-            $select = trim(strtolower($select));
-            if(strtolower($value['Name']) == $select){
-                if(!in_array($id, $notify)){
-                    array_push($notify, $id);
-                    $reply .= $value['Name']."\n";
-                }
-            }
+        $id = $pokemon->getID($select);
+        if($id){
+            $cNotifylist->pokemon_id    = $id;
+            $cNotifylist->chat_id       = $chat_id;
+            if(!$cNotifylist->Search()){
+                $reply .= $pokemon->getName($id)."\n";
 
+                $cNotifylist->chat_id       = $chat_id;
+                $cNotifylist->pokemon_id    = $id;
+                $create = $cNotifylist->Create();
+            }
         }
     }
-    sort($notify);
-    $notify = implode(":", $notify);
 
-    $update = $dbc->prepare("UPDATE chats SET notify_pokemon = :notify_pokemon WHERE chat_id = :chat_id");
-    $update->bindParam("chat_id", $chat_id);
-    $update->bindParam("notify_pokemon", $notify);
-    $update->execute();
-
-    if(empty($reply)){ $reply = "Es isch es Problem uftoucht."; }
-    else{ $reply .= "zu Benachrichtigung hinzuegfüegt."; }
+    if(!empty($reply)){ $reply .= "zu Benachrichtigung hinzuegfüegt."; }
     $content = array('chat_id' => $chat_id, 'text' => $reply);
     $telegram->sendMessage($content);
 }
@@ -128,46 +130,28 @@ if(substr(strtolower($text), 0, 4) == "/add"){
  * Pokemon aus Benachrichtigungsliste löschen
  */
 if(substr(strtolower($text), 0, 7) == "/remove"){
-    $sth = $dbc->prepare("SELECT notify_pokemon FROM chats WHERE chat_id = :chat_id");
-    $sth->bindParam("chat_id", $chat_id);
-    $sth->execute();
-    $chat = $sth->fetch(PDO::FETCH_ASSOC);
-
-    $notify = explode(":", $chat['notify_pokemon']);
-    $notify = array_combine(range(1, count($notify)), $notify);
-    $selected = explode(",", substr($text, 8));
 
     $reply = "";
-    $i = 0;
-    foreach($selected as $select){
+    $selected = explode(",", substr($text, 8));
+    foreach($selected as $select) {
         $id = $pokemon->getID($select);
-        echo $select." - ".$id."\n";
-        if(in_array($id, $notify)) {
-            $notify_id = array_search($id, $notify);
-            unset($notify[$notify_id]);
-            $reply .= $select . "\n";
-        } else {
-            $error = $select. "\n";
+        if ($id) {
+            $cNotifylist->pokemon_id = $id;
+            $cNotifylist->chat_id = $chat_id;
+            if ($cNotifylist->Search()) {
+                $reply .= $pokemon->getName($id) . "\n";
+
+                $cNotifylist->chat_id = $chat_id;
+                $cNotifylist->pokemon_id = $id;
+                $create = $cNotifylist->Delete();
+            }
         }
     }
-
-    $notify = implode(":", $notify);
-
-    $update = $dbc->prepare("UPDATE chats SET notify_pokemon = :notify_pokemon WHERE chat_id = :chat_id");
-    $update->bindParam("chat_id", $chat_id);
-    $update->bindParam("notify_pokemon", $notify);
-    $update->execute();
 
     if(!empty($reply)){
         $reply .= "von Benachrichtigung gelöscht.";
         $content = array('chat_id' => $chat_id, 'text' => $reply);
         $telegram->sendMessage($content);
-    }
-    if(!empty($error)){
-        $reply = "Bi folgende Pokémons isch es Problem uftoucht:\n".$error."Entweder isches nüm i dire Benachrichtigungsliste oder es isch kes Pokemon.";
-        $content = array('chat_id' => $chat_id, 'text' => $reply);
-        $telegram->sendMessage($content);
-
     }
 
 }
@@ -177,20 +161,16 @@ if(substr(strtolower($text), 0, 7) == "/remove"){
  */
 
 if(strtolower($text) == "/list") {
-    $sth = $dbc->prepare("SELECT notify_pokemon FROM chats WHERE chat_id = :chat_id");
-    $sth->bindParam("chat_id", $chat_id);
-    $sth->execute();
-    $chat = $sth->fetch(PDO::FETCH_ASSOC);
-
-    $notify = explode(":", $chat['notify_pokemon']);
-    $notify = array_combine(range(1, count($notify)), $notify);
 
     $notify_pokemon = Array();
-    for($i=1; $i <= count($notify); $i++){
-        array_push($notify_pokemon, $pokemon->getName($notify[$i]));
+
+    $cNotifylist->chat_id = $chat_id;
+    $notify = $cNotifylist->Search();
+
+    foreach($notify as $key){
+        array_push($notify_pokemon, $pokemon->getName($key['pokemon_id']));
     }
 
-    //print_r($notify_pokemon);
     $reply = "Zu folgende Pokémons berchunsch du e Benachrichtigung:\n";
     $reply .= implode(", ", $notify_pokemon);
     $content = array('chat_id' => $chat_id, 'text' => $reply);
@@ -206,5 +186,23 @@ if(strtolower($text) == "/help") {
     $reply = $helptext;
     $content = array('chat_id' => $chat_id, 'text' => $reply);
     $telegram->sendMessage($content);
+
+}
+
+if($chat && $chat[0]['admin']){
+
+    if(substr(strtolower($text), 0, 5) == "/send"){
+
+        $text = substr($text, 6);
+
+        $chats = $cChat->All();
+        foreach($chats as $chat){
+            $reply = "Meldung vom Administrator:\n\n";
+            $reply .= $text;
+            $content = array('chat_id' => $chat['chat_id'], 'text' => $reply);
+            $telegram->sendMessage($content);
+        }
+
+    }
 
 }

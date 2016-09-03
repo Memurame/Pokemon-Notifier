@@ -14,17 +14,8 @@ class Pokemon
         return $this->getPokemon($pokemonid, "Sticker");
     }
 
-    public function getNotify($pokemonid, $notify_pokemon = ""){
-        if(empty($notify_pokemon)){
+    public function getNotify($pokemonid){
             return $this->getPokemon($pokemonid, "Notify");
-        } else {
-            $json_decode = explode(":", $notify_pokemon);
-            if(in_array($pokemonid, $json_decode)){
-                return true;
-            } else {
-                return false;
-            }
-        }
 
     }
 
