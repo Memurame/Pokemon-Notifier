@@ -4,4 +4,5 @@ node_modules/
 test.php
 test.txt
 blocked
-libs/logs/
+libs/logs/*
+!libs/logs/.htaccess
