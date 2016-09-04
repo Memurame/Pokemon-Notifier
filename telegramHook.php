@@ -219,6 +219,9 @@ if(strtolower($text) == "/help") {
 
 if($chat && $chat[0]['admin']){
 
+    /**
+     * Senden einer Nachricht an alle registrierten Chats
+     */
     if(substr(strtolower($text), 0, 5) == "/send"){
 
         $text = substr($text, 6);
@@ -233,6 +236,10 @@ if($chat && $chat[0]['admin']){
 
     }
 
+    /**
+     * Säubern der Datenbank
+     * Löscht alle Pokemons die nicht mehr auf de Map sind.
+     */
     if(strtolower($text) == "/cleandb"){
 
         $db->bind("disappear_time", time());
@@ -243,4 +250,23 @@ if($chat && $chat[0]['admin']){
         $telegram->sendMessage($content);
     }
 
+
+    if(strtolower($text) == "/bot stop"){
+
+        $handle = fopen ("blocked", "w");
+        fclose ($handle);
+
+        $reply = "Bot gestoppt";
+        $content = array('chat_id' => $chat_id, 'text' => $reply);
+        $telegram->sendMessage($content);
+    }
+
+    if(strtolower($text) == "/bot start"){
+
+        unlink("blocked");
+
+        $reply = "Bot gestartet";
+        $content = array('chat_id' => $chat_id, 'text' => $reply);
+        $telegram->sendMessage($content);
+    }
 }

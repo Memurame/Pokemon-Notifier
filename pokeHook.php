@@ -7,6 +7,13 @@
 
 
 /**
+ * Prüfen ob der Telegramchat vom Admin über den Bot gestoppt wurde.
+ */
+if(file_exists("blocked")){die();}
+
+
+
+/**
  * Webhook daten empfangen
  */
 
@@ -17,6 +24,9 @@ $typ = $json_decode->type;
 
 
 require_once(__DIR__."/init.php");
+
+
+
 
 
 if($typ == "pokemon"){
