@@ -18,7 +18,7 @@ Ebenfalls können die User selber einstellen zu welchen Pokémons Sie eine Benac
 - In der config von der PokemonGo-Map musst du nun die Webhook Adresse entsprechend setzen. 
 ```z.B http://DEINEDOMAIN.CH/pokeHook.php```
 - Die Telegram WebhookUrl setzen
-```https://api.telegram.org/bot[API-KEY]/setWebhook?url=[URL zu deinem Script]```
+```https://api.telegram.org/bot[API-KEY]/setWebhook?url=[URL zu deinem Script]/telegramHook.php```
 
 So wenn dies alles geklappt hat kannst du nun dein Bot Starten und solltest eine Meldung erhalten.
 Hat auch dies geklappt steht dem Starten der PokemonGo-Map nichts mehr im wege.
