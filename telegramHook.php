@@ -254,6 +254,7 @@ if($chat && $chat[0]['admin']){
     if(strtolower($text) == "/bot stop"){
 
         $handle = fopen ("blocked", "w");
+        fwrite($handle, "Wenn diese Datei existiert wurde der Bot vom Admin gestoppt über das Telegram App");
         fclose ($handle);
 
         $reply = "Bot gestoppt";
