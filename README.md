@@ -36,3 +36,5 @@ Hat auch dies geklappt steht dem Starten der PokemonGo-Map nichts mehr im wege.
 #### Admin Befehle
 - /send [Text] = Senden einer Nachricht an alle User die den Bot gestartet haben
 - /cleandb = Löscht alle Pokémons aus der DB die nicht mehr auf der Map sind
+- /bot stop = Stopt den Bot
+- /bot start = Starten den Bot
