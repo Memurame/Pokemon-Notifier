@@ -12,7 +12,7 @@ Ebenfalls können die User selber einstellen zu welchen Pokémons Sie eine Benac
 
 
 ### Installation
-- Repositiry runterladen ```git clone https://github.com/PokemonGoMap/PokemonGo-Map.git```
+- Repositiry runterladen ```git clone https://github.com/n30nl1ght/Pokemon-Notifier.git```
 - ```config.ini.Example``` kopieren und unbenennen in ```config.ini```
 - In der config die DB-Verbindungsdaten und Telegram API-Key eintragen
 - In der config von der PokemonGo-Map musst du nun die Webhook Adresse entsprechend setzen. 
