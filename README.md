@@ -24,3 +24,10 @@ So wenn dies alles geklappt hat kannst du nun dein Bot Starten und solltest eine
 Hat auch dies geklappt steht dem Starten der PokemonGo-Map nichts mehr im wege.
 
 
+### TelegramBot Befehle
+- /add = Hinzufügen von Pokémons
+- /remove = Löschen von Pokémons
+- /list = Anzeigen zu welchen Pokémons du eine Benachrichtigung erhälst
+- /stop = Stopt die Benachrichtigngen (EInstellungen bleiben erhalten)
+- /reset = STellt die Benachrichtigungs Pokémon wieder auf die STandart einstellung
+- /start = Startet den Bot
