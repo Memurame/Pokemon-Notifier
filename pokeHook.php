@@ -16,7 +16,7 @@ header("Access-Control-Allow-Methods: POST, GET");
  * Wenn nicht wird der Push verweigert
  */
 if(isset($_SERVER['HTTP_WEBHOOKKEY'])){
-    if($_SERVER['HTTP_WEBHOOKSECUREKEY'] != "PokemonGo-Map"){
+    if($_SERVER['HTTP_WEBHOOKKEY'] != "PokemonGo-Map"){
         header('HTTP/1.1 401 Unauthorized');
         die("Zugriff nicht erlaubt!");
     }
