@@ -6,6 +6,22 @@
  */
 
 
+
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: X-Requested-With");
+header("Access-Control-Allow-Methods: POST, GET");
+
+/**
+ * Prüfen ob der KEY mit dem der Map übereinstimmt
+ * Wenn nicht wird der Push verweigert
+ */
+if(isset($_SERVER['HTTP_WEBHOOKKEY'])){
+    if($_SERVER['HTTP_WEBHOOKSECUREKEY'] != "PokemonGo-Map"){
+        header('HTTP/1.1 401 Unauthorized');
+        die("Zugriff nicht erlaubt!");
+    }
+}
+
 /**
  * Prüfen ob der Telegramchat vom Admin über den Bot gestoppt wurde.
  */
@@ -21,7 +37,6 @@ $data = file_get_contents("php://input");
 $json_decode = json_decode($data);
 $msg = $json_decode->message;
 $typ = $json_decode->type;
-
 
 require_once(__DIR__."/init.php");
 
