@@ -13,13 +13,10 @@ header("Access-Control-Allow-Methods: POST, GET");
 
 
 
-
-
 /**
  * Webhook daten empfangen
  */
-
-
+$data = file_get_contents("php://input");
 $json_decode = json_decode($data);
 $msg = $json_decode->message;
 $typ = $json_decode->type;
