@@ -30,9 +30,9 @@ require_once(__DIR__."/init.php");
 if(isset($_SERVER['HTTP_WEBHOOKKEY'])){
     if($_SERVER['HTTP_WEBHOOKKEY'] != $cfg['webhook']['key']){
         header('HTTP/1.1 401 Unauthorized');
-        die("Zugriff nicht erlaubt!");
+        die("Zugriff nicht erlaubt, Falscher WebhookKey!");
     }
-}
+} else { die("Zugriff nicht erlaubt, der WebhookKey existiert nicht.!"); }
 
 /**
  * Prüfen ob der Telegramchat vom Admin über den Bot gestoppt wurde.
