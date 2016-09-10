@@ -95,7 +95,7 @@ if($typ == "pokemon"){
         $notifylist = $cNotifylist->Search();
         foreach($notifylist as $notify){
             $cChat->find($notify['chat_id']);
-            echo $cChat->place." -> ". $place[0]."<br>";
+            echo $cChat->place." -> ". $place[0]."\n";
             if($cChat->place == $place[0]){
                 /**
                  * Prüfen ob bereits eine Benachrichtigung zu der Chat ID und der Pokemon DB ID geschickt wurde
