@@ -33,6 +33,10 @@ if (strtolower($text) == "/start") {
 
     $cChat->chat_id = $chat_id;
     if(!$cChat->search()){
+
+        if($cfg['telegram']['admin-id'] == $chat_id){
+            $cChat->admin = 1;
+        }
         $cChat->chat_id     = $chat_id;
         $cChat->place       = 'burgdorf';
         $create = $cChat->Create();

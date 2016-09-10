@@ -12,7 +12,7 @@ header("Access-Control-Allow-Headers: X-Requested-With");
 header("Access-Control-Allow-Methods: POST, GET");
 
 /**
- * Webhook daten empfangen
+ * Webhook daten empfangen un umwandeln
  */
 $data = file_get_contents("php://input");
 $json_decode = json_decode($data);
@@ -27,6 +27,7 @@ require_once(__DIR__."/init.php");
 /**
  * ############################################################
  * Zugriffs Berechtigung prüfen
+ * Nur zugriffe mit dem richtigen KEY haben zugriff
  * ############################################################
  */
 
@@ -49,14 +50,19 @@ if(isset($_SERVER['HTTP_WEBHOOKKEY'])){
  * ############################################################
  */
 
-
+/**
+ * Server Adresse auslesen um zu bestimmen welche Region zugreift.
+ */
 $place = explode('.', $_SERVER['SERVER_NAME']);
 
-
+/**
+ * Prüffen ob es sich um ein Pokemon handelt
+ */
 if($typ == "pokemon"){
 
     /**
-     * Prüfen ob das Pokemon bereits erschienen ist und in der Db vorhanden ist
+     * Prüfen ob das Pokemon bereits erschienen ist und in der Db vorhanden ist.
+     * Zur absicherung das es kein doppelter eintrag gibt.
      */
     $cPokemon->pokemon_id       = $msg->pokemon_id;
     $cPokemon->encounter_id     = $msg->encounter_id;
@@ -90,6 +96,9 @@ if($typ == "pokemon"){
         $notifylist = $cNotifylist->Search();
         foreach($notifylist as $notify){
 
+            /**
+             * Prüfen ob es sich um die richtige region handelt
+             */
             $cChat->chat_id = $notify['chat_id'];
             $cChat->find();
             if($cChat->place == $place[0]){

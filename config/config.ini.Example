@@ -7,6 +7,7 @@ dbname = pokenotifier
 
 [telegram]
 bot-id = "APIKEY"
+admin-id = "TELEGRAMID"
 
 [webhook]
 key = "WEBHOOKKEY"
