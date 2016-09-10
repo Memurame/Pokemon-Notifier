@@ -110,7 +110,7 @@ if($typ == "pokemon"){
                      * Chat ID geschickt wurde
                      */
                     $cNotified->chat_id     = $notify['chat_id'];
-                    $cNotified->pokemon_id  = $msg->pokemon_id;
+                    $cNotified->pokemon_id  = $last[0]['id'];
                     $create = $cNotified->Create();
 
 
