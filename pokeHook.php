@@ -11,8 +11,6 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: X-Requested-With");
 header("Access-Control-Allow-Methods: POST, GET");
 
-print_r($_SERVER);
-
 /**
  * Webhook daten empfangen
  */
@@ -78,6 +76,7 @@ if($typ == "pokemon"){
         $cPokemon->geo_lat          = $msg->latitude;
         $cPokemon->geo_lng          = $msg->longitude;
         $cPokemon->spawnpoint_id    = $msg->spawnpoint_id;
+        $cPokemon->place            = $place[0];
         $create = $cPokemon->Create();
 
 
