@@ -11,7 +11,7 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: X-Requested-With");
 header("Access-Control-Allow-Methods: POST, GET");
 
-
+print_r($_SERVER);
 
 /**
  * Webhook daten empfangen
@@ -21,7 +21,16 @@ $json_decode = json_decode($data);
 $msg = $json_decode->message;
 $typ = $json_decode->type;
 
+/**
+ * Erforderliche Files und Classen laden
+ */
 require_once(__DIR__."/init.php");
+
+/**
+ * ############################################################
+ * Zugriffs Berechtigung prüfen
+ * ############################################################
+ */
 
 /**
  * Prüfen ob der KEY mit dem der Map übereinstimmt
@@ -32,13 +41,23 @@ if(isset($_SERVER['HTTP_WEBHOOKKEY'])){
         header('HTTP/1.1 401 Unauthorized');
         die("Zugriff nicht erlaubt, Falscher WebhookKey!");
     }
-} else { die("Zugriff nicht erlaubt, der WebhookKey existiert nicht.!"); }
+} else {
+    header('HTTP/1.1 401 Unauthorized');
+    die("Zugriff nicht erlaubt, der WebhookKey existiert nicht.!");
+}
 
 /**
  * Prüfen ob der Telegramchat vom Admin über den Bot gestoppt wurde.
  */
 if(file_exists("blocked")){die("Service wurde vom Admin beendet");}
 
+/**
+ * ############################################################
+ * ############################################################
+ */
+
+
+$place = explode('.', $_SERVER['SERVER_NAME']);
 
 
 if($typ == "pokemon"){
@@ -76,33 +95,39 @@ if($typ == "pokemon"){
         $cNotifylist->pokemon_id    = $msg->pokemon_id;
         $notifylist = $cNotifylist->Search();
         foreach($notifylist as $notify){
-            /**
-             * Prüfen ob bereits eine Benachrichtigung zu der Chat ID und der Pokemon DB ID geschickt wurde
-             */
-            $cNotified->chat_id     = $notify['chat_id'];
-            $cNotified->pokemon_id  = $last[0]['id'];
-            if(empty($cNotified->search()))
-            {
+            $cChat->find($notify['chat_id']);
+            if($cChat->place == $place[0]){
                 /**
-                 * In der Datenbank eintragen das zu diesem Pokemon bereits eine Benachrichtigung an die
-                 * Chat ID geschickt wurde
+                 * Prüfen ob bereits eine Benachrichtigung zu der Chat ID und der Pokemon DB ID geschickt wurde
                  */
                 $cNotified->chat_id     = $notify['chat_id'];
-                $cNotified->pokemon_id  = $msg->pokemon_id;
-                $create = $cNotified->Create();
+                $cNotified->pokemon_id  = $last[0]['id'];
+                if(empty($cNotified->search()))
+                {
+                    /**
+                     * In der Datenbank eintragen das zu diesem Pokemon bereits eine Benachrichtigung an die
+                     * Chat ID geschickt wurde
+                     */
+                    $cNotified->chat_id     = $notify['chat_id'];
+                    $cNotified->pokemon_id  = $msg->pokemon_id;
+                    $create = $cNotified->Create();
 
 
-                /**
-                 * Nachricht an telegram senden
-                 */
-                $bild = array('chat_id' => $notify['chat_id'], 'sticker' => $pokemon->getSticker($msg->pokemon_id));
-                $name = array('chat_id' => $notify['chat_id'], 'text' => "I hanes " . $pokemon->getName($msg->pokemon_id) . " gse, \nblibt no bis " . date("H:i:s", $msg->disappear_time));
-                $location = array('chat_id' => $notify['chat_id'], 'latitude' => $msg->latitude, 'longitude' => $msg->longitude);
+                    /**
+                     * Nachricht an telegram senden
+                     */
+                    $bild = array('chat_id' => $notify['chat_id'], 'sticker' => $pokemon->getSticker($msg->pokemon_id));
+                    $name = array('chat_id' => $notify['chat_id'], 'text' => "I hanes " . $pokemon->getName($msg->pokemon_id) . " gse, \nblibt no bis " . date("H:i:s", $msg->disappear_time));
+                    $location = array('chat_id' => $notify['chat_id'], 'latitude' => $msg->latitude, 'longitude' => $msg->longitude);
 
-                $telegram->sendSticker($bild);
-                $telegram->sendMessage($name);
-                $telegram->sendLocation($location);
+                    $telegram->sendSticker($bild);
+                    $telegram->sendMessage($name);
+                    $telegram->sendLocation($location);
+                }
             }
+
+
+
 
         }
     }
