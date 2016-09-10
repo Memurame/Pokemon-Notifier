@@ -239,6 +239,18 @@ if(strtolower($text) == "/burgdorf") {
 
 }
 
+if(strtolower($text) == "/oberburg") {
+
+    $cChat->place   = "oberburg";
+    $cChat->chat_id = $chat_id;
+    $save = $cChat->save();
+
+    $reply = "Du wirsch ize über Pokemons in Oberburg benachrichtigt..";
+    $content = array('chat_id' => $chat_id, 'text' => $reply);
+    $telegram->sendMessage($content);
+
+}
+
 /**
  * ###############################################
  * Admin befehle
