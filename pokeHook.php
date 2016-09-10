@@ -66,6 +66,7 @@ if($typ == "pokemon"){
     $cPokemon->pokemon_id       = $msg->pokemon_id;
     $cPokemon->encounter_id     = $msg->encounter_id;
     $cPokemon->spawnpoint_id    = $msg->spawnpoint_id;
+    $cPokemon->place            = $place[0];
     if(empty($cPokemon->search())) {
         /**
          * Pokemon in der DB eintragen
@@ -86,6 +87,7 @@ if($typ == "pokemon"){
         $cPokemon->pokemon_id       = $msg->pokemon_id;
         $cPokemon->encounter_id     = $msg->encounter_id;
         $cPokemon->spawnpoint_id    = $msg->spawnpoint_id;
+        $cPokemon->place            = $place[0];
         $last = $cPokemon->search();
 
         /**
