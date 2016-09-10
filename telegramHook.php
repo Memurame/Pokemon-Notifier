@@ -180,7 +180,9 @@ if(strtolower($text) == "/list") {
 
 }
 
-
+/**
+ * Zurücksetzen der Notification Pokemon auf die Standart einstellung
+ */
 if(strtolower($text) == "/reset") {
 
     $notify_pokemon = Array();
@@ -257,27 +259,10 @@ if($chat && $chat[0]['admin']){
         $telegram->sendMessage($content);
     }
 
-
-    if(strtolower($text) == "/bot stop"){
-
-        $handle = fopen ("blocked", "w");
-        fwrite($handle, "Wenn diese Datei existiert wurde der Bot vom Admin gestoppt über das Telegram App");
-        fclose ($handle);
-
-        $reply = "Bot gestoppt";
-        $content = array('chat_id' => $chat_id, 'text' => $reply);
-        $telegram->sendMessage($content);
-    }
-
-    if(strtolower($text) == "/bot start"){
-
-        unlink("blocked");
-
-        $reply = "Bot gestartet";
-        $content = array('chat_id' => $chat_id, 'text' => $reply);
-        $telegram->sendMessage($content);
-    }
-
+    /**
+     * Setzen des Standortes -> Bern
+     * Benachrichtigt wird man nun über die gewählte Region
+     */
     if(strtolower($text) == "/bern") {
 
         $cChat->place   = "bern";
@@ -289,6 +274,11 @@ if($chat && $chat[0]['admin']){
         $telegram->sendMessage($content);
 
     }
+
+    /**
+     * Setzen des Standortes -> Burgdorf
+     * Benachrichtigt wird man nun über die gewählte Region
+     */
     if(strtolower($text) == "/burgdorf") {
 
         $cChat->place   = "burgdorf";
@@ -301,6 +291,10 @@ if($chat && $chat[0]['admin']){
 
     }
 
+    /**
+     * Setzen des Standortes -> Oberburg
+     * Benachrichtigt wird man nun über die gewählte Region
+     */
     if(strtolower($text) == "/oberburg") {
 
         $cChat->place   = "oberburg";
@@ -308,6 +302,22 @@ if($chat && $chat[0]['admin']){
         $save = $cChat->save();
 
         $reply = "Du wirsch ize über Pokemons in Oberburg benachrichtigt..";
+        $content = array('chat_id' => $chat_id, 'text' => $reply);
+        $telegram->sendMessage($content);
+
+    }
+
+    /**
+     * Setzen des Standortes -> Langnau
+     * Benachrichtigt wird man nun über die gewählte Region
+     */
+    if(strtolower($text) == "/langnau") {
+
+        $cChat->place   = "langnau";
+        $cChat->chat_id = $chat_id;
+        $save = $cChat->save();
+
+        $reply = "Du wirsch ize über Pokemons in Langnau benachrichtigt..";
         $content = array('chat_id' => $chat_id, 'text' => $reply);
         $telegram->sendMessage($content);
 

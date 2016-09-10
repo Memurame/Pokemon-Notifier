@@ -45,11 +45,6 @@ if(isset($_SERVER['HTTP_WEBHOOKKEY'])){
 }
 
 /**
- * Prüfen ob der Telegramchat vom Admin über den Bot gestoppt wurde.
- */
-if(file_exists("blocked")){die("Service wurde vom Admin beendet");}
-
-/**
  * ############################################################
  * ############################################################
  */
