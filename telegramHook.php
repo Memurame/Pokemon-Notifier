@@ -216,7 +216,34 @@ if(strtolower($text) == "/help") {
     $telegram->sendMessage($content);
 
 }
+if(strtolower($text) == "/bern") {
 
+    $cChat->place   = "bern";
+    $cChat->chat_id = $chat_id;
+    $save = $cChat->save();
+
+    $reply = "Du wirsch ize über Pokemons in Bern benachrichtigt..";
+    $content = array('chat_id' => $chat_id, 'text' => $reply);
+    $telegram->sendMessage($content);
+
+}
+if(strtolower($text) == "/burgdorf") {
+
+    $cChat->place   = "burgdorf";
+    $cChat->chat_id = $chat_id;
+    $save = $cChat->save();
+
+    $reply = "Du wirsch ize über Pokemons in Burgdorf benachrichtigt..";
+    $content = array('chat_id' => $chat_id, 'text' => $reply);
+    $telegram->sendMessage($content);
+
+}
+
+/**
+ * ###############################################
+ * Admin befehle
+ * ###############################################
+ */
 if($chat && $chat[0]['admin']){
 
     /**
