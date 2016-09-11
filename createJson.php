@@ -25,10 +25,11 @@ $result   =  $db->query("SELECT * FROM pokemon WHERE disappear_time > :disappear
 foreach($result as $key) {
     $entry = array();
     $entry['pokemon_id']        = $key['pokemon_id'];
-    $entry['name']              = $pokemon->getName($key['pokemon_id']);
+    $entry['pokemon_name']              = $pokemon->getName($key['pokemon_id']);
     $entry['disappear_time']    = $key['disappear_time'];
     $entry['latitude']          = $key['geo_lat'];
-    $entry['longitude']          = $key['geo_lng'];
+    $entry['longitude']         = $key['geo_lng'];
+    $entry['pokemon_rarity']    = "Kommt noch";
     array_push($array, $entry);
 
 }
