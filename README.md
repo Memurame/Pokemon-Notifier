@@ -14,14 +14,15 @@ Ebenfalls können die User selber einstellen zu welchen Pokémons Sie eine Benac
 ### Installation
 - Repositiry runterladen ```git clone https://github.com/n30nl1ght/Pokemon-Notifier.git```
 - ```config.ini.Example``` kopieren und unbenennen in ```config.ini```
-- In der config die DB-Verbindungsdaten und Telegram API-Key eintragen
+- In der config vom Notifier die DB-Verbindungsdaten und Telegram API-Key eintragen
 - In der config von der PokemonGo-Map musst du nun die Webhook Adresse entsprechend setzen. 
 ```z.B http://DEINEDOMAIN.CH/pokeHook.php```
+- In der config der PokemonGo-Map ein webhook-api-key eintragen und denselben wert ebenfalls in der config vom Notifier eintragen.
+So können dir keine anderen Personen Pokémons unterjubeln.
 - Die Telegram WebhookUrl setzen
-```https://api.telegram.org/bot[API-KEY]/setWebhook?url=[URL zu deinem Script]/telegramHook.php```
-
-So wenn dies alles geklappt hat kannst du nun dein Bot Starten und solltest eine Meldung erhalten.
-Hat auch dies geklappt steht dem Starten der PokemonGo-Map nichts mehr im wege.
+```https://api.telegram.org/bot[API-KEY]/setWebhook?url=[URL zu deinem Script]/telegramHook.php``` (Muss zwingend HTTPS sein)
+- Damit der Bot dich immer als Admin einträgt wenn du den Bot beendest und erneut startest musst du deine Telegram-ID auslesen und in der Notifier config eintragen.
+Du kannst diesen Wert jedoch auch leer lassen.
 
 
 ### TelegramBot Befehle
@@ -36,5 +37,5 @@ Hat auch dies geklappt steht dem Starten der PokemonGo-Map nichts mehr im wege.
 #### Admin Befehle
 - /send [Text] = Senden einer Nachricht an alle User die den Bot gestartet haben
 - /cleandb = Löscht alle Pokémons aus der DB die nicht mehr auf der Map sind
-- /bot stop = Stopt den Bot
-- /bot start = Starten den Bot
+
+
