@@ -46,6 +46,31 @@ class Pokemon
     }
 
     /**
+     * Sucht anhand der Pokemon ID den Namen
+     * @param int $pokemonid
+     * @return string
+     */
+    public function getRarity($pokemonid){
+        switch( $this->getPokemon($pokemonid, "Rarity") ){
+            case "Common":
+                return "Häufig";
+                break;
+            case "Uncommon":
+                return "Nicht Häufig";
+                break;
+            case "Rare":
+                return "Selten";
+                break;
+            case "Very Rare":
+                return "Sehr Selten";
+                break;
+            case "Ultra Rare":
+                return "Ultra Selten";
+                break;
+        }
+    }
+
+    /**
      * Sucht anhand des Pokemon Namen die ID
      * @param string $pokemonname
      * @return int

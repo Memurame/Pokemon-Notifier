@@ -29,7 +29,7 @@ foreach($result as $key) {
     $entry['disappear_time']    = $key['disappear_time'];
     $entry['latitude']          = $key['geo_lat'];
     $entry['longitude']         = $key['geo_lng'];
-    $entry['pokemon_rarity']    = "Kommt noch";
+    $entry['pokemon_rarity']    = $pokemon->getRarity($key['pokemon_id']);
     array_push($array, $entry);
 
 }
