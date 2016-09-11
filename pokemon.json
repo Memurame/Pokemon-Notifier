@@ -3,907 +3,907 @@
     "Name": "Bisasam",
     "Sticker": "BQADBAADfwQAAjZHEwABnO68QzZgsfMC",
     "Notify": true,
-    "rarity": "Uncommon"
+    "Rarity": "Uncommon"
   },
   "2": {
     "Name": "Bisaknosp",
     "Sticker": "BQADBAADKQADA6ZnAd09yoh66pIfAg",
     "Notify": true,
-    "rarity": "Rare"
+    "Rarity": "Rare"
   },
   "3": {
     "Name": "Bisaflor",
     "Sticker": "BQADBAADKwADA6ZnAdELYlYwzKbIAg",
     "Notify": true,
-    "rarity": "Very Rare"
+    "Rarity": "Very Rare"
 
   },
   "4": {
     "Name": "Glumanda",
     "Sticker": "BQADBAADgQQAAjZHEwABFqCiENEvMnwC",
     "Notify": true,
-    "rarity": "Rare"
+    "Rarity": "Rare"
   },
   "5": {
     "Name": "Glutexo",
     "Sticker": "BQADBAADLwADA6ZnAch60dZ72R0AAQI",
     "Notify": true,
-    "rarity": "Very Rare"
+    "Rarity": "Very Rare"
   },
   "6": {
     "Name": "Glurak",
     "Sticker": "BQADBAADMQADA6ZnAYFZ_5qjNAytAg",
     "Notify": true,
-    "rarity": "Very Rare"
+    "Rarity": "Very Rare"
   },
   "7": {
     "Name": "Schiggy",
     "Sticker": "BQADBAADMwADA6ZnAY9noVGNdiDVAg",
     "Notify": true,
-    "rarity": "Uncommon"
+    "Rarity": "Uncommon"
   },
   "8": {
     "Name": "Schillok",
     "Sticker": "BQADBAADNQADA6ZnAZpcNOcyNj1PAg",
     "Notify": true,
-    "rarity": "Rare"
+    "Rarity": "Rare"
   },
   "9": {
     "Name": "Turtok",
     "Sticker": "BQADBAADNwADA6ZnAUhWLdtsQ7q9Ag",
     "Notify": true,
-    "rarity": "Very Rare"
+    "Rarity": "Very Rare"
   },
   "10": {
     "Name": "Raupy",
     "Sticker": "BQADBAADOQADA6ZnARvXmxliihkVAg",
     "Notify": false,
-    "rarity": "Uncommon"
+    "Rarity": "Uncommon"
   },
   "11": {
     "Name": "Safcon",
     "Sticker": "BQADBAADOwADA6ZnASym7G_LJ1tkAg",
     "Notify": false,
-    "rarity": "Rare"
+    "Rarity": "Rare"
   },
   "12": {
     "Name": "Smettbo",
     "Sticker": "BQADBAADPQADA6ZnAa2iOXvsY3aCAg",
     "Notify": false,
-    "rarity": "Very Rare"
+    "Rarity": "Very Rare"
   },
   "13": {
     "Name": "Hornliu",
     "Sticker": "BQADBAADPwADA6ZnAb_csYpSRfRTAg",
     "Notify": false,
-    "rarity": "Common"
+    "Rarity": "Common"
   },
   "14": {
     "Name": "Kokuna",
     "Sticker": "BQADBAADQQADA6ZnAfTUFQcCDmUNAg",
     "Notify": false,
-    "rarity": "Rare"
+    "Rarity": "Rare"
   },
   "15": {
     "Name": "Bibor",
     "Sticker": "BQADBAADQwADA6ZnAT_h8QyLW6DVAg",
     "Notify": false,
-    "rarity": "Rare"
+    "Rarity": "Rare"
   },
   "16": {
     "Name": "Taubsi",
     "Sticker": "BQADBAADRQADA6ZnAVLPw-jNWf5_Ag",
     "Notify": false,
-    "rarity": "Common"
+    "Rarity": "Common"
   },
   "17": {
     "Name": "Tauboga",
     "Sticker": "BQADBAADRwADA6ZnAdE1sU4M-3SQAg",
     "Notify": false,
-    "rarity": "Uncommon"
+    "Rarity": "Uncommon"
   },
   "18": {
     "Name": "Tauboss",
     "Sticker": "BQADBAADSQADA6ZnARgu9mEkMLquAg",
     "Notify": false,
-    "rarity": "Rare"
+    "Rarity": "Rare"
   },
   "19": {
     "Name": "Rattfratz",
     "Sticker": "BQADBAADSwADA6ZnAV9fPY_XhW5_Ag",
     "Notify": false,
-    "rarity": "Common"
+    "Rarity": "Common"
   },
   "20": {
     "Name": "Rattikarl",
     "Sticker": "BQADBAADTQADA6ZnAZ3-Y-eQocbyAg",
     "Notify": false,
-    "rarity": "Rare"
+    "Rarity": "Rare"
   },
   "21": {
     "Name": "Habitak",
     "Sticker": "BQADBAADTwADA6ZnAfk9lxoXOwZ_Ag",
     "Notify": false,
-    "rarity": "Uncommon"
+    "Rarity": "Uncommon"
   },
   "22": {
     "Name": "Ibitak",
     "Sticker": "BQADBAADUQADA6ZnAShVKm8X2wgSAg",
     "Notify": false,
-    "rarity": "Rare"
+    "Rarity": "Rare"
   },
   "23": {
     "Name": "Rettan",
     "Sticker": "BQADBAADUwADA6ZnARauEgMgbEB9Ag",
     "Notify": false,
-    "rarity": "Uncommon"
+    "Rarity": "Uncommon"
   },
   "24": {
     "Name": "Arbok",
     "Sticker": "BQADBAADVQADA6ZnARtDICyQZuaiAg",
     "Notify": true,
-    "rarity": "Very Rare"
+    "Rarity": "Very Rare"
   },
   "25": {
     "Name": "Pikachu",
     "Sticker": "BQADBAADVwADA6ZnAczvFE7dfBYLAg",
     "Notify": true,
-    "rarity": "Uncommon"
+    "Rarity": "Uncommon"
   },
   "26": {
     "Name": "Raichu",
     "Sticker": "BQADBAADWQADA6ZnAc_Lh0IvZdxqAg",
     "Notify": true,
-    "rarity": "Ultra Rare"
+    "Rarity": "Ultra Rare"
   },
   "27": {
     "Name": "Sandan",
     "Sticker": "BQADBAADWwADA6ZnAXwre3efyX0kAg",
     "Notify": true,
-    "rarity": "Rare"
+    "Rarity": "Rare"
   },
   "28": {
     "Name": "Sandamer",
     "Sticker": "BQADBAADXQADA6ZnAZQssQGzd6_qAg",
     "Notify": true,
-    "rarity": "Ultra Rare"
+    "Rarity": "Ultra Rare"
   },
   "29": {
     "Name": "Nidoran (weiblich)",
     "Sticker": "BQADBAADXwADA6ZnAdb_etFcQm7QAg",
     "Notify": false,
-    "rarity": "Uncommon"
+    "Rarity": "Uncommon"
   },
   "30": {
     "Name": "Nidorina",
     "Sticker": "BQADBAADYQADA6ZnAdrCKGPIRCLTAg",
     "Notify": false,
-    "rarity": "Very Rare"
+    "Rarity": "Very Rare"
   },
   "31": {
     "Name": "Nidoqueen",
     "Sticker": "BQADBAADYwADA6ZnAQm3s1oUdXs_Ag",
     "Notify": true,
-    "rarity": "Very Rare"
+    "Rarity": "Very Rare"
   },
   "32": {
     "Name": "Nidoran (männlich)",
     "Sticker": "BQADBAADZQADA6ZnAfZdxDqZduP0Ag",
     "Notify": false,
-    "rarity": "Uncommon"
+    "Rarity": "Uncommon"
   },
   "33": {
     "Name": "Nidorino",
     "Sticker": "BQADBAADZwADA6ZnAWtHR2JimNBEAg",
     "Notify": false,
-    "rarity": "Very Rare"
+    "Rarity": "Very Rare"
   },
   "34": {
     "Name": "Nidoking",
     "Sticker": "BQADBAADaQADA6ZnAUhBuBB0KHolAg",
     "Notify": true,
-    "rarity": "Very Rare"
+    "Rarity": "Very Rare"
   },
   "35": {
     "Name": "Piepi",
     "Sticker": "BQADBAADawADA6ZnAe4Ky5ABuoufAg",
     "Notify": false,
-    "rarity": "Uncommon"
+    "Rarity": "Uncommon"
   },
   "36": {
     "Name": "Pixi",
     "Sticker": "BQADBAADbQADA6ZnAZxHQ-pwTVpeAg",
     "Notify": false,
-    "rarity": "Very Rare"
+    "Rarity": "Very Rare"
   },
   "37": {
     "Name": "Vulpix",
     "Sticker": "BQADBAADbwADA6ZnAQaiwVEnAsQAAQI",
     "Notify": true,
-    "rarity": "Rare"
+    "Rarity": "Rare"
   },
   "38": {
     "Name": "Vulnona",
     "Sticker": "BQADBAADcQADA6ZnATXHBNQUYTd4Ag",
     "Notify": true,
-    "rarity": "Ultra Rare"
+    "Rarity": "Ultra Rare"
   },
   "39": {
     "Name": "Pummeluff",
     "Sticker": "BQADBAADcwADA6ZnAWOU_YY2d7V0Ag",
     "Notify": false,
-    "rarity": "Rare"
+    "Rarity": "Rare"
   },
   "40": {
     "Name": "Knuddeluff",
     "Sticker": "BQADBAADdQADA6ZnAdGnBQjf7dvLAg",
     "Notify": false,
-    "rarity": "Ultra Rare"
+    "Rarity": "Ultra Rare"
   },
   "41": {
     "Name": "Zubat",
     "Sticker": "BQADBAADdwADA6ZnAYIOutGsHR2iAg",
     "Notify": false,
-    "rarity": "Common"
+    "Rarity": "Common"
   },
   "42": {
     "Name": "Golbat",
     "Sticker": "BQADBAADeQADA6ZnAYlGQQR6zqK8Ag",
     "Notify": false,
-    "rarity": "Rare"
+    "Rarity": "Rare"
   },
   "43": {
     "Name": "Myrapla",
     "Sticker": "BQADBAADewADA6ZnAYXXJSAdu6WwAg",
     "Notify": false,
-    "rarity": "Uncommon"
+    "Rarity": "Uncommon"
   },
   "44": {
     "Name": "Duflor",
     "Sticker": "BQADBAADfQADA6ZnAZltrfQww-etAg",
     "Notify": true,
-    "rarity": "Very Rare"
+    "Rarity": "Very Rare"
   },
   "45": {
     "Name": "Giflor",
     "Sticker": "BQADBAADfwADA6ZnAYtRA7ak5aE_Ag",
     "Notify": true,
-    "rarity": "Ultra Rare"
+    "Rarity": "Ultra Rare"
   },
   "46": {
     "Name": "Paras",
     "Sticker": "BQADBAADgwADA6ZnAaDpym5nwE-ZAg",
     "Notify": false,
-    "rarity": "Uncommon"
+    "Rarity": "Uncommon"
   },
   "47": {
     "Name": "Parasek",
     "Sticker": "BQADBAADhQADA6ZnAczzQQaLLLeVAg",
     "Notify": false,
-    "rarity": "Rare"
+    "Rarity": "Rare"
   },
   "48": {
     "Name": "Bluzuk",
     "Sticker": "BQADBAADhwADA6ZnASegVAKAdmKQAg",
     "Notify": false,
-    "rarity": "Uncommon"
+    "Rarity": "Uncommon"
   },
   "49": {
     "Name": "Omot",
     "Sticker": "BQADBAADiQADA6ZnASx88dHmKk9MAg",
     "Notify": false,
-    "rarity": "Rare"
+    "Rarity": "Rare"
   },
   "50": {
     "Name": "Digda",
     "Sticker": "BQADBAADiwADA6ZnAdYkifTqrBHhAg",
     "Notify": true,
-    "rarity": "Rare"
+    "Rarity": "Rare"
   },
   "51": {
     "Name": "Digdri",
     "Sticker": "BQADBAADjQADA6ZnAb5iLRuZ-MT7Ag",
     "Notify": true,
-    "rarity": "Ultra Rare"
+    "Rarity": "Ultra Rare"
   },
   "52": {
     "Name": "Mauzi",
     "Sticker": "BQADBAADjwADA6ZnAUXZy7haaa38Ag",
     "Notify": false,
-    "rarity": "Rare"
+    "Rarity": "Rare"
   },
   "53": {
     "Name": "Snobilikat",
     "Sticker": "BQADBAADkQADA6ZnAfYI5xOxllwNAg",
     "Notify": true,
-    "rarity": "Very Rare"
+    "Rarity": "Very Rare"
   },
   "54": {
     "Name": "Enton",
     "Sticker": "BQADBAADkwADA6ZnAR4w9K2ezyuhAg",
     "Notify": false,
-    "rarity": "Rare"
+    "Rarity": "Rare"
   },
   "55": {
     "Name": "Entoron",
     "Sticker": "BQADBAADlQADA6ZnAWIuwUz5NlbVAg",
     "Notify": true,
-    "rarity": "Very Rare"
+    "Rarity": "Very Rare"
   },
   "56": {
     "Name": "Menki",
     "Sticker": "BQADBAADlwADA6ZnAQ6i5D8LOvWuAg",
     "Notify": true,
-    "rarity": "Rare"
+    "Rarity": "Rare"
   },
   "57": {
     "Name": "Rasaff",
     "Sticker": "BQADBAADmQADA6ZnAR_MKmfUQLE2Ag",
     "Notify": true,
-    "rarity": "Very Rare"
+    "Rarity": "Very Rare"
   },
   "58": {
     "Name": "Fukano",
     "Sticker": "BQADBAADmwADA6ZnAfLEuQot6KjjAg",
     "Notify": true,
-    "rarity": "Uncommon"
+    "Rarity": "Uncommon"
   },
   "59": {
     "Name": "Arkani",
     "Sticker": "BQADBAADnQADA6ZnAUDhsV5f7YZGAg",
     "Notify": true,
-    "rarity": "Very Rare"
+    "Rarity": "Very Rare"
   },
   "60": {
     "Name": "Quapsel",
     "Sticker": "BQADBAADnwADA6ZnARTW2z_2HCD1Ag",
     "Notify": false,
-    "rarity": "Uncommon"
+    "Rarity": "Uncommon"
   },
   "61": {
     "Name": "Quaputzi",
     "Sticker": "BQADBAADoQADA6ZnAVARDDhpUG3yAg",
     "Notify": false,
-    "rarity": "Rare"
+    "Rarity": "Rare"
   },
   "62": {
     "Name": "Quappo",
     "Sticker": "BQADBAADowADA6ZnARH-XrV88RQ8Ag",
     "Notify": true,
-    "rarity": "Ultra Rare"
+    "Rarity": "Ultra Rare"
   },
   "63": {
     "Name": "Abra",
     "Sticker": "BQADBAADpQADA6ZnAZCJIefeAAEmfgI",
     "Notify": true,
-    "rarity": "Rare"
+    "Rarity": "Rare"
   },
   "64": {
     "Name": "Kadabra",
     "Sticker": "BQADBAADpwADA6ZnAZ0Uk9tIQ6NiAg",
     "Notify": true,
-    "rarity": "Very Rare"
+    "Rarity": "Very Rare"
   },
   "65": {
     "Name": "Simsala",
     "Sticker": "BQADBAADqQADA6ZnAbfKD0i88yCRAg",
     "Notify": true,
-    "rarity": "Ultra Rare"
+    "Rarity": "Ultra Rare"
   },
   "66": {
     "Name": "Machollo",
     "Sticker": "BQADBAADqwADA6ZnAbQ1d0JRxcUNAg",
     "Notify": true,
-    "rarity": "Rare"
+    "Rarity": "Rare"
   },
   "67": {
     "Name": "Maschock",
     "Sticker": "BQADBAADrQADA6ZnAR5fcBQMcOxzAg",
     "Notify": true,
-    "rarity": "Very Rare"
+    "Rarity": "Very Rare"
   },
   "68": {
     "Name": "Machomei",
     "Sticker": "BQADBAADrwADA6ZnATmnBCXu9W1iAg",
     "Notify": true,
-    "rarity": "Ultra Rare"
+    "Rarity": "Ultra Rare"
   },
   "69": {
     "Name": "Knofensa",
     "Sticker": "BQADBAADsQADA6ZnAZVmTiH9CziuAg",
     "Notify": false,
-    "rarity": "Uncommon"
+    "Rarity": "Uncommon"
   },
   "70": {
     "Name": "Ultrigaria",
     "Sticker": "BQADBAADswADA6ZnAeLr9NrxPNyeAg",
     "Notify": false,
-    "rarity": "Rare"
+    "Rarity": "Rare"
   },
   "71": {
     "Name": "Sarzenia",
     "Sticker": "BQADBAADtQADA6ZnAS3peyUC2wGZAg",
     "Notify": true,
-    "rarity": "Ultra Rare"
+    "Rarity": "Ultra Rare"
   },
   "72": {
     "Name": "Tentacha",
     "Sticker": "BQADBAADtwADA6ZnAV1BjJAGRZVyAg",
     "Notify": false,
-    "rarity": "Rare"
+    "Rarity": "Rare"
   },
   "73": {
     "Name": "Tentoxa",
     "Sticker": "BQADBAADuQADA6ZnAVd-oIO7g8KtAg",
     "Notify": false,
-    "rarity": "Very Rare"
+    "Rarity": "Very Rare"
   },
   "74": {
     "Name": "Kleinstein",
     "Sticker": "BQADBAADuwADA6ZnAXgaugJm0yQlAg",
     "Notify": true,
-    "rarity": "Rare"
+    "Rarity": "Rare"
   },
   "75": {
     "Name": "Georok",
     "Sticker": "BQADBAADvQADA6ZnAQiU9hGdGHuZAg",
     "Notify": true,
-    "rarity": "Very Rare"
+    "Rarity": "Very Rare"
   },
   "76": {
     "Name": "Geowaz",
     "Sticker": "BQADBAADvwADA6ZnAdfGBGghX3STAg",
     "Notify": true,
-    "rarity": "Ultra Rare"
+    "Rarity": "Ultra Rare"
   },
   "77": {
     "Name": "Ponita",
     "Sticker": "BQADBAADwQADA6ZnAQNiLcVCAZL4Ag",
     "Notify": true,
-    "rarity": "Rare"
+    "Rarity": "Rare"
   },
   "78": {
     "Name": "Gallopa",
     "Sticker": "BQADBAADwwADA6ZnAR3Rw1pdnw1xAg",
     "Notify": true,
-    "rarity": "Very Rare"
+    "Rarity": "Very Rare"
   },
   "79": {
     "Name": "Flegmon",
     "Sticker": "BQADBAADxQADA6ZnAYpnLOW8sg5IAg",
     "Notify": false,
-    "rarity": "Rare"
+    "Rarity": "Rare"
   },
   "80": {
     "Name": "Lahmus",
     "Sticker": "BQADBAADxwADA6ZnAdglk9tiIFj5Ag",
     "Notify": true,
-    "rarity": "Very Rare"
+    "Rarity": "Very Rare"
   },
   "81": {
     "Name": "Magnetilo",
     "Sticker": "BQADBAADyQADA6ZnAc6qChQtQtWkAg",
     "Notify": true,
-    "rarity": "Rare"
+    "Rarity": "Rare"
   },
   "82": {
     "Name": "Magneton",
     "Sticker": "BQADBAADywADA6ZnAcT80CaV62YoAg",
     "Notify": true,
-    "rarity": "Ultra Rare"
+    "Rarity": "Ultra Rare"
   },
   "83": {
     "Name": "Porenta",
     "Sticker": "BQADBAADzQADA6ZnAZDUR-BgCwEvAg",
     "Notify": true,
-    "rarity": "Ultra Rare"
+    "Rarity": "Ultra Rare"
   },
   "84": {
     "Name": "Dodu",
     "Sticker": "BQADBAADzwADA6ZnATD0sBYypMYJAg",
     "Notify": true,
-    "rarity": "Uncommon"
+    "Rarity": "Uncommon"
   },
   "85": {
     "Name": "Dodri",
     "Sticker": "BQADBAAD0QADA6ZnAY3-Cyah9zVlAg",
     "Notify": true,
-    "rarity": "Very Rar"
+    "Rarity": "Very Rar"
   },
   "86": {
     "Name": "Jurob",
     "Sticker": "BQADBAAD0wADA6ZnAYbqNqa5KKO7Ag",
     "Notify": false,
-    "rarity": "Rare"
+    "Rarity": "Rare"
   },
   "87": {
     "Name": "Jugong",
     "Sticker": "BQADBAAD1QADA6ZnAbZfqdPcBtliAg",
     "Notify": true,
-    "rarity": "Ultra Rare"
+    "Rarity": "Ultra Rare"
   },
   "88": {
     "Name": "Sleima",
     "Sticker": "BQADBAAD1wADA6ZnAfC9p8aaxoIDAg",
     "Notify": true,
-    "rarity": "Very Rare"
+    "Rarity": "Very Rare"
   },
   "89": {
     "Name": "Sleimok",
     "Sticker": "BQADBAAD2QADA6ZnAeTuuVW1rAPoAg",
     "Notify": true,
-    "rarity": "Ultra Rare"
+    "Rarity": "Ultra Rare"
   },
   "90": {
     "Name": "Muschas",
     "Sticker": "BQADBAAD2wADA6ZnAWik5KbprDonAg",
     "Notify": false,
-    "rarity": "Rare"
+    "Rarity": "Rare"
   },
   "91": {
     "Name": "Austos",
     "Sticker": "BQADBAAD3QADA6ZnASfqqi93beFFAg",
     "Notify": false,
-    "rarity": "Ultra Rare"
+    "Rarity": "Ultra Rare"
   },
   "92": {
     "Name": "Nebulak",
     "Sticker": "BQADBAAD3wADA6ZnAW5e6QABKyvL2gI",
     "Notify": false,
-    "rarity": "Uncommon"
+    "Rarity": "Uncommon"
   },
   "93": {
     "Name": "Alpollo",
     "Sticker": "BQADBAAD4QADA6ZnAQO3sab51TBQAg",
     "Notify": false,
-    "rarity": "Rare"
+    "Rarity": "Rare"
   },
   "94": {
     "Name": "Gengar",
     "Sticker": "BQADBAAD4wADA6ZnAcbzlaR74bh1Ag",
     "Notify": true,
-    "rarity": "Ultra Rare"
+    "Rarity": "Ultra Rare"
   },
   "95": {
     "Name": "Onix",
     "Sticker": "BQADBAAD5QADA6ZnAeaHKtrdS1ieAg",
     "Notify": true,
-    "rarity": "Rare"
+    "Rarity": "Rare"
   },
   "96": {
     "Name": "Traumato",
     "Sticker": "BQADBAAD5wADA6ZnAZOxZx2CQbenAg",
     "Notify": false,
-    "rarity": "Uncommon"
+    "Rarity": "Uncommon"
   },
   "97": {
     "Name": "Hypno",
     "Sticker": "BQADBAAD6QADA6ZnAcPZQIXfUCofAg",
     "Notify": false,
-    "rarity": "Rare"
+    "Rarity": "Rare"
   },
   "98": {
     "Name": "Krabby",
     "Sticker": "BQADBAAD6wADA6ZnAW7_9VABjZC7Ag",
     "Notify": false,
-    "rarity": "Uncommon"
+    "Rarity": "Uncommon"
   },
   "99": {
     "Name": "Kingler",
     "Sticker": "BQADBAAD7QADA6ZnARahOsYP9y_iAg",
     "Notify": false,
-    "rarity": "Very Rare"
+    "Rarity": "Very Rare"
   },
   "100": {
     "Name": "Voltobal",
     "Sticker": "BQADBAAD7wADA6ZnAf5IfBcs43EnAg",
     "Notify": true,
-    "rarity": "Rare"
+    "Rarity": "Rare"
   },
   "101": {
     "Name": "Lektrobal",
     "Sticker": "BQADBAAD8QADA6ZnAYJzl8obPhdiAg",
     "Notify": true,
-    "rarity": "Ultra Rare"
+    "Rarity": "Ultra Rare"
   },
   "102": {
     "Name": "Owei",
     "Sticker": "BQADBAAD8wADA6ZnAW4EaA1_40PUAg",
     "Notify": true,
-    "rarity": "Rare"
+    "Rarity": "Rare"
   },
   "103": {
     "Name": "Kokowei",
     "Sticker": "BQADBAAD9QADA6ZnASfbL8QOivbLAg",
     "Notify": true,
-    "rarity": "Very Rare"
+    "Rarity": "Very Rare"
   },
   "104": {
     "Name": "Tragosso",
     "Sticker": "BQADBAAD9wADA6ZnAVFRHQIyyyCTAg",
     "Notify": true,
-    "rarity": "Rare"
+    "Rarity": "Rare"
   },
   "105": {
     "Name": "Knogga",
     "Sticker": "BQADBAAD-QADA6ZnAe18tSbN3mg9Ag",
     "Notify": true,
-    "rarity": "Very Rare"
+    "Rarity": "Very Rare"
   },
   "106": {
     "Name": "Kicklee",
     "Sticker": "BQADBAAD-wADA6ZnAYprm88bDRBPAg",
     "Notify": true,
-    "rarity": "Very Rare"
+    "Rarity": "Very Rare"
   },
   "107": {
     "Name": "Nockchan",
     "Sticker": "BQADBAAD_QADA6ZnAVhB3fE3vG3pAg",
     "Notify": true,
-    "rarity": "Rare"
+    "Rarity": "Rare"
   },
   "108": {
     "Name": "Schlurp",
     "Sticker": "BQADBAAD_wADA6ZnAVoEJINLedE1Ag",
     "Notify": true,
-    "rarity": "Rare"
+    "Rarity": "Rare"
   },
   "109": {
     "Name": "Smogon",
     "Sticker": "BQADBAADAQEAAgOmZwE-d2b4Nxg6LwI",
     "Notify": false,
-    "rarity": "Rare"
+    "Rarity": "Rare"
   },
   "110": {
     "Name": "Smogmog",
     "Sticker": "BQADBAADAwEAAgOmZwGH2IdZFV8JXQI",
     "Notify": true,
-    "rarity": "Very Rare"
+    "Rarity": "Very Rare"
   },
   "111": {
     "Name": "Rihorn",
     "Sticker": "BQADBAADBQEAAgOmZwH1F1U5livuSQI",
     "Notify": true,
-    "rarity": "Rare"
+    "Rarity": "Rare"
   },
   "112": {
     "Name": "Rizeros",
     "Sticker": "BQADBAADBwEAAgOmZwEu1poyBbPzXAI",
     "Notify": true,
-    "rarity": "Very Rare"
+    "Rarity": "Very Rare"
   },
   "113": {
     "Name": "Chaneira",
     "Sticker": "BQADBAADCQEAAgOmZwHRVMUpYv-MnQI",
     "Notify": true,
-    "rarity": "Very Rare"
+    "Rarity": "Very Rare"
   },
   "114": {
     "Name": "Tangela",
     "Sticker": "BQADBAADCwEAAgOmZwFZ6eS2xms8GgI",
     "Notify": true,
-    "rarity": "Rare"
+    "Rarity": "Rare"
   },
   "115": {
     "Name": "Kangama",
     "Sticker": "BQADBAADDQEAAgOmZwFbl03M95cnBQI",
     "Notify": true,
-    "rarity": "Ultra Rare"
+    "Rarity": "Ultra Rare"
   },
   "116": {
     "Name": "Seeper",
     "Sticker": "BQADBAADDwEAAgOmZwH5q7bPIgfzIwI",
     "Notify": false,
-    "rarity": "Rare"
+    "Rarity": "Rare"
   },
   "117": {
     "Name": "Seemon",
     "Sticker": "BQADBAADEQEAAgOmZwF9_sqDyPjSFAI",
     "Notify": false,
-    "rarity": "Very Rare"
+    "Rarity": "Very Rare"
   },
   "118": {
     "Name": "Goldini",
     "Sticker": "BQADBAADEwEAAgOmZwHguDaRDVS_GwI",
     "Notify": false,
-    "rarity": "Rare"
+    "Rarity": "Rare"
   },
   "119": {
     "Name": "Golking",
     "Sticker": "BQADBAADFQEAAgOmZwFMvdJ3CJDpBgI",
     "Notify": false,
-    "rarity": "Very Rare"
+    "Rarity": "Very Rare"
   },
   "120": {
     "Name": "Sterndu",
     "Sticker": "BQADBAADEAIAAhbdEgPS6vJ8Wy4Q3wI",
     "Notify": false,
-    "rarity": "Uncommon"
+    "Rarity": "Uncommon"
   },
   "121": {
     "Name": "Starmie",
     "Sticker": "BQADBAADEgIAAhbdEgPBtxRxYkFR8gI",
     "Notify": false,
-    "rarity": "Very Rare"
+    "Rarity": "Very Rare"
   },
   "122": {
     "Name": "Pantimos",
     "Sticker": "BQADBAADFAIAAhbdEgM2Yd4tjDwvZAI",
     "Notify": true,
-    "rarity": "Very Rare"
+    "Rarity": "Very Rare"
   },
   "123": {
     "Name": "Sichlor",
     "Sticker": "BQADBAADFgIAAhbdEgOSgLuaWfxPMQI",
     "Notify": true,
-    "rarity": "Rare"
+    "Rarity": "Rare"
   },
   "124": {
     "Name": "Rossana",
     "Sticker": "BQADBAADGAIAAhbdEgOAzpWgCjhZLwI",
     "Notify": false,
-    "rarity": "Rare"
+    "Rarity": "Rare"
   },
   "125": {
     "Name": "Elektek",
     "Sticker": "BQADBAADGgIAAhbdEgPKZ168UMN0UgI",
     "Notify": true,
-    "rarity": "Rare"
+    "Rarity": "Rare"
   },
   "126": {
     "Name": "Magmar",
     "Sticker": "BQADBAADHAIAAhbdEgMx3TjFCMSa4AI",
     "Notify": true,
-    "rarity": "Rare"
+    "Rarity": "Rare"
   },
   "127": {
     "Name": "Pinsir",
     "Sticker": "BQADBAADHgIAAhbdEgOiTdTfuv7uNwI",
     "Notify": true,
-    "rarity": "Uncommon"
+    "Rarity": "Uncommon"
   },
   "128": {
     "Name": "Tauros",
     "Sticker": "BQADBAADIgIAAhbdEgNfzZ0u8SwImgI",
     "Notify": true,
-    "rarity": "Rare"
+    "Rarity": "Rare"
   },
   "129": {
     "Name": "Karpador",
     "Sticker": "BQADBAADJAIAAhbdEgOxAyjSXMHWzwI",
     "Notify": false,
-    "rarity": "Uncommon"
+    "Rarity": "Uncommon"
   },
   "130": {
     "Name": "Garados",
     "Sticker": "BQADBAADJgIAAhbdEgMPYrHEq8FAqQI",
     "Notify": true,
-    "rarity": "Ultra Rare"
+    "Rarity": "Ultra Rare"
   },
   "131": {
     "Name": "Lapras",
     "Sticker": "BQADBAADKgIAAhbdEgOrSKvk6_TzKwI",
     "Notify": true,
-    "rarity": "Very Rare"
+    "Rarity": "Very Rare"
   },
   "132": {
     "Name": "Ditto",
     "Sticker": "BQADBAADLAIAAhbdEgMfTgxuerqE2AI",
     "Notify": true,
-    "rarity": "Ultra Rare"
+    "Rarity": "Ultra Rare"
   },
   "133": {
     "Name": "Evoli",
     "Sticker": "BQADBAADLgIAAhbdEgNMQBwVcosD3gI",
     "Notify": false,
-    "rarity": "Common"
+    "Rarity": "Common"
   },
   "134": {
     "Name": "Aquana",
     "Sticker": "BQADBAADMAIAAhbdEgP8wxhwlmaGUAI",
     "Notify": true,
-    "rarity": "Very Rare"
+    "Rarity": "Very Rare"
   },
   "135": {
     "Name": "Blitza",
     "Sticker": "BQADBAADMgIAAhbdEgP1Si4lYRrmFgI",
     "Notify": true,
-    "rarity": "Very Rare"
+    "Rarity": "Very Rare"
   },
   "136": {
     "Name": "Flamara",
     "Sticker": "BQADBAADNAIAAhbdEgOsjt7XNfs2xwI",
     "Notify": true,
-    "rarity": "Ultra Rare"
+    "Rarity": "Ultra Rare"
   },
   "137": {
     "Name": "Porygon",
     "Sticker": "BQADBAADNgIAAhbdEgM3d-DFjAyyPAI",
     "Notify": true,
-    "rarity": "Very Rare"
+    "Rarity": "Very Rare"
   },
   "138": {
     "Name": "Amonitas",
     "Sticker": "BQADBAADOAIAAhbdEgPZjh9Sk-YWswI",
     "Notify": true,
-    "rarity": "Rare"
+    "Rarity": "Rare"
   },
   "139": {
     "Name": "Amoroso",
     "Sticker": "BQADBAADOgIAAhbdEgMd_WOs4CFIdQI",
     "Notify": true,
-    "rarity": "Ultra Rare"
+    "Rarity": "Ultra Rare"
   },
   "140": {
     "Name": "Kabuto",
     "Sticker": "BQADBAADPAIAAhbdEgMSH4Br7UJq7gI",
     "Notify": true,
-    "rarity": "Rare"
+    "Rarity": "Rare"
   },
   "141": {
     "Name": "Kabutops",
     "Sticker": "BQADBAADPgIAAhbdEgN8Odihah2YMwI",
     "Notify": true,
-    "rarity": "Ultra Rare"
+    "Rarity": "Ultra Rare"
   },
   "142": {
     "Name": "Aerodactyl",
     "Sticker": "BQADBAADQAIAAhbdEgPW_0P0AYO9EQI",
     "Notify": true,
-    "rarity": "Very Rare"
+    "Rarity": "Very Rare"
   },
   "143": {
     "Name": "Relaxo",
     "Sticker": "BQADBAADRAIAAhbdEgOxL5yLxhdN4gI",
     "Notify": true,
-    "rarity": "Rare"
+    "Rarity": "Rare"
   },
   "144": {
     "Name": "Arktos",
     "Sticker": "BQADBAADRgIAAhbdEgPnLvayG8FciwI",
     "Notify": true,
-    "rarity": "Ultra Rare"
+    "Rarity": "Ultra Rare"
   },
   "145": {
     "Name": "Zapdos",
     "Sticker": "BQADBAADSAIAAhbdEgN2p-nITb6HFAI",
     "Notify": true,
-    "rarity": "Ultra Rare"
+    "Rarity": "Ultra Rare"
   },
   "146": {
     "Name": "Lavados",
     "Sticker": "BQADBAADSgIAAhbdEgOu7HEzEJylbAI",
     "Notify": true,
-    "rarity": "Ultra Rare"
+    "Rarity": "Ultra Rare"
   },
   "147": {
     "Name": "Dratini",
     "Sticker": "BQADBAADTAIAAhbdEgOH-WchMCa0XQI",
     "Notify": true,
-    "rarity": "Uncommon"
+    "Rarity": "Uncommon"
   },
   "148": {
     "Name": "Dragonir",
     "Sticker": "BQADBAADTgIAAhbdEgNAD7ORpXu9gwI",
     "Notify": true,
-    "rarity": "Very Rare"
+    "Rarity": "Very Rare"
   },
   "149": {
     "Name": "Dragoran",
     "Sticker": "BQADBAADUAIAAhbdEgMK7jgCDtnu5gI",
     "Notify": true,
-    "rarity": "Very Rare"
+    "Rarity": "Very Rare"
   },
   "150": {
     "Name": "Mewtu",
     "Sticker": "BQADBAADUgIAAhbdEgNCY7bbmFdbIQI",
     "Notify": true,
-    "rarity": "Ultra Rare"
+    "Rarity": "Ultra Rare"
   },
   "151": {
     "Name": "Mew",
     "Sticker": "BQADBAADWAIAAhbdEgOEUoZVIm9S-wI",
     "Notify": true,
-    "rarity": "Ultra Rare"
+    "Rarity": "Ultra Rare"
   }
 }
