@@ -27,9 +27,9 @@ class Pokemon
     }
 
     /**
-     * Liest die Notify angabe aus und gibt diese zurück.
+     * Liest die Rarität angabe aus und gibt diese zurück.
      * @param $pokemonid
-     * @return boolean
+     * @return string
      */
     public function getNotify($pokemonid){
             return $this->getPokemon($pokemonid, "Notify");
