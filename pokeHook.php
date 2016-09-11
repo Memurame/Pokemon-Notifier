@@ -6,11 +6,6 @@
  */
 
 
-
-header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Headers: X-Requested-With");
-header("Access-Control-Allow-Methods: POST, GET");
-
 /**
  * Webhook daten empfangen un umwandeln
  */
@@ -53,7 +48,8 @@ if(isset($_SERVER['HTTP_WEBHOOKKEY'])){
 /**
  * Server Adresse auslesen um zu bestimmen welche Region zugreift.
  */
-$place = explode('.', $_SERVER['SERVER_NAME']);
+$urldecode = explode('.', $_SERVER['SERVER_NAME']);
+$place = $urldecode[0];
 
 /**
  * Prüffen ob es sich um ein Pokemon handelt
@@ -77,7 +73,7 @@ if($typ == "pokemon"){
         $cPokemon->geo_lat          = $msg->latitude;
         $cPokemon->geo_lng          = $msg->longitude;
         $cPokemon->spawnpoint_id    = $msg->spawnpoint_id;
-        $cPokemon->place            = $place[0];
+        $cPokemon->place            = $place;
         $create = $cPokemon->Create();
 
 
@@ -101,7 +97,7 @@ if($typ == "pokemon"){
              */
             $cChat->chat_id = $notify['chat_id'];
             $cChat->find();
-            if($cChat->place == $place[0]){
+            if($cChat->place == $place){
                 /**
                  * Prüfen ob bereits eine Benachrichtigung zu der Chat ID und der Pokemon DB ID geschickt wurde
                  */
