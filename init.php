@@ -14,6 +14,8 @@ define("ROOT", __DIR__);
 /**
  * Erforderliche Dateien einbinden und Klassen laden
  */
+$cfg = parse_ini_file(__DIR__."/config/config.ini", TRUE);
+
 require_once(__DIR__."/libs/pokemon.php");
 require_once(__DIR__."/libs/telegram.php");
 require_once(__DIR__."/libs/cPokemon.php");
@@ -27,9 +29,11 @@ $cChat = new cChat();
 $cNotifylist = new cNotifylist();
 $cNotified = new cNotified();
 $db = new DB();
-
-
-$cfg = parse_ini_file(__DIR__."/config/config.ini", TRUE);
 $pokemon = new Pokemon(__DIR__."/pokemon.json");
 $telegram = new Telegram($cfg['telegram']['bot-id']);
 
+/**
+ * Server Adresse auslesen um zu bestimmen welche Region zugreift.
+ */
+$urldecode = explode('.', $_SERVER['SERVER_NAME']);
+$place = $urldecode[0];

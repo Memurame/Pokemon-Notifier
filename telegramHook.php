@@ -38,7 +38,7 @@ if (strtolower($text) == "/start") {
             $cChat->admin = 1;
         }
         $cChat->chat_id     = $chat_id;
-        $cChat->place       = 'burgdorf';
+        $cChat->place       = $place;
         $create = $cChat->Create();
 
         $cNotifylist->chat_id = $chat_id;

@@ -46,12 +46,6 @@ if(isset($_SERVER['HTTP_WEBHOOKKEY'])){
  */
 
 /**
- * Server Adresse auslesen um zu bestimmen welche Region zugreift.
- */
-$urldecode = explode('.', $_SERVER['SERVER_NAME']);
-$place = $urldecode[0];
-
-/**
  * Prüffen ob es sich um ein Pokemon handelt
  */
 if($typ == "pokemon"){

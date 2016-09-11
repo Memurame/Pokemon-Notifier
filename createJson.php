@@ -10,9 +10,6 @@ header("Access-Control-Allow-Origin: *");
 //header("Access-Control-Allow-Headers: X-Requested-With");
 header("Access-Control-Allow-Methods: GET");
 
-$urldecode = explode('.', $_SERVER['SERVER_NAME']);
-$place = $urldecode[0];
-
 /**
  * Erforderliche Files und Classen laden
  */
