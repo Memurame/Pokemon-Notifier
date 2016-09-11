@@ -23,13 +23,12 @@ require_once(__DIR__."/init.php");
  * ############################################################
  * Zugriffs Berechtigung prüfen
  * Nur zugriffe mit dem richtigen KEY haben zugriff
+ *
+ * Prüfen ob der KEY mit dem der Map übereinstimmt
+ * Wenn nicht wird der Push verweigert
  * ############################################################
  */
 
-/**
- * Prüfen ob der KEY mit dem der Map übereinstimmt
- * Wenn nicht wird der Push verweigert
- */
 if(isset($_SERVER['HTTP_WEBHOOKKEY'])){
     if($_SERVER['HTTP_WEBHOOKKEY'] != $cfg['webhook']['key']){
         header('HTTP/1.1 401 Unauthorized');
