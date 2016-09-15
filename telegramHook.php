@@ -36,6 +36,7 @@ if (strtolower($text) == "/start") {
 
         if($cfg['telegram']['admin-id'] == $chat_id){
             $cChat->admin = 1;
+            $cChat->priority = 1;
         }
         $cChat->chat_id     = $chat_id;
         $cChat->place       = $place;
