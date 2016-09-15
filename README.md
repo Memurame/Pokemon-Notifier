@@ -6,7 +6,7 @@ Dieser Bot wird über Webhook gesteuer, so sind die Benachrichtigungen stets in 
 Ebenfalls können die User selber einstellen zu welchen Pokémons Sie eine Benachrichtigung möchten.
 
 ### Voraussetzung
-- [PokemonGo-Map](https://github.com/PokemonGoMap/PokemonGo-Map)
+- [PokemonGo-Map](https://github.com/n30nl1ght/PokemonGo-Map)
 - Mysql
 - Telegram API-Key -> [BotFather](https://telegram.me/botfather)
 
