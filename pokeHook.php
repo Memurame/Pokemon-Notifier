@@ -56,7 +56,7 @@ if($typ == "pokemon"){
     $cPokemon->pokemon_id       = $msg->pokemon_id;
     $cPokemon->encounter_id     = $msg->encounter_id;
     $cPokemon->spawnpoint_id    = $msg->spawnpoint_id;
-    if(empty($cPokemon->search()) or 1==1) {
+    if(empty($cPokemon->search())) {
         /**
          * IV ausrechnen
          */
