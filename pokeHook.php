@@ -58,6 +58,12 @@ if($typ == "pokemon"){
     $cPokemon->spawnpoint_id    = $msg->spawnpoint_id;
     if(empty($cPokemon->search())) {
         /**
+         * IV ausrechnen
+         */
+        $IV = ($msg->individual_attack + $msg->individual->defense + $msg->individual_stamina)/(15+15+15)*100;
+
+
+        /**
          * Pokemon in der DB eintragen
          */
         $cPokemon->pokemon_id       = $msg->pokemon_id;
@@ -67,6 +73,10 @@ if($typ == "pokemon"){
         $cPokemon->geo_lng          = $msg->longitude;
         $cPokemon->spawnpoint_id    = $msg->spawnpoint_id;
         $cPokemon->place            = $place;
+        $cPokemon->iv_attack        = $msg->individual_attack;
+        $cPokemon->iv_defense       = $msg->individual_defense;
+        $cPokemon->iv_stamina       = $msg->individual_stamina;
+        $cPokemon->iv_result        = $IV;
         $create = $cPokemon->Create();
 
 
