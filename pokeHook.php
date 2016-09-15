@@ -61,7 +61,7 @@ if($typ == "pokemon"){
          * IV ausrechnen
          */
         $IV = ($msg->individual_attack + $msg->individual_defense + $msg->individual_stamina)/(15+15+15)*100;
-
+        $IV = number_format($IV, 1, ",", "'");
 
         /**
          * Pokemon in der DB eintragen
@@ -104,7 +104,7 @@ if($typ == "pokemon"){
                 'sticker' => $pokemon->getSticker($msg->pokemon_id));
             $name = array(
                 'chat_id' => $chat_id,
-                'text' => "*".$pokemon->getName($msg->pokemon_id) . "* mit IV: *".number_format($IV, 1, ",", "'").
+                'text' => "*".$pokemon->getName($msg->pokemon_id) . "* mit IV: *".$IV.
                     "*%\nAttack: ".$msg->individual_attack." / Defense: ".$msg->individual_defense ." / Stamina: ".$msg->individual_stamina.
                     "\nblibt no bis " . date("H:i:s", $msg->disappear_time),
                 'parse_mode' => 'Markdown');
