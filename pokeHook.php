@@ -85,12 +85,13 @@ if($typ == "pokemon"){
          */
         $db->bind("pokemon_id", $msg->pokemon_id);
         $db->bind("place", $place);
-        $notifylist = $db->query("SELECT * FROM notifylist 
-          LEFT JOIN chats 
-          ON notifylist.chat_id = chats.chat_id 
-          WHERE notifylist.pokemon_id = :pokemon_id
-          AND chats.place = :place
-          ORDER BY priority desc");
+        $notifylist = $db->query("
+            SELECT * FROM notifylist 
+            LEFT JOIN chats 
+            ON notifylist.chat_id = chats.chat_id 
+            WHERE notifylist.pokemon_id = :pokemon_id
+            AND chats.place = :place
+            ORDER BY priority desc");
         $i = 0;
         while($i < count($notifylist)){
 
