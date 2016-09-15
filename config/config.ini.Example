@@ -10,5 +10,5 @@ bot-id = "APIKEY"
 admin-id = "TELEGRAMID"
 
 [webhook]
-key = "WEBHOOKKEY"
+key = "PokemonGo-Map"
 
