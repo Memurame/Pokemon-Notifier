@@ -121,7 +121,7 @@ if($typ == "pokemon"){
                      * Nachricht an telegram senden
                      */
                     $bild = array('chat_id' => $notify['chat_id'], 'sticker' => $pokemon->getSticker($msg->pokemon_id));
-                    $name = array('chat_id' => $notify['chat_id'], 'text' => "I hanes " . $pokemon->getName($msg->pokemon_id) . " gse, \nblibt no bis " . date("H:i:s", $msg->disappear_time));
+                    $name = array('chat_id' => $notify['chat_id'], 'text' => $pokemon->getName($msg->pokemon_id) . " mit IV: $IV\n(".$msg->individual_attack." / ".$msg->individual_defense ." / ". $msg->individual_stamina." ), \nblibt no bis " . date("H:i:s", $msg->disappear_time));
                     $location = array('chat_id' => $notify['chat_id'], 'latitude' => $msg->latitude, 'longitude' => $msg->longitude);
 
                     $telegram->sendSticker($bild);
