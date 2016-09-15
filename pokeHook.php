@@ -60,7 +60,7 @@ if($typ == "pokemon"){
         /**
          * IV ausrechnen
          */
-        $IV = ($msg->individual_attack + $msg->individual->defense + $msg->individual_stamina)/(15+15+15)*100;
+        $IV = ($msg->individual_attack + $msg->individual->individual_defense + $msg->individual_stamina)/(15+15+15)*100;
 
 
         /**
