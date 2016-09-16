@@ -7,7 +7,7 @@ Ebenfalls können die User selber einstellen zu welchen Pokémons Sie eine Benac
 
 ### Voraussetzung
 - [PokemonGo-Map](https://github.com/n30nl1ght/PokemonGo-Map)
-- Webserver mit Mysql (z.B XAMPP)
+- Webserver mit Mysql
 - Telegram API-Key -> [BotFather](https://telegram.me/botfather)
 
 
