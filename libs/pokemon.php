@@ -4,11 +4,10 @@
  * Pokemon Class.
  * @author Thomas Hirter <t.hirter@outlook.com>
  * @git https://github.com/n30nl1ght/Pokemon-Notifier
+ * @version 0.1.0
  */
 class Pokemon
 {
-
-
     /**
      * Ladet das Config file für mit den benötigten parameter
      * @param string $file
@@ -28,7 +27,7 @@ class Pokemon
 
     /**
      * Liest die Rarität angabe aus und gibt diese zurück.
-     * @param $pokemonid
+     * @param int $pokemonid
      * @return string
      */
     public function getNotify($pokemonid){

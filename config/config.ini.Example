@@ -1,14 +1,22 @@
 
 [database]
-host = localhost
-user = homestead
-pass = secret
-dbname = pokenotifier
+host = "localhost"
+user = "homestead"
+pass = "secret"
+dbname = "pokenotifier"
 
 [telegram]
 bot-id = "APIKEY"
 admin-id = "TELEGRAMID"
 
+[notifier]
+lang = "de"
+
+; Dieser Schutz kann nur mit meiner Modifizierten PokemonGo-Map eingesetzt werden.
+; Es wird geprüft ob ein Gültiger Key mitgeliefert wird.
+; Solltest du die Offizielle Map benutzen kannst du den Eintrag leer lassen.
+; Es beeinträchtigt die Funktionen dieses Notifiers nicht.
 [webhook]
-key = "PokemonGo-Map"
+key = ""
+
 

@@ -23,6 +23,8 @@ require_once(__DIR__."/libs/cChat.php");
 require_once(__DIR__."/libs/cNotifylist.php");
 require_once(__DIR__."/libs/cNotified.php");
 require_once(__DIR__."/libs/database.php");
+require_once(__DIR__ ."/libs/log.php");
+require_once(__DIR__ ."/libs/language.php");
 
 $cPokemon = new cPokemon();
 $cChat = new cChat();
@@ -37,3 +39,8 @@ $telegram = new Telegram($cfg['telegram']['bot-id']);
  */
 $urldecode = explode('.', $_SERVER['SERVER_NAME']);
 $place = $urldecode[0];
+Lang::set($cfg['notifier']['lang']);
+
+if(!file_exists("DB_EXISTS")){
+
+}

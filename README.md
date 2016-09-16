@@ -20,7 +20,8 @@ Ebenfalls können die User selber einstellen zu welchen Pokémons Sie eine Benac
 - In der config der PokemonGo-Map ein webhook-api-key eintragen und denselben wert ebenfalls in der config vom Notifier eintragen.
 So können dir keine anderen Personen Pokémons unterjubeln.
 - Die Telegram WebhookUrl setzen
-```https://api.telegram.org/bot[API-KEY]/setWebhook?url=[URL zu deinem Script]/telegramHook.php``` (Muss zwingend HTTPS sein)
+```https://api.telegram.org/bot[API-KEY]/setWebhook?url=[URL zu deinem Script]/telegramHook.php```.
+Die URL die du als Webhook angeben willst muss zwingend eine SSL-Verschlüsselung besitzen (Voraussetzung von Telegram).
 - Damit der Bot dich immer als Admin einträgt wenn du den Bot beendest und erneut startest musst du deine Telegram-ID auslesen und in der Notifier config eintragen.
 Du kannst diesen Wert jedoch auch leer lassen.
 

@@ -4,20 +4,23 @@
  * @author Thomas Hirter <t.hirter@outlook.com>
  * @git https://github.com/n30nl1ght/Pokemon-Notifier
  */
+/**
+ * Erforderliche Files und Classen laden
+ */
 
+require_once(__DIR__."/init.php");
 
 /**
  * Webhook daten empfangen un umwandeln
  */
 $data = file_get_contents("php://input");
+
+if(empty($data)){ Log::write("It has received no content.", true); }
+
 $json_decode = json_decode($data);
 $msg = $json_decode->message;
 $typ = $json_decode->type;
 
-/**
- * Erforderliche Files und Classen laden
- */
-require_once(__DIR__."/init.php");
 
 /**
  * ############################################################
@@ -26,18 +29,22 @@ require_once(__DIR__."/init.php");
  *
  * Prüfen ob der KEY mit dem der Map übereinstimmt
  * Wenn nicht wird der Push verweigert
+ *
+ * !! Dieser Schutz wird nur aktiv wenn du in der config einen Webhook Key hinterlegt hast!!
  * ############################################################
  */
-
-if(isset($_SERVER['HTTP_WEBHOOKKEY'])){
-    if($_SERVER['HTTP_WEBHOOKKEY'] != $cfg['webhook']['key']){
+if(!empty($cfg['webhook']['key'])){
+    if(isset($_SERVER['HTTP_WEBHOOKKEY'])){
+        if($_SERVER['HTTP_WEBHOOKKEY'] != $cfg['webhook']['key']){
+            header('HTTP/1.1 401 Unauthorized');
+            Log::write("Wrong Webhook KEY.");
+        }
+    } else {
         header('HTTP/1.1 401 Unauthorized');
-        die("Zugriff nicht erlaubt, Falscher WebhookKey!");
+        Log::write("No defined Webhook KEY");
     }
-} else {
-    header('HTTP/1.1 401 Unauthorized');
-    die("Zugriff nicht erlaubt, der WebhookKey existiert nicht.!");
 }
+
 
 /**
  * ############################################################

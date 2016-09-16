@@ -7,7 +7,6 @@
  * @version      0.2ab
  *
  */
-require("log.php");
 class DB
 {
     # @object, The PDO object
@@ -22,9 +21,6 @@ class DB
     # @bool ,  Connected to the database
     private $bConnected = false;
     
-    # @object, Object for logging exceptions  
-    private $log;
-    
     # @array, The parameters of the SQL query
     private $parameters;
     
@@ -37,7 +33,6 @@ class DB
      */
     public function __construct()
     {
-        $this->log = new Log();
         $this->Connect();
         $this->parameters = array();
     }
@@ -72,7 +67,6 @@ class DB
         catch (PDOException $e) {
             # Write into log
             echo $this->ExceptionLog($e->getMessage());
-            die();
         }
     }
     /*
@@ -277,21 +271,16 @@ class DB
      *
      * @param  string $message
      * @param  string $sql
-     * @return string
      */
     private function ExceptionLog($message, $sql = "")
     {
-        $exception = 'Unhandled Exception.';
-        $exception .= "<br /> You can find the error back in the log.";
-        
         if (!empty($sql)) {
             # Add the Raw SQL to the Log
             $message .= "\r\nRaw SQL : " . $sql;
         }
         # Write into log
-        $this->log->write($message);
-        
-        return $exception;
+        Log::write($message, true);
+
     }
 }
 ?>
