@@ -4,20 +4,23 @@
  * @author Thomas Hirter <t.hirter@outlook.com>
  * @git https://github.com/n30nl1ght/Pokemon-Notifier
  */
+/**
+ * Erforderliche Files und Classen laden
+ */
 
+require_once(__DIR__."/init.php");
 
 /**
  * Webhook daten empfangen un umwandeln
  */
 $data = file_get_contents("php://input");
+
+if(empty($data)){ Log::write("It has received no content.", true); }
+
 $json_decode = json_decode($data);
 $msg = $json_decode->message;
 $typ = $json_decode->type;
 
-/**
- * Erforderliche Files und Classen laden
- */
-require_once(__DIR__."/init.php");
 
 /**
  * ############################################################
@@ -26,18 +29,22 @@ require_once(__DIR__."/init.php");
  *
  * Prüfen ob der KEY mit dem der Map übereinstimmt
  * Wenn nicht wird der Push verweigert
+ *
+ * !! Dieser Schutz wird nur aktiv wenn du in der config einen Webhook Key hinterlegt hast!!
  * ############################################################
  */
-
-if(isset($_SERVER['HTTP_WEBHOOKKEY'])){
-    if($_SERVER['HTTP_WEBHOOKKEY'] != $cfg['webhook']['key']){
+if(!empty($cfg['webhook']['key'])){
+    if(isset($_SERVER['HTTP_WEBHOOKKEY'])){
+        if($_SERVER['HTTP_WEBHOOKKEY'] != $cfg['webhook']['key']){
+            header('HTTP/1.1 401 Unauthorized');
+            Log::write("Wrong Webhook KEY.");
+        }
+    } else {
         header('HTTP/1.1 401 Unauthorized');
-        die("Zugriff nicht erlaubt, Falscher WebhookKey!");
+        Log::write("No defined Webhook KEY");
     }
-} else {
-    header('HTTP/1.1 401 Unauthorized');
-    die("Zugriff nicht erlaubt, der WebhookKey existiert nicht.!");
 }
+
 
 /**
  * ############################################################
@@ -61,7 +68,6 @@ if($typ == "pokemon"){
          * IV ausrechnen
          */
         $IV = ($msg->individual_attack + $msg->individual_defense + $msg->individual_stamina)/(15+15+15)*100;
-        $IV = number_format($IV, 1, ",", "'");
 
         /**
          * Pokemon in der DB eintragen
@@ -86,10 +92,10 @@ if($typ == "pokemon"){
         $db->bind("pokemon_id", $msg->pokemon_id);
         $db->bind("place", $place);
         $notifylist = $db->query("
-            SELECT * FROM notifylist 
+            SELECT * FROM notify_pokemon 
             LEFT JOIN chats 
-            ON notifylist.chat_id = chats.chat_id 
-            WHERE notifylist.pokemon_id = :pokemon_id
+            ON notify_pokemon.chat_id = chats.chat_id 
+            WHERE notify_pokemon.pokemon_id = :pokemon_id
             AND chats.place = :place
             ORDER BY priority desc");
         $i = 0;
@@ -104,7 +110,7 @@ if($typ == "pokemon"){
                 'sticker' => $pokemon->getSticker($msg->pokemon_id));
             $name = array(
                 'chat_id' => $chat_id,
-                'text' => "*".$pokemon->getName($msg->pokemon_id) . "* mit IV: *".$IV.
+                'text' => "*".$pokemon->getName($msg->pokemon_id) . "* mit IV: *".number_format($IV, 1, ",", "'").
                     "*%\nAttack: ".$msg->individual_attack." / Defense: ".$msg->individual_defense ." / Stamina: ".$msg->individual_stamina.
                     "\nblibt no bis " . date("H:i:s", $msg->disappear_time),
                 'parse_mode' => 'Markdown');

@@ -19,17 +19,10 @@ $chat_id = $update["message"]["chat"]["id"];
 $cChat->chat_id = $chat_id;
 $chat = $cChat->Search();
 
-$helptext = "Du chasch säuber istelle wasde für Benachrichtigunge wosch.\n\n/add = Hinzuefüege\n/remove = Löschä\n/list = Benachrichtigungslischte\n/reset = Istellige zuüggsetze\n/stop = Chat beände\n/help = Hilfe\n\n";
-$helptext .="Wende mehreri Pokémons wosch lösche oder hinzuefüege muesch immer es ',' zwüsche de Pokémons schribe.\n";
-$helptext .= "Es Bispil:\n/add Glumanda\n/add Glumanda, Glurak\n";
-
 /**
  * Bot Starten
  */
 if (strtolower($text) == "/start") {
-
-
-
 
     $cChat->chat_id = $chat_id;
     if(!$cChat->search()){
@@ -42,20 +35,20 @@ if (strtolower($text) == "/start") {
         $cChat->place       = $place;
         $create = $cChat->Create();
 
-        $cNotifylist->chat_id = $chat_id;
-        if(empty($cNotifylist->Search())){
+        $cNotifyPokemon->chat_id = $chat_id;
+        if(empty($cNotifyPokemon->Search())){
             $notify_pokemon = array();
             for($i=1; $i <= count($pokemon->pokemonArray()); $i++){
                 if($pokemon->getNotify($i)){
                     array_push($notify_pokemon, $pokemon->getName($i));
 
-                    $cNotifylist->chat_id       = $chat_id;
-                    $cNotifylist->pokemon_id    = $i;
-                    $create = $cNotifylist->Create();
+                    $cNotifyPokemon->chat_id       = $chat_id;
+                    $cNotifyPokemon->pokemon_id    = $i;
+                    $create = $cNotifyPokemon->Create();
                 }
             }
 
-            $reply = "Hallo bim PokemonBot vo Burgdorf. Mit däm Bot chasch dini benachrichtigunge säuber istelle. Zu folgende Pokémons wirsch standart mässig benachrichtigt:";
+            $reply = Lang::get("welcome");
             $content = array('chat_id' => $chat_id, 'text' => $reply);
             $telegram->sendMessage($content);
 
@@ -63,19 +56,19 @@ if (strtolower($text) == "/start") {
             $content = array('chat_id' => $chat_id, 'text' => $reply);
             $telegram->sendMessage($content);
 
-            $reply = $helptext;
+            $reply = Lang::get("helptext");;
             $content = array('chat_id' => $chat_id, 'text' => $reply);
             $telegram->sendMessage($content);
 
         } else {
-            $reply = "Willkommen zrüg.\nDini Istellige si immerno vorhande.";
+            $reply = Lang::get("welcomeback");
             $content = array('chat_id' => $chat_id, 'text' => $reply);
             $telegram->sendMessage($content);
 
         }
 
     } else {
-        $reply = "Du hesch der chat bereits gstartet!";
+        $reply = Lang::get("botalredystarted");
         $content = array('chat_id' => $chat_id, 'text' => $reply);
         $telegram->sendMessage($content);
         die();
@@ -94,11 +87,11 @@ if(strtolower($text) == "/stop"){
         $cChat->chat_id = $chat_id;
         $delete = $cChat->Delete();
 
-        $reply = "Du wirsch ize nüm benachrichtigt. Zum erneute starte muesch /start i chat schribe.";
+        $reply = Lang::get("stopped");
         $content = array('chat_id' => $chat_id, 'text' => $reply);
         $telegram->sendMessage($content);
     } else {
-        $reply = "Du hesch d Benachrichtigunge bereits beändet.";
+        $reply = Lang::get("botalredystopped");
         $content = array('chat_id' => $chat_id, 'text' => $reply);
         $telegram->sendMessage($content);
         die();
@@ -116,19 +109,19 @@ if(substr(strtolower($text), 0, 4) == "/add"){
     foreach($selected as $select){
         $id = $pokemon->getID($select);
         if($id){
-            $cNotifylist->pokemon_id    = $id;
-            $cNotifylist->chat_id       = $chat_id;
-            if(!$cNotifylist->Search()){
+            $cNotifyPokemon->pokemon_id    = $id;
+            $cNotifyPokemon->chat_id       = $chat_id;
+            if(!$cNotifyPokemon->Search()){
                 $reply .= $pokemon->getName($id)."\n";
 
-                $cNotifylist->chat_id       = $chat_id;
-                $cNotifylist->pokemon_id    = $id;
-                $create = $cNotifylist->Create();
+                $cNotifyPokemon->chat_id       = $chat_id;
+                $cNotifyPokemon->pokemon_id    = $id;
+                $create = $cNotifyPokemon->Create();
             }
         }
     }
 
-    if(!empty($reply)){ $reply .= "zu Benachrichtigung hinzuegfüegt."; }
+    if(!empty($reply)){ $reply .= Lang::get("added"); }
     $content = array('chat_id' => $chat_id, 'text' => $reply);
     $telegram->sendMessage($content);
 }
@@ -143,20 +136,20 @@ if(substr(strtolower($text), 0, 7) == "/remove"){
     foreach($selected as $select) {
         $id = $pokemon->getID($select);
         if ($id) {
-            $cNotifylist->pokemon_id = $id;
-            $cNotifylist->chat_id = $chat_id;
-            if ($cNotifylist->Search()) {
+            $cNotifyPokemon->pokemon_id = $id;
+            $cNotifyPokemon->chat_id = $chat_id;
+            if ($cNotifyPokemon->Search()) {
                 $reply .= $pokemon->getName($id) . "\n";
 
-                $cNotifylist->chat_id = $chat_id;
-                $cNotifylist->pokemon_id = $id;
-                $create = $cNotifylist->Delete();
+                $cNotifyPokemon->chat_id = $chat_id;
+                $cNotifyPokemon->pokemon_id = $id;
+                $create = $cNotifyPokemon->Delete();
             }
         }
     }
 
     if(!empty($reply)){
-        $reply .= "von Benachrichtigung gelöscht.";
+        $reply .= Lang::get("removed");
         $content = array('chat_id' => $chat_id, 'text' => $reply);
         $telegram->sendMessage($content);
     }
@@ -171,14 +164,14 @@ if(strtolower($text) == "/list") {
 
     $notify_pokemon = Array();
 
-    $cNotifylist->chat_id = $chat_id;
-    $notify = $cNotifylist->Search();
+    $cNotifyPokemon->chat_id = $chat_id;
+    $notify = $cNotifyPokemon->Search();
 
     foreach($notify as $key){
         array_push($notify_pokemon, $pokemon->getName($key['pokemon_id']));
     }
 
-    $reply = "Zu folgende Pokémons berchunsch du e Benachrichtigung:\n";
+    $reply = Lang::get("replylist");
     $reply .= implode(", ", $notify_pokemon);
     $content = array('chat_id' => $chat_id, 'text' => $reply);
     $telegram->sendMessage($content);
@@ -192,22 +185,22 @@ if(strtolower($text) == "/reset") {
 
     $notify_pokemon = Array();
 
-    $cNotifylist->chat_id = $chat_id;
-    $delete = $cNotifylist->Delete();
+    $cNotifyPokemon->chat_id = $chat_id;
+    $delete = $cNotifyPokemon->Delete();
 
     $notify_pokemon = array();
     for($i=1; $i <= count($pokemon->pokemonArray()); $i++){
         if($pokemon->getNotify($i)){
             array_push($notify_pokemon, $pokemon->getName($i));
 
-            $cNotifylist->chat_id       = $chat_id;
-            $cNotifylist->pokemon_id    = $i;
-            $create = $cNotifylist->Create();
+            $cNotifyPokemon->chat_id       = $chat_id;
+            $cNotifyPokemon->pokemon_id    = $i;
+            $create = $cNotifyPokemon->Create();
         }
     }
 
 
-    $reply = "Benachrichtigungs Pokémon si zurüggsetzt worde.\n";
+    $reply = Lang::get("reset");
     $content = array('chat_id' => $chat_id, 'text' => $reply);
     $telegram->sendMessage($content);
 
@@ -219,7 +212,7 @@ if(strtolower($text) == "/reset") {
  */
 if(strtolower($text) == "/help") {
 
-    $reply = $helptext;
+    $reply = Lang::get("helptext");
     $content = array('chat_id' => $chat_id, 'text' => $reply);
     $telegram->sendMessage($content);
 
@@ -242,7 +235,7 @@ if($chat && $chat[0]['admin']){
 
         $chats = $cChat->All();
         foreach($chats as $chat){
-            $reply = "Meldung vom Administrator:\n\n";
+            $reply = Lang::get("adminmsg");
             $reply .= $text;
             $content = array('chat_id' => $chat['chat_id'], 'text' => $reply);
             $telegram->sendMessage($content);
@@ -262,69 +255,5 @@ if($chat && $chat[0]['admin']){
         $reply = $result ." gelöschte einträge.";
         $content = array('chat_id' => $chat_id, 'text' => $reply);
         $telegram->sendMessage($content);
-    }
-
-    /**
-     * Setzen des Standortes -> Bern
-     * Benachrichtigt wird man nun über die gewählte Region
-     */
-    if(strtolower($text) == "/bern") {
-
-        $cChat->place   = "bern";
-        $cChat->chat_id = $chat_id;
-        $save = $cChat->save();
-
-        $reply = "Du wirsch ize über Pokemons in Bern benachrichtigt..";
-        $content = array('chat_id' => $chat_id, 'text' => $reply);
-        $telegram->sendMessage($content);
-
-    }
-
-    /**
-     * Setzen des Standortes -> Burgdorf
-     * Benachrichtigt wird man nun über die gewählte Region
-     */
-    if(strtolower($text) == "/burgdorf") {
-
-        $cChat->place   = "burgdorf";
-        $cChat->chat_id = $chat_id;
-        $save = $cChat->save();
-
-        $reply = "Du wirsch ize über Pokemons in Burgdorf benachrichtigt..";
-        $content = array('chat_id' => $chat_id, 'text' => $reply);
-        $telegram->sendMessage($content);
-
-    }
-
-    /**
-     * Setzen des Standortes -> Oberburg
-     * Benachrichtigt wird man nun über die gewählte Region
-     */
-    if(strtolower($text) == "/oberburg") {
-
-        $cChat->place   = "oberburg";
-        $cChat->chat_id = $chat_id;
-        $save = $cChat->save();
-
-        $reply = "Du wirsch ize über Pokemons in Oberburg benachrichtigt..";
-        $content = array('chat_id' => $chat_id, 'text' => $reply);
-        $telegram->sendMessage($content);
-
-    }
-
-    /**
-     * Setzen des Standortes -> Langnau
-     * Benachrichtigt wird man nun über die gewählte Region
-     */
-    if(strtolower($text) == "/langnau") {
-
-        $cChat->place   = "langnau";
-        $cChat->chat_id = $chat_id;
-        $save = $cChat->save();
-
-        $reply = "Du wirsch ize über Pokemons in Langnau benachrichtigt..";
-        $content = array('chat_id' => $chat_id, 'text' => $reply);
-        $telegram->sendMessage($content);
-
     }
 }

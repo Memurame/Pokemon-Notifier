@@ -1,31 +1,20 @@
-SET FOREIGN_KEY_CHECKS=0;
-
--- ----------------------------
--- Table structure for chats
--- ----------------------------
-DROP TABLE IF EXISTS `chats`;
 CREATE TABLE `chats` (
-  `chat_id` varchar(50) CHARACTER SET utf16 NOT NULL,
+  `chat_id` varchar(50) CHARACTER SET utf8 NOT NULL,
   `admin` int(11) DEFAULT '0',
   `place` varchar(45) DEFAULT NULL,
   `priority` int(11) DEFAULT NULL,
   PRIMARY KEY (`chat_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Table structure for notifylist
--- ----------------------------
-DROP TABLE IF EXISTS `notifylist`;
-CREATE TABLE `notifylist` (
-  `chat_id` varchar(30) CHARACTER SET latin1 NOT NULL,
+CREATE TABLE `notify_iv` (
+  `chat_id` varchar(50) NOT NULL,
+  `iv_val` int(11) DEFAULT NULL,
+  PRIMARY KEY (`chat_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE `notify_pokemon` (
+  `chat_id` varchar(30) CHARACTER SET utf8 NOT NULL,
   `pokemon_id` int(11) NOT NULL,
   PRIMARY KEY (`chat_id`,`pokemon_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Table structure for pokemon
--- ----------------------------
-DROP TABLE IF EXISTS `pokemon`;
 CREATE TABLE `pokemon` (
   `pokemon_id` int(11) DEFAULT NULL,
   `encounter_id` varchar(250) DEFAULT NULL,
@@ -39,3 +28,8 @@ CREATE TABLE `pokemon` (
   `iv_stamina` int(11) DEFAULT NULL,
   `iv_result` float DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE `versions` (
+  `schema_version` varchar(20) NOT NULL,
+  `val` int(11) DEFAULT NULL,
+  PRIMARY KEY (`schema_version`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8

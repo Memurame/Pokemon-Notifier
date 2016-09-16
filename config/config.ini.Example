@@ -1,14 +1,18 @@
 
 [database]
-host = localhost
-user = homestead
-pass = secret
-dbname = pokenotifier
+host = "localhost"
+user = "homestead"
+pass = "secret"
+dbname = "pokenotifier"
 
 [telegram]
 bot-id = "APIKEY"
 admin-id = "TELEGRAMID"
 
+[notifier]
+lang = "de"
+
 [webhook]
-key = "PokemonGo-Map"
+key = ""
+
 
