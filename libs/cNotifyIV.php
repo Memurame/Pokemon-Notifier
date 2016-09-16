@@ -6,10 +6,10 @@
  */
 require_once("easyCRUD.php");
 
-class cNotifylist  Extends Crud {
+class cNotifyIV  Extends Crud {
 
     # The table you want to perform the database actions on
-    protected $table = 'notifylist';
+    protected $table = 'notify_iv';
 
     # Primary Key of the table
     protected $pk  = 'chat_id';

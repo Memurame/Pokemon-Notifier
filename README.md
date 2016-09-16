@@ -14,11 +14,12 @@ Ebenfalls können die User selber einstellen zu welchen Pokémons Sie eine Benac
 ### Installation
 - Repositiry runterladen ```git clone https://github.com/n30nl1ght/Pokemon-Notifier.git```
 - ```config.ini.Example``` kopieren und unbenennen in ```config.ini```
-- In der config vom Notifier die DB-Verbindungsdaten und Telegram API-Key eintragen
+- In der config vom Notifier die DB-Verbindungsdaten, Sprache und Telegram API-Key eintragen
 - In der config von der PokemonGo-Map musst du nun die Webhook Adresse entsprechend setzen. 
-```z.B http://DEINEDOMAIN.CH/pokeHook.php```
-- In der config der PokemonGo-Map ein webhook-api-key eintragen und denselben wert ebenfalls in der config vom Notifier eintragen.
-So können dir keine anderen Personen Pokémons unterjubeln.
+```z.B https://DEINEDOMAIN.CH/pokeHook.php```
+- Die installation aufrufen die sich im Ordner ```/install/index.php```.
+Diese Datei legt die erforderlichen Tabellen in der DB an.
+Anschliessend unbedingt das ganze install Verzeichniss löschen.
 - Die Telegram WebhookUrl setzen
 ```https://api.telegram.org/bot[API-KEY]/setWebhook?url=[URL zu deinem Script]/telegramHook.php```.
 Die URL die du als Webhook angeben willst muss zwingend eine SSL-Verschlüsselung besitzen (Voraussetzung von Telegram).

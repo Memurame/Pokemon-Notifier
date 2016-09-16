@@ -5,6 +5,9 @@
  * @git https://github.com/n30nl1ght/Pokemon-Notifier
  */
 
+
+
+
 /**
  * Zeitzone festlegen
  */
@@ -20,16 +23,16 @@ require_once(__DIR__."/libs/pokemon.php");
 require_once(__DIR__."/libs/telegram.php");
 require_once(__DIR__."/libs/cPokemon.php");
 require_once(__DIR__."/libs/cChat.php");
-require_once(__DIR__."/libs/cNotifylist.php");
-require_once(__DIR__."/libs/cNotified.php");
+require_once(__DIR__."/libs/cNotifyPokemon.php");
+require_once(__DIR__."/libs/cNotifyIV.php");
 require_once(__DIR__."/libs/database.php");
 require_once(__DIR__ ."/libs/log.php");
 require_once(__DIR__ ."/libs/language.php");
 
 $cPokemon = new cPokemon();
 $cChat = new cChat();
-$cNotifylist = new cNotifylist();
-$cNotified = new cNotified();
+$cNotifyPokemon = new cNotifyPokemon();
+$cNotifyIV = new cNotifyIV();
 $db = new DB();
 $pokemon = new Pokemon(__DIR__."/pokemon.json");
 $telegram = new Telegram($cfg['telegram']['bot-id']);
@@ -41,6 +44,3 @@ $urldecode = explode('.', $_SERVER['SERVER_NAME']);
 $place = $urldecode[0];
 Lang::set($cfg['notifier']['lang']);
 
-if(!file_exists("DB_EXISTS")){
-
-}

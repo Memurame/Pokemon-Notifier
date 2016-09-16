@@ -68,7 +68,6 @@ if($typ == "pokemon"){
          * IV ausrechnen
          */
         $IV = ($msg->individual_attack + $msg->individual_defense + $msg->individual_stamina)/(15+15+15)*100;
-        $IV = number_format($IV, 1, ",", "'");
 
         /**
          * Pokemon in der DB eintragen
@@ -93,10 +92,10 @@ if($typ == "pokemon"){
         $db->bind("pokemon_id", $msg->pokemon_id);
         $db->bind("place", $place);
         $notifylist = $db->query("
-            SELECT * FROM notifylist 
+            SELECT * FROM notify_pokemon 
             LEFT JOIN chats 
-            ON notifylist.chat_id = chats.chat_id 
-            WHERE notifylist.pokemon_id = :pokemon_id
+            ON notify_pokemon.chat_id = chats.chat_id 
+            WHERE notify_pokemon.pokemon_id = :pokemon_id
             AND chats.place = :place
             ORDER BY priority desc");
         $i = 0;
@@ -111,7 +110,7 @@ if($typ == "pokemon"){
                 'sticker' => $pokemon->getSticker($msg->pokemon_id));
             $name = array(
                 'chat_id' => $chat_id,
-                'text' => "*".$pokemon->getName($msg->pokemon_id) . "* mit IV: *".$IV.
+                'text' => "*".$pokemon->getName($msg->pokemon_id) . "* mit IV: *".number_format($IV, 1, ",", "'").
                     "*%\nAttack: ".$msg->individual_attack." / Defense: ".$msg->individual_defense ." / Stamina: ".$msg->individual_stamina.
                     "\nblibt no bis " . date("H:i:s", $msg->disappear_time),
                 'parse_mode' => 'Markdown');

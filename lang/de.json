@@ -1,0 +1,13 @@
+{
+  "helptext": "DU kannst selber festlegen zu welchen Pokemons du eine Benachrichtigung möchtest.\n\n/add = Hinzufügen\n/remove = Löschen\n/list = Pokemonliste\n/reset = Einstellungen zurücksetzen\n/stop = Chat beenden\n/help = Hilfe\n\nWenn du meherer Pokemons hinzufügen oder löschen möchtest musst du immer ein ',' zwischen den Pokemons schreiben.\nEin Beispiel:\n/add Glumanda\n/add Glumanda, Glurak\n",
+  "welcome": "Willkommen beim Pokemonbot. Mit diesem Bot kannst du deine Wunschbenachrichtigung selber einstellen. Zu folgenden Pokemons erhälst du zurzeit eine Benachrichtigung:",
+  "welcomeback": "Willkommen zurück.\nDeine vorherigen Einstellungen sind noch immer vorhanden.",
+  "botalredystarted": "Du hast den Bot bereits gestartet",
+  "stopped": "Du wirst nun nicht mehr Benachrichtigt. Mit /start kannst du den Bot erneut starten.",
+  "botalredystopped": "DU hast den Bot bereits gestoppt.",
+  "added": "zu Benachrichtigung hinzuegfüegt.",
+  "removed": "von Benachrichtigung gelöscht.",
+  "replylist": "Zu folgenden Pokemons erhälst du eine Benachrichtigung:",
+  "reset": "Alle Einstellungen wurden zurückgesetzt.",
+  "adminmsg": "Meldung vom Administrator:\n\n"
+}

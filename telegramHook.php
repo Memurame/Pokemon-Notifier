@@ -24,9 +24,6 @@ $chat = $cChat->Search();
  */
 if (strtolower($text) == "/start") {
 
-
-
-
     $cChat->chat_id = $chat_id;
     if(!$cChat->search()){
 
@@ -38,16 +35,16 @@ if (strtolower($text) == "/start") {
         $cChat->place       = $place;
         $create = $cChat->Create();
 
-        $cNotifylist->chat_id = $chat_id;
-        if(empty($cNotifylist->Search())){
+        $cNotifyPokemon->chat_id = $chat_id;
+        if(empty($cNotifyPokemon->Search())){
             $notify_pokemon = array();
             for($i=1; $i <= count($pokemon->pokemonArray()); $i++){
                 if($pokemon->getNotify($i)){
                     array_push($notify_pokemon, $pokemon->getName($i));
 
-                    $cNotifylist->chat_id       = $chat_id;
-                    $cNotifylist->pokemon_id    = $i;
-                    $create = $cNotifylist->Create();
+                    $cNotifyPokemon->chat_id       = $chat_id;
+                    $cNotifyPokemon->pokemon_id    = $i;
+                    $create = $cNotifyPokemon->Create();
                 }
             }
 
@@ -112,14 +109,14 @@ if(substr(strtolower($text), 0, 4) == "/add"){
     foreach($selected as $select){
         $id = $pokemon->getID($select);
         if($id){
-            $cNotifylist->pokemon_id    = $id;
-            $cNotifylist->chat_id       = $chat_id;
-            if(!$cNotifylist->Search()){
+            $cNotifyPokemon->pokemon_id    = $id;
+            $cNotifyPokemon->chat_id       = $chat_id;
+            if(!$cNotifyPokemon->Search()){
                 $reply .= $pokemon->getName($id)."\n";
 
-                $cNotifylist->chat_id       = $chat_id;
-                $cNotifylist->pokemon_id    = $id;
-                $create = $cNotifylist->Create();
+                $cNotifyPokemon->chat_id       = $chat_id;
+                $cNotifyPokemon->pokemon_id    = $id;
+                $create = $cNotifyPokemon->Create();
             }
         }
     }
@@ -139,14 +136,14 @@ if(substr(strtolower($text), 0, 7) == "/remove"){
     foreach($selected as $select) {
         $id = $pokemon->getID($select);
         if ($id) {
-            $cNotifylist->pokemon_id = $id;
-            $cNotifylist->chat_id = $chat_id;
-            if ($cNotifylist->Search()) {
+            $cNotifyPokemon->pokemon_id = $id;
+            $cNotifyPokemon->chat_id = $chat_id;
+            if ($cNotifyPokemon->Search()) {
                 $reply .= $pokemon->getName($id) . "\n";
 
-                $cNotifylist->chat_id = $chat_id;
-                $cNotifylist->pokemon_id = $id;
-                $create = $cNotifylist->Delete();
+                $cNotifyPokemon->chat_id = $chat_id;
+                $cNotifyPokemon->pokemon_id = $id;
+                $create = $cNotifyPokemon->Delete();
             }
         }
     }
@@ -167,8 +164,8 @@ if(strtolower($text) == "/list") {
 
     $notify_pokemon = Array();
 
-    $cNotifylist->chat_id = $chat_id;
-    $notify = $cNotifylist->Search();
+    $cNotifyPokemon->chat_id = $chat_id;
+    $notify = $cNotifyPokemon->Search();
 
     foreach($notify as $key){
         array_push($notify_pokemon, $pokemon->getName($key['pokemon_id']));
@@ -188,17 +185,17 @@ if(strtolower($text) == "/reset") {
 
     $notify_pokemon = Array();
 
-    $cNotifylist->chat_id = $chat_id;
-    $delete = $cNotifylist->Delete();
+    $cNotifyPokemon->chat_id = $chat_id;
+    $delete = $cNotifyPokemon->Delete();
 
     $notify_pokemon = array();
     for($i=1; $i <= count($pokemon->pokemonArray()); $i++){
         if($pokemon->getNotify($i)){
             array_push($notify_pokemon, $pokemon->getName($i));
 
-            $cNotifylist->chat_id       = $chat_id;
-            $cNotifylist->pokemon_id    = $i;
-            $create = $cNotifylist->Create();
+            $cNotifyPokemon->chat_id       = $chat_id;
+            $cNotifyPokemon->pokemon_id    = $i;
+            $create = $cNotifyPokemon->Create();
         }
     }
 
