@@ -40,7 +40,11 @@ $telegram = new Telegram($cfg['telegram']['bot-id']);
 /**
  * Server Adresse auslesen um zu bestimmen welche Region zugreift.
  */
+
 $urldecode = explode('.', $_SERVER['SERVER_NAME']);
+if($urldecode[0] == "www"){ array_shift($urldecode); }
 $place = $urldecode[0];
+
 Lang::set($cfg['notifier']['lang']);
+
 
