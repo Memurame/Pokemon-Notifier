@@ -17,7 +17,7 @@ class Log {
      */
     static private function init() {
         date_default_timezone_set('Europe/Zurich');
-        return dirname(__FILE__) . self::$path;
+        return ROOT . self::$path;
 
     }
 
@@ -41,7 +41,7 @@ class Log {
             }
         }
         else {
-            if(mkdir(self::$path,0777) === true)
+            if(mkdir(self::$path,0777) == true)
             {
                 self::write($message);
             }
