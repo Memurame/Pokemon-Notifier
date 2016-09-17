@@ -7,7 +7,14 @@
   "botalredystopped": "You already stopped the bot",
   "added": "added to notify list.",
   "removed": "removed to notify list.",
-  "replylist": "You receive notifications for the following Pokémon:",
+  "replylist": "You receive notifications for the following Pokémon:\n",
   "reset": "Configuration reset to default.",
-  "adminmsg": "Message from Admin:\n\n"
+  "adminmsg": "Message from Admin:\n\n",
+  "iv": "with IV: ",
+  "time": "It remains to ",
+  "attack": "Attack: ",
+  "defense": "Defense: ",
+  "stamina": "Stamina: ",
+  "hit1": "Attack 1: ",
+  "hit2": "Attack 2: "
 }

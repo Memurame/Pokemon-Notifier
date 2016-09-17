@@ -12,8 +12,11 @@ class Pokemon
      * Ladet das Config file für mit den benötigten parameter
      * @param string $file
      */
-    public function __construct($file) {
-        $this->file = $file;
+    public function __construct($path, $locale = "de") {
+        $this->path = $path;
+        $this->pokemonJson = $this->path . "/pokemon.json";
+        $this->localeJson = $this->path . "/locales/" . $locale . "_pokemon.json";
+        $this->movesJson = $this->path . "/locales/" . $locale . "_moves.json";
     }
 
     /**
@@ -35,13 +38,19 @@ class Pokemon
 
     }
 
+    public function getMoves($movesid){
+        $array = $this->movesArray();
+        return $array[$movesid];
+    }
+
     /**
      * Sucht anhand der Pokemon ID den Namen
      * @param int $pokemonid
      * @return string
      */
     public function getName($pokemonid){
-        return $this->getPokemon($pokemonid, "Name");
+        $array = $this->localeArray();
+        return $array[$pokemonid];
     }
 
     /**
@@ -75,8 +84,8 @@ class Pokemon
      * @return int
      */
     public function getID($pokemonname){
-        foreach($this->pokemonArray() as $id => $value){
-            if(strtolower($value['Name']) == trim(strtolower($pokemonname))){
+        foreach($this->localeArray() as $id => $name){
+            if(strtolower($name) == trim(strtolower($pokemonname))){
                 return $id;
             }
         }
@@ -95,11 +104,44 @@ class Pokemon
     }
 
     /**
-     * Ladet das Pokemon JSON und wandelt es in ein Array
+     * @param $pokemonid
+     * @return mixed
+     */
+    protected function getLocale($pokemonid){
+        $pokemon = $this->localeArray();
+        return $pokemon[$pokemonid];
+
+    }
+
+    /**
      * @return array
      */
     public function pokemonArray(){
-        return json_decode(file_get_contents($this->file), TRUE);
+        return $this->getJson($this->pokemonJson);
     }
+
+    /**
+     * @return mixed
+     */
+    protected function localeArray(){
+        return $this->getJson($this->localeJson);
+    }
+
+    /**
+     * @return mixed
+     */
+    protected function movesArray(){
+        return $this->getJson($this->movesJson);
+    }
+
+
+    /**
+     * @param $file
+     * @return mixed
+     */
+    protected function getJson($file){
+        return json_decode(file_get_contents($file), TRUE);
+    }
+
 
 }
