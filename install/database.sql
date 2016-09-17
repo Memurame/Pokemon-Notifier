@@ -27,9 +27,4 @@ CREATE TABLE `pokemon` (
   `iv_defense` int(11) DEFAULT NULL,
   `iv_stamina` int(11) DEFAULT NULL,
   `iv_result` float DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-CREATE TABLE `versions` (
-  `schema_version` varchar(20) NOT NULL,
-  `val` int(11) DEFAULT NULL,
-  PRIMARY KEY (`schema_version`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8
