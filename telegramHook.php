@@ -165,7 +165,7 @@ if(strtolower($text) == "/list") {
     $notify_pokemon = Array();
 
     $cNotifyPokemon->chat_id = $chat_id;
-    $notify = $cNotifyPokemon->Search();
+    $notify = $cNotifyPokemon->search();
 
     foreach($notify as $key){
         array_push($notify_pokemon, $pokemon->getName($key['pokemon_id']));
@@ -186,7 +186,7 @@ if(strtolower($text) == "/reset") {
     $notify_pokemon = Array();
 
     $cNotifyPokemon->chat_id = $chat_id;
-    $delete = $cNotifyPokemon->Delete();
+    $delete = $cNotifyPokemon->delete();
 
     $notify_pokemon = array();
     for($i=1; $i <= count($pokemon->pokemonArray()); $i++){
@@ -195,7 +195,7 @@ if(strtolower($text) == "/reset") {
 
             $cNotifyPokemon->chat_id       = $chat_id;
             $cNotifyPokemon->pokemon_id    = $i;
-            $create = $cNotifyPokemon->Create();
+            $create = $cNotifyPokemon->create();
         }
     }
 
@@ -218,6 +218,33 @@ if(strtolower($text) == "/help") {
 
 }
 
+
+if(substr(strtolower($text), 0, 3) == "/iv"){
+
+    $text = intval(substr($text, 4));
+    if($text){
+        $cNotifyIV->chat_id = $chat_id;
+        if($cNotifyIV->search()) {
+            $cNotifyIV->iv_val = $text;
+            $set = $cNotifyIV->save();
+        } else {
+            $cNotifyIV->iv_val = $text;
+            $cNotifyIV->chat_id = $chat_id;
+            $set = $cNotifyIV->create();
+        }
+
+        $reply = Lang::get("setiv") . $text . "%";
+        $content = array('chat_id' => $chat_id, 'text' => $reply);
+        $telegram->sendMessage($content);
+    } else {
+        $reply = Lang::get("erroriv");
+        $content = array('chat_id' => $chat_id, 'text' => $reply);
+        $telegram->sendMessage($content);
+    }
+
+
+
+}
 
 /**
  * ###############################################

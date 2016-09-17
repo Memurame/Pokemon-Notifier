@@ -38,6 +38,10 @@ class Pokemon
 
     }
 
+    /**
+     * @param $movesid
+     * @return mixed
+     */
     public function getMoves($movesid){
         $array = $this->movesArray();
         return $array[$movesid];

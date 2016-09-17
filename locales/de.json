@@ -16,6 +16,8 @@
   "defense": "Verteidigung: ",
   "stamina": "Ausdauer: ",
   "hit1": "Attacke 1: ",
-  "hit2": "Attacke 2: "
+  "hit2": "Attacke 2: ",
+  "setiv": "Minimum IV-Wert wurde gesetzt: ",
+  "erroriv": "Der wert muss eine Zahl sein und zwischen 0 und 100 liegen."
 
 }
