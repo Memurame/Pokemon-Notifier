@@ -1,13 +1,13 @@
 {
-  "helptext": "DU kannst selber festlegen zu welchen Pokemons du eine Benachrichtigung möchtest.\n\n/add = Hinzufügen\n/remove = Löschen\n/list = Pokemonliste\n/reset = Einstellungen zurücksetzen\n/stop = Chat beenden\n/help = Hilfe\n\nWenn du meherer Pokemons hinzufügen oder löschen möchtest musst du immer ein ',' zwischen den Pokemons schreiben.\nEin Beispiel:\n/add Glumanda\n/add Glumanda, Glurak\n",
-  "welcome": "Willkommen beim Pokemonbot. Mit diesem Bot kannst du deine Wunschbenachrichtigung selber einstellen. Zu folgenden Pokemons erhälst du zurzeit eine Benachrichtigung:",
+  "helptext": "Hier kannst du festlegen zu welchen Pokémon du eine Benachrichtigung möchtest.\n\n/add = Pokémon hinzufügen\n/remove = Pokémon entfernen\n/list = Pokémon auflisten\n/reset = Einstellungen zurücksetzen\n/stop = Chat beenden\n/help = Dieses Menü\n\nWenn du mehrere Pokémon hinzufügen oder löschen möchtest, trenne diese mit einem ein ','.\n\nEin Beispiel:\n\n/add Glumanda, Glurak\n",
+  "welcome": "Willkommen beim Pokémonbot. Mit diesem Bot kannst du deine Wunschbenachrichtigung selbst einstellen. Zu folgenden Pokémon erhälst du zurzeit eine Benachrichtigung:",
   "welcomeback": "Willkommen zurück.\nDeine vorherigen Einstellungen sind noch immer vorhanden.",
   "botalredystarted": "Du hast den Bot bereits gestartet",
-  "stopped": "Du wirst nun nicht mehr Benachrichtigt. Mit /start kannst du den Bot erneut starten.",
-  "botalredystopped": "DU hast den Bot bereits gestoppt.",
-  "added": "zu Benachrichtigung hinzuegfüegt.",
-  "removed": "von Benachrichtigung gelöscht.",
-  "replylist": "Zu folgenden Pokemons erhälst du eine Benachrichtigung:",
+  "stopped": "Du wirst nun nicht mehr benachrichtigt. Mit /start kannst du den Bot erneut starten.",
+  "botalredystopped": "Du hast den Bot bereits gestoppt.",
+  "added": "zu Benachrichtigung hinzugefügt.",
+  "removed": "von Benachrichtigung entfernt.",
+  "replylist": "Zu folgenden Pokémon erhälst du eine Benachrichtigung:",
   "reset": "Alle Einstellungen wurden zurückgesetzt.",
-  "adminmsg": "Meldung vom Administrator:\n\n"
+  "adminmsg": "Nachricht vom Admin:\n\n"
 }
