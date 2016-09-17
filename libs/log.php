@@ -17,7 +17,7 @@ class Log {
      */
     static private function init() {
         date_default_timezone_set('Europe/Zurich');
-        return dirname(__FILE__, 2) . self::$path;
+        return dirname(__FILE__) . self::$path;
 
     }
 
