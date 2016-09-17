@@ -16,7 +16,7 @@ class Lang
     }
 
     private static function getlanguage($var){
-        self::$file = dirname(__FILE__, 2) . self::$dir .$var.'.json';
+        self::$file = ROOT . self::$dir .$var.'.json';
         if(file_exists(self::$file))
         { return json_decode(file_get_contents(self::$file)); }
         else
