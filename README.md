@@ -1,44 +1,39 @@
 # Pokemon-Notifier
 ![unbenannt](https://cloud.githubusercontent.com/assets/15847494/18547280/dbff5c22-7b42-11e6-83b6-3462d5dac425.png)
 
-Das ist ein Telegram Bot für PokemonGo.
-Dieser Bot wird über Webhook gesteuer, so sind die Benachrichtigungen stets in echtzeit.
-Ebenfalls können die User selber einstellen zu welchen Pokémons Sie eine Benachrichtigung möchten.
+This is a Telegram Bot for Pokemon GO.
+This bot is controlled via a Webhook, notification occur in realtime.
+Each user can configure which notifications for which Pokémon they want.
 
-### Voraussetzung
+### Requirements
 - [PokemonGo-Map](https://github.com/n30nl1ght/PokemonGo-Map)
-- Mindestens PHP 5.6
-- Mysql
-- Telegram API-Key -> [BotFather](https://telegram.me/botfather)
+- Minimum PHP 5.6
+- MySQL/MariaDB
+- Telegram Bot API-Key -> [BotFather](https://telegram.me/botfather)
 
+### Install
+- Clone repository ```git clone https://github.com/n30nl1ght/Pokemon-Notifier.git```
+- Rename ```config.ini.example``` to ```config.ini```
+- Edit ```config.ini``` and enter your db details, language and Telegram Bot API-Key, Webhook API-Key is optional
+- Define a webhook in your PokemonGo-Map config pointing to your domain, ```https://yourdomain.com/pokeHook.php for example```.
+  HTTPS and a signed and valid SSL certificate are mandatory, there are Telegram API requirements !
+- Open the url where you put your install adding ```/install/index.php```. This will installed the required tabled to your DB. Remove ```install``` dir.
+- Set your Telegram WebHookURL:
+  ```https://api.telegram.org/bot[API-KEY]/setWebhook?url=[URL to your install]/telegramHook.php```.
+  As already said, this HAS to be HTTPS and your domain needs a valid SSL certificate.
+- To have the bot recognizing you as admin you also need to enter your Telegram ID into the ```config.ini```, to find your your ID do the following, on a Linux Shell for example:
+  ```curl -X POST https://api.telegram.org/bot[API-KEY]/getUpdates```
 
-### Installation
-- Repositiry runterladen ```git clone https://github.com/n30nl1ght/Pokemon-Notifier.git```
-- ```config.ini.Example``` kopieren und unbenennen in ```config.ini```
-- In der config vom Notifier die DB-Verbindungsdaten, Sprache und Telegram API-Key eintragen
-- In der config von der PokemonGo-Map musst du nun die Webhook Adresse entsprechend setzen. 
-```z.B https://DEINEDOMAIN.CH/pokeHook.php```
-- Die installation aufrufen die sich im Ordner ```/install/index.php```.
-Diese Datei legt die erforderlichen Tabellen in der DB an.
-Anschliessend unbedingt das ganze install Verzeichniss löschen.
-- Die Telegram WebhookUrl setzen
-```https://api.telegram.org/bot[API-KEY]/setWebhook?url=[URL zu deinem Script]/telegramHook.php```.
-Die URL die du als Webhook angeben willst muss zwingend eine SSL-Verschlüsselung besitzen (Voraussetzung von Telegram).
-- Damit der Bot dich immer als Admin einträgt wenn du den Bot beendest und erneut startest musst du deine Telegram-ID auslesen und in der Notifier config eintragen.
-Du kannst diesen Wert jedoch auch leer lassen.
+### Bot commands
+#### User commands
+- /add		= Add Pokémon to your notify list.
+- /remove	= Remove Pokémon from your notify list.
+- /list		= List Pokémon on your notify list.
+- /stop		= Stop notifications [Your configuration remains intact].
+- /reset	= Reset notifications to default.
+- /start	= Start communication with the bot.
 
-
-### TelegramBot Befehle
-#### User Befehle
-- /add = Hinzufügen von Pokémons
-- /remove = Löschen von Pokémons
-- /list = Anzeigen zu welchen Pokémons du eine Benachrichtigung erhälst
-- /stop = Stopt die Benachrichtigngen (EInstellungen bleiben erhalten)
-- /reset = STellt die Benachrichtigungs Pokémon wieder auf die STandart einstellung
-- /start = Startet den Bot
-
-#### Admin Befehle
-- /send [Text] = Senden einer Nachricht an alle User die den Bot gestartet haben
-- /cleandb = Löscht alle Pokémons aus der DB die nicht mehr auf der Map sind
-
+#### Admin commands
+- /send		= Send a message to all users.
+- /cleandb	= Clean all Pokémon in the db that are not on the map anymore.
 
