@@ -110,9 +110,11 @@ if($typ == "pokemon"){
                 'sticker' => $pokemon->getSticker($msg->pokemon_id));
             $name = array(
                 'chat_id' => $chat_id,
-                'text' => "*".$pokemon->getName($msg->pokemon_id) . "* mit IV: *".number_format($IV, 1, ",", "'").
-                    "*%\nAttack: ".$msg->individual_attack." / Defense: ".$msg->individual_defense ." / Stamina: ".$msg->individual_stamina.
-                    "\nblibt no bis " . date("H:i:s", $msg->disappear_time),
+                'text' => "*".$pokemon->getName($msg->pokemon_id) . " *" .  Lang::get("iv") . "*" . number_format($IV, 1, ",", "'").
+                    "*%\n" .  Lang::get("attack") . $msg->individual_attack." / " .  Lang::get("defense") . $msg->individual_defense ." / " .  Lang::get("stamina") . $msg->individual_stamina.
+                    "\n\n" .  Lang::get("hit1") . $pokemon->getMoves($msg->move_1).
+                    "\n" .  Lang::get("hit2") . $pokemon->getMoves($msg->move_2).
+                    "\n\n" .  Lang::get("time") . date("H:i:s", $msg->disappear_time),
                 'parse_mode' => 'Markdown');
             $location = array(
                 'chat_id' => $chat_id,

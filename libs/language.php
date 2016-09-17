@@ -8,7 +8,7 @@
 class Lang
 {
     static private $lang;
-    static private $dir = "/lang/";
+    static private $dir = "/locales/";
     static private $file;
 
     public static function set($var){
@@ -16,7 +16,7 @@ class Lang
     }
 
     private static function getlanguage($var){
-        self::$file = ROOT . self::$dir .$var.'.json';
+        self::$file = ROOT . self::$dir . $var.'.json';
         if(file_exists(self::$file))
         { return json_decode(file_get_contents(self::$file)); }
         else

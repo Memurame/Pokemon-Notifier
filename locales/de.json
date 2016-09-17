@@ -7,7 +7,15 @@
   "botalredystopped": "Du hast den Bot bereits gestoppt.",
   "added": "zu Benachrichtigung hinzugefügt.",
   "removed": "von Benachrichtigung entfernt.",
-  "replylist": "Zu folgenden Pokémon erhälst du eine Benachrichtigung:",
+  "replylist": "Zu folgenden Pokémon erhälst du eine Benachrichtigung:\n",
   "reset": "Alle Einstellungen wurden zurückgesetzt.",
-  "adminmsg": "Nachricht vom Admin:\n\n"
+  "adminmsg": "Nachricht vom Admin:\n\n",
+  "iv": "mit IV: ",
+  "time": "Bleibt noch bis ",
+  "attack": "Angriff: ",
+  "defense": "Verteidigung: ",
+  "stamina": "Ausdauer: ",
+  "hit1": "Attacke 1: ",
+  "hit2": "Attacke 2: "
+
 }

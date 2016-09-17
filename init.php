@@ -34,7 +34,7 @@ $cChat = new cChat();
 $cNotifyPokemon = new cNotifyPokemon();
 $cNotifyIV = new cNotifyIV();
 $db = new DB();
-$pokemon = new Pokemon(__DIR__."/pokemon.json");
+$pokemon = new Pokemon(__DIR__, $cfg['notifier']['lang']);
 $telegram = new Telegram($cfg['telegram']['bot-id']);
 
 /**
