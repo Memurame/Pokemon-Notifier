@@ -1,6 +1,6 @@
 {
   "helptext": "You can choose for which Pokémon you want to be notified.\n\n/add = Add Pokémon to notifiy list\n/remove = Remove Pokémon from notify list\n/list = List Pokémon on notify list\n/reset = Reset configuration\n/stop = Stop chat\n/help = This menu\n\nIf you want to add more than one Pokémon to the list, use the ',' seperator.\n\nExample:\n\n /add Glumanda, Glurak\n",
-  "welcome": "Welcome to Pokémonbot. This bot allows you to configure notifications for Pokémon you like. You receive notification for the following Pokémon:",
+  "welcome": "Welcome to Pokémonbot. This bot allows you to configure notifications for Pokémon you like. You receive notification for the following Pokémon:\n\n",
   "welcomeback": "Welcome back.\nYour configuration is still active.",
   "botalredystarted": "You already started the bot.",
   "stopped": "You are not notified anymore. Restart the bot with /start.",
