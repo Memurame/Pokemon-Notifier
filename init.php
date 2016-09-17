@@ -43,7 +43,8 @@ $telegram = new Telegram($cfg['telegram']['bot-id']);
 
 $urldecode = explode('.', $_SERVER['SERVER_NAME']);
 if($urldecode[0] == "www"){ array_shift($urldecode); }
-$place = $urldecode[0];
+$place = strtolower($urldecode[0]);
+
 
 Lang::set($cfg['notifier']['lang']);
 
