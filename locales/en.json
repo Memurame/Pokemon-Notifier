@@ -11,10 +11,12 @@
   "reset": "Configuration reset to default.",
   "adminmsg": "Message from Admin:\n\n",
   "iv": "with IV: ",
-  "time": "It remains to ",
+  "time": "Rremains until ",
   "attack": "Attack: ",
   "defense": "Defense: ",
   "stamina": "Stamina: ",
   "hit1": "Attack 1: ",
-  "hit2": "Attack 2: "
+  "hit2": "Attack 2: ",
+  "setiv": "Minimum IV-Value set: ",
+  "erroriv": "Value has to be a number between 0 and 100."
 }
