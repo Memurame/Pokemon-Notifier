@@ -126,9 +126,9 @@ if($typ == "pokemon"){
                     'latitude' => $msg->latitude,
                     'longitude' => $msg->longitude);
 
-                //$telegram->sendSticker($bild);
-                //$telegram->sendMessage($name);
-                //$telegram->sendLocation($location);
+                $telegram->sendSticker($bild);
+                $telegram->sendMessage($name);
+                $telegram->sendLocation($location);
             }
 
 
