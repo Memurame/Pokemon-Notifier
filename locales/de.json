@@ -1,5 +1,5 @@
 {
-  "helptext": "Hier kannst du festlegen zu welchen Pokémon du eine Benachrichtigung möchtest.\n\n/add = Pokémon hinzufügen\n/remove = Pokémon entfernen\n/list = Pokémon auflisten\n/reset = Einstellungen zurücksetzen\n/stop = Chat beenden\n/help = Dieses Menü\n\nWenn du mehrere Pokémon hinzufügen oder löschen möchtest, trenne diese mit einem ein ','.\n\nEin Beispiel:\n\n/add Glumanda, Glurak\n",
+  "helptext": "Hier kannst du festlegen zu welchen Pokémon du eine Benachrichtigung möchtest.\n\n/add = Pokémon hinzufügen\n/remove = Pokémon entfernen\n/list = Pokémon auflisten\n/reset = Einstellungen zurücksetzen\n/stop = Chat beenden\n/help = Dieses Menü\n/iv = Setzen des Wertes ab welchem IV-Wert du über dieses Pokémon benachrichtigt werden möchtest.\n\nWenn du mehrere Pokémon hinzufügen oder löschen möchtest, trenne diese mit einem ','.\n\nEin Beispiel:\n\n/add Glumanda, Glurak\n/iv 80 Taubsi,Glurak",
   "welcome": "Willkommen beim Pokémonbot. Mit diesem Bot kannst du deine Wunschbenachrichtigung selbst einstellen. Zu folgenden Pokémon erhälst du zurzeit eine Benachrichtigung:\n\n",
   "welcomeback": "Willkommen zurück.\nDeine vorherigen Einstellungen sind noch immer vorhanden.",
   "botalredystarted": "Du hast den Bot bereits gestartet",
@@ -17,6 +17,6 @@
   "stamina": "Ausdauer: ",
   "hit1": "Attacke 1: ",
   "hit2": "Attacke 2: ",
-  "setiv": "Minimum IV-Wert wurde gesetzt: ",
-  "erroriv": "Der Wert muss eine Zahl sein und zwischen 0 und 100 liegen."
+  "setiv": "wurde als minimum IV-Wert gesetzt. ",
+  "erroriv": "Der Wert muss eine Zahl sein und zwischen 1 und 100 liegen."
 }
