@@ -18,5 +18,5 @@
   "hit1": "Attack 1: ",
   "hit2": "Attack 2: ",
   "setiv": "Minimum IV-Value set: ",
-  "erroriv": "Value has to be a number between 0 and 100."
+  "erroriv": "Value has to be a number between 1 and 100."
 }

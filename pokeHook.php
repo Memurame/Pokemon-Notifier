@@ -63,7 +63,7 @@ if($typ == "pokemon"){
     $cPokemon->pokemon_id       = $msg->pokemon_id;
     $cPokemon->encounter_id     = $msg->encounter_id;
     $cPokemon->spawnpoint_id    = $msg->spawnpoint_id;
-    if(empty($cPokemon->search()) OR 1==1) {
+    if(empty($cPokemon->search())) {
         /**
          * IV ausrechnen
          */
@@ -93,7 +93,8 @@ if($typ == "pokemon"){
         $db->bind("pokemon_id", $msg->pokemon_id);
         $db->bind("place", $place);
         $notifylist = $db->query("
-            SELECT * FROM notify_pokemon 
+            SELECT chats.chat_id, chats.place, notify_pokemon.pokemon_id, notify_iv.iv_val 
+            FROM notify_pokemon 
             LEFT JOIN chats 
             ON notify_pokemon.chat_id = chats.chat_id 
             LEFT JOIN notify_iv
