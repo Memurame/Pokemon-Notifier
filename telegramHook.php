@@ -221,21 +221,40 @@ if(strtolower($text) == "/help") {
 
 if(substr(strtolower($text), 0, 3) == "/iv"){
 
-    $text = intval(substr($text, 4));
-    if($text){
-        $cNotifyIV->chat_id = $chat_id;
-        if($cNotifyIV->search()) {
-            $cNotifyIV->iv_val = $text;
-            $set = $cNotifyIV->save();
-        } else {
-            $cNotifyIV->iv_val = $text;
-            $cNotifyIV->chat_id = $chat_id;
-            $set = $cNotifyIV->create();
+    $reply = "";
+    $text = trim(substr($text, 4));
+    $textArray = array_filter(explode(" ", $text, 2));
+    if(!empty($textArray) && intval($textArray[0]) AND $textArray[0] > 0 AND $textArray[0] <= 100){
+        $iv = $textArray[0];
+        $pokemons = explode(",", $textArray[1]);
+        foreach($pokemons as $select){
+            $id = $pokemon->getID($select);
+            if($id){
+                $reply .= $pokemon->getName($id)."\n";
+
+                $cNotifyIV->pokemon_id    = $id;
+                $cNotifyIV->chat_id       = $chat_id;
+                if(!$cNotifyIV->search()){
+                    $cNotifyIV->chat_id     = $chat_id;
+                    $cNotifyIV->pokemon_id  = $id;
+                    $cNotifyIV->iv_val      = $iv;
+                    $create = $cNotifyIV->create();
+                } else {
+                    $db->bind("chat_id", $chat_id);
+                    $db->bind("pokemon_id", $id);
+                    $db->bind("iv_val", $iv);
+                    $update = $db->query("UPDATE notify_iv SET
+                      iv_val = :iv_val
+                      WHERE chat_id = :chat_id
+                      AND pokemon_id = :pokemon_id");
+                }
+            }
         }
 
-        $reply = Lang::get("setiv") . $text . "%";
+        if(!empty($reply)){ $reply .= $iv . "% " .  Lang::get("setiv"); }
         $content = array('chat_id' => $chat_id, 'text' => $reply);
         $telegram->sendMessage($content);
+
     } else {
         $reply = Lang::get("erroriv");
         $content = array('chat_id' => $chat_id, 'text' => $reply);

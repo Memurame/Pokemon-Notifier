@@ -98,9 +98,10 @@ if($typ == "pokemon"){
             LEFT JOIN chats 
             ON notify_pokemon.chat_id = chats.chat_id 
             LEFT JOIN notify_iv
-            ON notify_pokemon.chat_id = notify_iv.chat_id
+            ON notify_pokemon.chat_id = notify_iv.chat_id AND notify_pokemon.pokemon_id = notify_iv.pokemon_id
             WHERE notify_pokemon.pokemon_id = :pokemon_id
             AND chats.place = :place
+            
             ORDER BY priority desc");
         $i = 0;
         print_r($notifylist);
