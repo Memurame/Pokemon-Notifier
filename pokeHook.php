@@ -21,7 +21,7 @@ $json_decode = json_decode($data);
 $msg = $json_decode->message;
 $typ = $json_decode->type;
 
-
+Log::write($place . ": Pokemon " . $pokemon->getName($msg->pokemon_id) . " per Webhook erhalten\n" . $data);
 /**
  * ############################################################
  * Zugriffs Berechtigung prüfen
@@ -71,13 +71,13 @@ if($typ == "pokemon"){
         ON notify_pokemon.chat_id = notify_iv.chat_id AND notify_pokemon.pokemon_id = notify_iv.pokemon_id
         WHERE notify_pokemon.pokemon_id = :pokemon_id
         AND chats.place = :place
-        
         ORDER BY priority desc");
     $i = 0;
-    print_r($notifylist);
+
+    if(empty($notifylist)){ Log::write($place . ": Pokemon " . $pokemon->getName($msg->pokemon_id) . ", keine Benachrichtigung zu diesem Pokemon gefunden."); }
+
     while($i < count($notifylist)){
         if($notifylist[$i]['iv_val'] <= $IV || empty($notifylist[$i]['iv_val'])){
-            echo"Send Message";
             /**
              * Nachricht an telegram senden
              */
@@ -99,9 +99,13 @@ if($typ == "pokemon"){
                 'latitude' => $msg->latitude,
                 'longitude' => $msg->longitude);
 
-            $telegram->sendSticker($bild);
-            $telegram->sendMessage($name);
-            $telegram->sendLocation($location);
+            $returnBild = $telegram->sendSticker($bild);
+            $returnMessage = $telegram->sendMessage($name);
+            $returnLocation = $telegram->sendLocation($location);
+
+            if($returnBild['ok'] != 1 || $returnMessage['ok'] != 1 || $returnLocation['ok'] != 1){
+                Log::write($place . ": Pokemon " . $pokemon->getName($msg->pokemon_id) . ", Fehler beim senden der Telegram Nachricht");
+            }
         }
 
 
