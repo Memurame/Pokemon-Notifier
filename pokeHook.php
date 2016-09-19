@@ -21,7 +21,7 @@ $json_decode = json_decode($data);
 $msg = $json_decode->message;
 $typ = $json_decode->type;
 
-Log::write($place . ": Pokemon " . $pokemon->getName($msg->pokemon_id) . " per Webhook erhalten\n");
+Log::write($place . ": Pokemon " . $pokemon->getName($msg->pokemon_id) . " per Webhook erhalten");
 /**
  * ############################################################
  * Zugriffs Berechtigung prüfen
@@ -105,6 +105,8 @@ if($typ == "pokemon"){
 
             if($returnBild['ok'] != 1 || $returnMessage['ok'] != 1 || $returnLocation['ok'] != 1){
                 Log::write($place . ": Pokemon " . $pokemon->getName($msg->pokemon_id) . ", Fehler beim senden der Telegram Nachricht");
+            } else {
+                Log::write($place . ": Pokemon " . $pokemon->getName($msg->pokemon_id) . ", Benachrichtigung gesendet an " . $chat_id);
             }
         }
 
