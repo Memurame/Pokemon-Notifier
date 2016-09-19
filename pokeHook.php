@@ -21,7 +21,7 @@ $json_decode = json_decode($data);
 $msg = $json_decode->message;
 $typ = $json_decode->type;
 
-Log::write($place . ": Pokemon " . $pokemon->getName($msg->pokemon_id) . " per Webhook erhalten\n" . $data);
+Log::write($place . ": Pokemon " . $pokemon->getName($msg->pokemon_id) . " per Webhook erhalten\n");
 /**
  * ############################################################
  * Zugriffs Berechtigung prüfen
