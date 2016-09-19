@@ -288,18 +288,4 @@ if($chat && $chat[0]['admin']){
         }
 
     }
-
-    /**
-     * Säubern der Datenbank
-     * Löscht alle Pokemons die nicht mehr auf de Map sind.
-     */
-    if(strtolower($text) == "/cleandb"){
-
-        $db->bind("disappear_time", time());
-        $result   =  $db->query("DELETE FROM pokemon WHERE disappear_time < :disappear_time");
-
-        $reply = $result ." gelöschte einträge.";
-        $content = array('chat_id' => $chat_id, 'text' => $reply);
-        $telegram->sendMessage($content);
-    }
 }

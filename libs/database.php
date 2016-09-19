@@ -50,10 +50,15 @@ class DB
         $this->settings = parse_ini_file(ROOT."/config/config.ini", TRUE);
         $dsn            = 'mysql:dbname=' . $this->settings['database']["dbname"] . ';host=' . $this->settings['database']["host"] . '';
         try {
-            # Read settings from INI file, set UTF8
-            $this->pdo = new PDO($dsn, $this->settings['database']["user"], $this->settings['database']["pass"], array(
-                PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"
-            ));
+            if($this->settings['database']["type"] == "mysql"){
+                # Read settings from INI file, set UTF8
+                $this->pdo = new PDO($dsn, $this->settings['database']["user"], $this->settings['database']["pass"], array(
+                    PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"
+                ));
+            } elseif($this->settings['database']["type"] == "sqlite"){
+                $this->pdo = new PDO(ROOT.'/sqlite:database.db');
+            }
+
             
             # We can now log any exceptions on Fatal error. 
             $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
