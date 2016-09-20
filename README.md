@@ -1,5 +1,5 @@
 # Pokemon-Notifier
-![unbenannt](https://cloud.githubusercontent.com/assets/15847494/18547280/dbff5c22-7b42-11e6-83b6-3462d5dac425.png)
+![botscreen](https://cloud.githubusercontent.com/assets/15847494/18670917/5253eaf2-7f42-11e6-8114-118b6cc551e7.JPG)
 
 This is a Telegram Bot for Pokemon GO.
 This bot is controlled via a Webhook, notifications occur in realtime.
