@@ -12,12 +12,19 @@
  * Zeitzone festlegen
  */
 date_default_timezone_set('Europe/Zurich');
+
+$cfg = parse_ini_file(__DIR__."/config/config.ini", TRUE);
+
+$urldecode = explode('.', $_SERVER['SERVER_NAME']);
+if($urldecode[0] == "www"){ array_shift($urldecode); }
+
 define("ROOT", __DIR__);
+define("LOG", $cfg['notifier']['log']);
+define("PLACE", strtolower($urldecode[0]));
 
 /**
  * Erforderliche Dateien einbinden und Klassen laden
  */
-$cfg = parse_ini_file(__DIR__."/config/config.ini", TRUE);
 
 require_once(__DIR__."/libs/pokemon.php");
 require_once(__DIR__."/libs/telegram.php");
@@ -41,9 +48,6 @@ $telegram = new Telegram($cfg['telegram']['bot-id']);
  * Server Adresse auslesen um zu bestimmen welche Region zugreift.
  */
 
-$urldecode = explode('.', $_SERVER['SERVER_NAME']);
-if($urldecode[0] == "www"){ array_shift($urldecode); }
-$place = strtolower($urldecode[0]);
 
 
 Lang::set($cfg['notifier']['lang']);

@@ -32,7 +32,7 @@ if (strtolower($text) == "/start") {
             $cChat->priority = 1;
         }
         $cChat->chat_id     = $chat_id;
-        $cChat->place       = $place;
+        $cChat->place       = PLACE;
         $create = $cChat->Create();
 
         $cNotifyPokemon->chat_id = $chat_id;
