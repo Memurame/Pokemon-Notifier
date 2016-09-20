@@ -16,6 +16,7 @@ require_once(__DIR__."/init.php");
 $data = file_get_contents("php://input");
 
 if(empty($data)){ Log::write("It has received no content.", true); }
+http_response_code(200);
 
 $json_decode = json_decode($data);
 $msg = $json_decode->message;
@@ -36,12 +37,12 @@ Log::write($place . ": Pokemon " . $pokemon->getName($msg->pokemon_id) . " per W
 if(!empty($cfg['webhook']['key'])){
     if(isset($_SERVER['HTTP_WEBHOOKKEY'])){
         if($_SERVER['HTTP_WEBHOOKKEY'] != $cfg['webhook']['key']){
-            header('HTTP/1.1 401 Unauthorized');
-            Log::write("Wrong Webhook KEY.");
+            http_response_code(401);
+            Log::write("Wrong Webhook KEY.", true);
         }
     } else {
-        header('HTTP/1.1 401 Unauthorized');
-        Log::write("No defined Webhook KEY");
+        http_response_code(401);
+        Log::write("No defined Webhook KEY", true);
     }
 }
 
@@ -114,5 +115,4 @@ if($typ == "pokemon"){
         $i++;
     }
 }
-
 ?>
