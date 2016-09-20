@@ -10,14 +10,15 @@ class Log {
     /**
      * @var string
      */
-    static private $path = '/logs/';
+    static private $dir = '/logs/';
+    static private $path;
 
     /**
      * @return string
      */
     static private function init() {
         date_default_timezone_set('Europe/Zurich');
-        return ROOT . self::$path;
+        return ROOT . self::$dir;
 
     }
 
@@ -55,7 +56,7 @@ class Log {
      * @param string $message
      */
     static private function edit($log,$date,$message) {
-        $logcontent = "Time : " . $date->format('H:i:s')."\r\n" . $message ."\r\n\r\n";
+        $logcontent = "Time : " . $date->format('H:i:s') . " -> " . $message ."\n";
         $logcontent = $logcontent . file_get_contents($log);
         file_put_contents($log, $logcontent);
     }
