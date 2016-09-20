@@ -22,7 +22,7 @@ $json_decode = json_decode($data);
 $msg = $json_decode->message;
 $typ = $json_decode->type;
 
-Log::write($place . ": Pokemon " . $pokemon->getName($msg->pokemon_id) . " per Webhook erhalten");
+Log::write("Pokemon " . $pokemon->getName($msg->pokemon_id) . " per Webhook erhalten");
 /**
  * ############################################################
  * Zugriffs Berechtigung prüfen
@@ -62,7 +62,7 @@ if($typ == "pokemon"){
      */
 
     $db->bind("pokemon_id", $msg->pokemon_id);
-    $db->bind("place", $place);
+    $db->bind("place", PLACE);
     $notifylist = $db->query("
         SELECT chats.chat_id, chats.place, notify_pokemon.pokemon_id, notify_iv.iv_val 
         FROM notify_pokemon 
@@ -75,7 +75,9 @@ if($typ == "pokemon"){
         ORDER BY priority desc");
     $i = 0;
 
-    if(empty($notifylist)){ Log::write($place . ": Pokemon " . $pokemon->getName($msg->pokemon_id) . ", keine Benachrichtigung zu diesem Pokemon gefunden."); }
+    if(empty($notifylist)){
+        Log::write(PLACE . ": Pokemon " . $pokemon->getName($msg->pokemon_id) .
+            ", keine Benachrichtigung zu diesem Pokemon gefunden."); }
 
     while($i < count($notifylist)){
         if($notifylist[$i]['iv_val'] <= $IV || empty($notifylist[$i]['iv_val'])){
@@ -105,9 +107,9 @@ if($typ == "pokemon"){
             $returnLocation = $telegram->sendLocation($location);
 
             if($returnBild['ok'] != 1 || $returnMessage['ok'] != 1 || $returnLocation['ok'] != 1){
-                Log::write($place . ": Pokemon " . $pokemon->getName($msg->pokemon_id) . ", Fehler beim senden der Telegram Nachricht");
+                Log::write("Pokemon " . $pokemon->getName($msg->pokemon_id) . ", Fehler beim senden der Telegram Nachricht");
             } else {
-                Log::write($place . ": Pokemon " . $pokemon->getName($msg->pokemon_id) . ", Benachrichtigung gesendet an " . $chat_id);
+                Log::write("Pokemon " . $pokemon->getName($msg->pokemon_id) . ", Benachrichtigung gesendet an " . $chat_id);
             }
         }
 
