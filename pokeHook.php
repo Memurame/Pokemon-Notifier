@@ -78,6 +78,11 @@ if($typ == "pokemon"){
                     )
                 )));
 
+            /**
+             * reypl_markup entfernen wenne s sich um einen Kanal handelt
+             */
+            if(substr($chat_id, 0, 1) == "@" || $chat_id < 0){ unset($name['reply_markup']); }
+
             $returnMessage = $telegram->sendMessage($name);
 
             if($returnMessage['ok'] != 1){
