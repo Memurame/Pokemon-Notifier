@@ -81,9 +81,26 @@ if($typ == "pokemon"){
             /**
              * reypl_markup entfernen wenne s sich um einen Kanal handelt
              */
-            if(substr($chat_id, 0, 1) == "@" || $chat_id < 0){ unset($name['reply_markup']); }
+            if(substr($chat_id, 0, 1) == "@" || $chat_id < 0){
+                unset($name['reply_markup']);
 
-            $returnMessage = $telegram->sendMessage($name);
+                $bild = array(
+                    'chat_id' => $chat_id,
+                    'sticker' => $pokemon->getSticker($msg->pokemon_id));
+
+                $location = array(
+                    'chat_id' => $chat_id,
+                    'latitude' => $msg->latitude,
+                    'longitude' => $msg->longitude);
+
+                $returnBild = $telegram->sendSticker($bild);
+                $returnMessage = $telegram->sendMessage($name);
+                $returnLocation = $telegram->sendLocation($location);
+            } else {
+                $returnMessage = $telegram->sendMessage($name);
+            }
+
+
 
             if($returnMessage['ok'] != 1){
                 Log::write("Pokemon " . $pokemon->getName($msg->pokemon_id) . ", Telegram Fehler: " . $returnMessage['description'] ." -> " . $chat_id);

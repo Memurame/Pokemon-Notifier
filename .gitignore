@@ -5,4 +5,3 @@ test.php
 logs/*
 !logs/.htaccess
 sql/create.sql.backup
-sql/create.sql
