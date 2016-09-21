@@ -1,6 +1,5 @@
 {  
   "1":{  
-    "name":"Thunder Shock",
     "bars":1,
     "damage":"5",
     "cooldown":"0.60",
@@ -8,7 +7,6 @@
     "dps":"8.33"
   },
   "2":{  
-    "name":"Quick Attack",
     "bars":1,
     "damage":"10",
     "cooldown":"1.33",
@@ -16,7 +14,6 @@
     "dps":"7.52"
   },
   "3":{  
-    "name":"Scratch",
     "bars":1,
     "damage":"6",
     "cooldown":"0.50",
@@ -24,7 +21,6 @@
     "dps":"12.00"
   },
   "4":{  
-    "name":"Ember",
     "bars":1,
     "damage":"10",
     "cooldown":"1.05",
@@ -32,7 +28,6 @@
     "dps":"9.52"
   },
   "5":{  
-    "name":"Vine Whip",
     "bars":1,
     "damage":"7",
     "cooldown":"0.65",
@@ -40,7 +35,6 @@
     "dps":"10.77"
   },
   "6":{  
-    "name":"Tackle",
     "bars":1,
     "damage":"12",
     "cooldown":"1.10",
@@ -48,7 +42,6 @@
     "dps":"10.91"
   },
   "7":{  
-    "name":"Razor Leaf",
     "bars":1,
     "damage":"15",
     "cooldown":"1.45",
@@ -56,7 +49,6 @@
     "dps":"10.34"
   },
   "9":{  
-    "name":"Water Gun",
     "bars":1,
     "damage":"6",
     "cooldown":"0.50",
@@ -64,7 +56,6 @@
     "dps":"12.00"
   },
   "10":{  
-    "name":"Bite",
     "bars":1,
     "damage":"6",
     "cooldown":"0.50",
@@ -72,7 +63,6 @@
     "dps":"12.00"
   },
   "11":{  
-    "name":"Pound",
     "bars":1,
     "damage":"7",
     "cooldown":"0.54",
@@ -80,7 +70,6 @@
     "dps":"12.96"
   },
   "13":{  
-    "name":"Wrap",
     "bars":"5",
     "damage":"25",
     "cooldown":"4.00",
@@ -88,7 +77,6 @@
     "dps":"6.25"
   },
   "14":{  
-    "name":"Hyper Beam",
     "bars":"1",
     "damage":"120",
     "cooldown":"5.00",
@@ -96,7 +84,6 @@
     "dps":"24.00"
   },
   "15":{  
-    "name":"Lick",
     "bars":1,
     "damage":"5",
     "cooldown":"0.50",
@@ -104,7 +91,6 @@
     "dps":"10.00"
   },
   "16":{  
-    "name":"Dark Pulse",
     "bars":"3",
     "damage":"45",
     "cooldown":"3.50",
@@ -112,7 +98,6 @@
     "dps":"12.86"
   },
   "18":{  
-    "name":"Sludge",
     "bars":"4",
     "damage":"30",
     "cooldown":"2.60",
@@ -120,7 +105,6 @@
     "dps":"11.54"
   },
   "19":{  
-    "name":"Metal Claw",
     "bars":1,
     "damage":"8",
     "cooldown":"0.63",
@@ -128,7 +112,6 @@
     "dps":"12.70"
   },
   "20":{  
-    "name":"Vice Grip",
     "bars":"5",
     "damage":"25",
     "cooldown":"2.10",
@@ -136,7 +119,6 @@
     "dps":"11.90"
   },
   "21":{  
-    "name":"Flame Wheel",
     "bars":"4",
     "damage":"40",
     "cooldown":"4.60",
@@ -144,7 +126,6 @@
     "dps":"8.70"
   },
   "22":{  
-    "name":"Megahorn",
     "bars":"1",
     "damage":"80",
     "cooldown":"3.20",
@@ -152,7 +133,6 @@
     "dps":"25.00"
   },
   "23":{  
-    "name":"Wing Attack",
     "bars":1,
     "damage":"9",
     "cooldown":"0.75",
@@ -160,7 +140,6 @@
     "dps":"12.00"
   },
   "24":{  
-    "name":"Flamethrower",
     "bars":"2",
     "damage":"55",
     "cooldown":"2.90",
@@ -168,7 +147,6 @@
     "dps":"18.97"
   },
   "25":{  
-    "name":"Sucker Punch",
     "bars":1,
     "damage":"7",
     "cooldown":"0.70",
@@ -176,7 +154,6 @@
     "dps":"10.00"
   },
   "26":{  
-    "name":"Dig",
     "bars":"3",
     "damage":"70",
     "cooldown":"5.80",
@@ -184,7 +161,6 @@
     "dps":"12.07"
   },
   "27":{  
-    "name":"Low Kick",
     "bars":1,
     "damage":"5",
     "cooldown":"0.60",
@@ -192,7 +168,6 @@
     "dps":"8.33"
   },
   "28":{  
-    "name":"Cross Chop",
     "bars":"1",
     "damage":"60",
     "cooldown":"2.00",
@@ -200,7 +175,6 @@
     "dps":"30.00"
   },
   "29":{  
-    "name":"Psycho Cut",
     "bars":1,
     "damage":"7",
     "cooldown":"0.57",
@@ -208,7 +182,6 @@
     "dps":"12.28"
   },
   "30":{  
-    "name":"Psybeam",
     "bars":"4",
     "damage":"40",
     "cooldown":"3.80",
@@ -216,7 +189,6 @@
     "dps":"10.53"
   },
   "31":{  
-    "name":"Earthquake",
     "bars":"1",
     "damage":"100",
     "cooldown":"4.20",
@@ -224,7 +196,6 @@
     "dps":"23.81"
   },
   "32":{  
-    "name":"Stone Edge",
     "bars":"1",
     "damage":"80",
     "cooldown":"3.10",
@@ -232,7 +203,6 @@
     "dps":"25.81"
   },
   "33":{  
-    "name":"Ice Punch",
     "bars":"3",
     "damage":"45",
     "cooldown":"3.50",
@@ -240,7 +210,6 @@
     "dps":"12.86"
   },
   "35":{  
-    "name":"Discharge",
     "bars":"3",
     "damage":"35",
     "cooldown":"2.50",
@@ -248,7 +217,6 @@
     "dps":"14.00"
   },
   "36":{  
-    "name":"Flash Cannon",
     "bars":"3",
     "damage":"60",
     "cooldown":"3.90",
@@ -256,7 +224,6 @@
     "dps":"15.38"
   },
   "37":{  
-    "name":"Peck",
     "bars":1,
     "damage":"10",
     "cooldown":"1.15",
@@ -264,7 +231,6 @@
     "dps":"8.70"
   },
   "38":{  
-    "name":"Drill Peck",
     "bars":"3",
     "damage":"40",
     "cooldown":"2.70",
@@ -272,7 +238,6 @@
     "dps":"14.81"
   },
   "39":{  
-    "name":"Ice Beam",
     "bars":"2",
     "damage":"65",
     "cooldown":"3.65",
@@ -280,7 +245,6 @@
     "dps":"17.81"
   },
   "40":{  
-    "name":"Blizzard",
     "bars":"1",
     "damage":"100",
     "cooldown":"3.90",
@@ -288,7 +252,6 @@
     "dps":"25.64"
   },
   "42":{  
-    "name":"Heat Wave",
     "bars":"1",
     "damage":"80",
     "cooldown":"3.80",
@@ -296,7 +259,6 @@
     "dps":"21.05"
   },
   "44":{  
-    "name":"Poison Jab",
     "bars":1,
     "damage":"12",
     "cooldown":"1.05",
@@ -304,7 +266,6 @@
     "dps":"11.43"
   },
   "45":{  
-    "name":"Aerial Ace",
     "bars":"4",
     "damage":"30",
     "cooldown":"2.90",
@@ -312,7 +273,6 @@
     "dps":"10.34"
   },
   "46":{  
-    "name":"Drill Run",
     "bars":"3",
     "damage":"50",
     "cooldown":"3.40",
@@ -320,7 +280,6 @@
     "dps":"14.71"
   },
   "47":{  
-    "name":"Petal Blizzard",
     "bars":"2",
     "damage":"65",
     "cooldown":"3.20",
@@ -328,7 +287,6 @@
     "dps":"20.31"
   },
   "49":{  
-    "name":"Bug Buzz",
     "bars":"2",
     "damage":"75",
     "cooldown":"4.25",
@@ -336,7 +294,6 @@
     "dps":"17.65"
   },
   "50":{  
-    "name":"Poison Fang",
     "bars":"5",
     "damage":"25",
     "cooldown":"2.40",
@@ -344,7 +301,6 @@
     "dps":"10.42"
   },
   "51":{  
-    "name":"Night Slash",
     "bars":"4",
     "damage":"30",
     "cooldown":"2.70",
@@ -352,7 +308,6 @@
     "dps":"11.11"
   },
   "53":{  
-    "name":"Bubble Beam",
     "bars":"4",
     "damage":"30",
     "cooldown":"2.90",
@@ -360,7 +315,6 @@
     "dps":"10.34"
   },
   "54":{  
-    "name":"Submission",
     "bars":"3",
     "damage":"30",
     "cooldown":"2.10",
@@ -368,7 +322,6 @@
     "dps":"14.29"
   },
   "55":{  
-    "name":"Karate Chop",
     "bars":1,
     "damage":"6",
     "cooldown":"0.80",
@@ -376,7 +329,6 @@
     "dps":"7.50"
   },
   "56":{  
-    "name":"Low Sweep",
     "bars":"4",
     "damage":"30",
     "cooldown":"2.25",
@@ -384,7 +336,6 @@
     "dps":"13.33"
   },
   "57":{  
-    "name":"Aqua Jet",
     "bars":"5",
     "damage":"25",
     "cooldown":"2.35",
@@ -392,7 +343,6 @@
     "dps":"10.64"
   },
   "58":{  
-    "name":"Aqua Tail",
     "bars":"2",
     "damage":"45",
     "cooldown":"2.35",
@@ -400,7 +350,6 @@
     "dps":"19.15"
   },
   "59":{  
-    "name":"Seed Bomb",
     "bars":"3",
     "damage":"40",
     "cooldown":"2.40",
@@ -408,7 +357,6 @@
     "dps":"16.67"
   },
   "60":{  
-    "name":"Psyshock",
     "bars":"3",
     "damage":"40",
     "cooldown":"2.70",
@@ -416,7 +364,6 @@
     "dps":"14.81"
   },
   "61":{  
-    "name":"Rock Throw",
     "bars":1,
     "damage":"12",
     "cooldown":"1.36",
@@ -424,7 +371,6 @@
     "dps":"8.82"
   },
   "62":{  
-    "name":"Ancient Power",
     "bars":"4",
     "damage":"35",
     "cooldown":"3.60",
@@ -432,7 +378,6 @@
     "dps":"9.72"
   },
   "63":{  
-    "name":"Rock Tomb",
     "bars":"4",
     "damage":"30",
     "cooldown":"3.40",
@@ -440,7 +385,6 @@
     "dps":"8.82"
   },
   "64":{  
-    "name":"Rock Slide",
     "bars":"3",
     "damage":"50",
     "cooldown":"3.20",
@@ -448,7 +392,6 @@
     "dps":"15.63"
   },
   "65":{  
-    "name":"Power Gem",
     "bars":"3",
     "damage":"40",
     "cooldown":"2.90",
@@ -456,7 +399,6 @@
     "dps":"13.79"
   },
   "68":{  
-    "name":"Shadow Claw",
     "bars":1,
     "damage":"11",
     "cooldown":"0.95",
@@ -464,7 +406,6 @@
     "dps":"11.58"
   },
   "69":{  
-    "name":"Ominous Wind",
     "bars":"4",
     "damage":"30",
     "cooldown":"3.10",
@@ -472,7 +413,6 @@
     "dps":"9.68"
   },
   "70":{  
-    "name":"Shadow Ball",
     "bars":"3",
     "damage":"45",
     "cooldown":"3.08",
@@ -480,7 +420,6 @@
     "dps":"14.61"
   },
   "71":{  
-    "name":"Bullet Punch",
     "bars":1,
     "damage":"10",
     "cooldown":"1.20",
@@ -488,7 +427,6 @@
     "dps":"8.33"
   },
   "72":{  
-    "name":"Magnet Bomb",
     "bars":"4",
     "damage":"30",
     "cooldown":"2.80",
@@ -496,7 +434,6 @@
     "dps":"10.71"
   },
   "73":{  
-    "name":"Steel Wing",
     "bars":1,
     "damage":"15",
     "cooldown":"1.33",
@@ -504,7 +441,6 @@
     "dps":"11.28"
   },
   "74":{  
-    "name":"Iron Head",
     "bars":"3",
     "damage":"30",
     "cooldown":"2.00",
@@ -512,7 +448,6 @@
     "dps":"15.00"
   },
   "76":{  
-    "name":"Spark",
     "bars":1,
     "damage":"7",
     "cooldown":"0.70",
@@ -520,7 +455,6 @@
     "dps":"10.00"
   },
   "77":{  
-    "name":"Thunder Punch",
     "bars":"3",
     "damage":"40",
     "cooldown":"2.40",
@@ -528,7 +462,6 @@
     "dps":"16.67"
   },
   "78":{  
-    "name":"Thunder",
     "bars":"1",
     "damage":"100",
     "cooldown":"4.30",
@@ -536,7 +469,6 @@
     "dps":"23.26"
   },
   "79":{  
-    "name":"Thunderbolt",
     "bars":"2",
     "damage":"55",
     "cooldown":"2.70",
@@ -544,7 +476,6 @@
     "dps":"20.37"
   },
   "80":{  
-    "name":"Twister",
     "bars":"5",
     "damage":"25",
     "cooldown":"2.70",
@@ -552,7 +483,6 @@
     "dps":"9.26"
   },
   "81":{  
-    "name":"Dragon Breath",
     "bars":1,
     "damage":"6",
     "cooldown":"0.50",
@@ -560,7 +490,6 @@
     "dps":"12.00"
   },
   "82":{  
-    "name":"Dragon Pulse",
     "bars":"2",
     "damage":"65",
     "cooldown":"3.60",
@@ -568,7 +497,6 @@
     "dps":"18.06"
   },
   "83":{  
-    "name":"Dragon Claw",
     "bars":"2",
     "damage":"35",
     "cooldown":"1.60",
@@ -576,7 +504,6 @@
     "dps":"21.88"
   },
   "84":{  
-    "name":"Disarming Voice",
     "bars":"5",
     "damage":"25",
     "cooldown":"3.90",
@@ -584,7 +511,6 @@
     "dps":"6.41"
   },
   "85":{  
-    "name":"Draining Kiss",
     "bars":"5",
     "damage":"25",
     "cooldown":"2.80",
@@ -592,7 +518,6 @@
     "dps":"8.93"
   },
   "86":{  
-    "name":"Dazzling Gleam",
     "bars":"3",
     "damage":"55",
     "cooldown":"4.20",
@@ -600,7 +525,6 @@
     "dps":"13.10"
   },
   "87":{  
-    "name":"Moonblast",
     "bars":"1",
     "damage":"85",
     "cooldown":"4.10",
@@ -608,7 +532,6 @@
     "dps":"20.73"
   },
   "88":{  
-    "name":"Play Rough",
     "bars":"2",
     "damage":"55",
     "cooldown":"2.90",
@@ -616,7 +539,6 @@
     "dps":"18.97"
   },
   "89":{  
-    "name":"Cross Poison",
     "bars":"4",
     "damage":"25",
     "cooldown":"1.50",
@@ -624,7 +546,6 @@
     "dps":"16.67"
   },
   "90":{  
-    "name":"Sludge Bomb",
     "bars":"2",
     "damage":"55",
     "cooldown":"2.60",
@@ -632,7 +553,6 @@
     "dps":"21.15"
   },
   "91":{  
-    "name":"Sludge Wave",
     "bars":"1",
     "damage":"70",
     "cooldown":"3.40",
@@ -640,7 +560,6 @@
     "dps":"20.59"
   },
   "92":{  
-    "name":"Gunk Shot",
     "bars":"1",
     "damage":"65",
     "cooldown":"3.00",
@@ -648,7 +567,6 @@
     "dps":"21.67"
   },
   "93":{  
-    "name":"Mud Shot",
     "bars":1,
     "damage":"6",
     "cooldown":"0.55",
@@ -656,7 +574,6 @@
     "dps":"10.91"
   },
   "94":{  
-    "name":"Bone Club",
     "bars":"4",
     "damage":"25",
     "cooldown":"1.60",
@@ -664,7 +581,6 @@
     "dps":"15.63"
   },
   "95":{  
-    "name":"Bulldoze",
     "bars":"4",
     "damage":"35",
     "cooldown":"3.40",
@@ -672,7 +588,6 @@
     "dps":"10.29"
   },
   "96":{  
-    "name":"Mud Bomb",
     "bars":"4",
     "damage":"30",
     "cooldown":"2.60",
@@ -680,7 +595,6 @@
     "dps":"11.54"
   },
   "97":{  
-    "name":"Fury Cutter",
     "bars":1,
     "damage":"3",
     "cooldown":"0.40",
@@ -688,7 +602,6 @@
     "dps":"7.50"
   },
   "98":{  
-    "name":"Bug Bite",
     "bars":1,
     "damage":"5",
     "cooldown":"0.45",
@@ -696,7 +609,6 @@
     "dps":"11.11"
   },
   "99":{  
-    "name":"Signal Beam",
     "bars":"3",
     "damage":"45",
     "cooldown":"3.10",
@@ -704,7 +616,6 @@
     "dps":"14.52"
   },
   "101":{  
-    "name":"Flame Charge",
     "bars":"5",
     "damage":"25",
     "cooldown":"3.10",
@@ -712,7 +623,6 @@
     "dps":"8.06"
   },
   "102":{  
-    "name":"Flame Burst",
     "bars":"4",
     "damage":"30",
     "cooldown":"2.10",
@@ -720,7 +630,6 @@
     "dps":"14.29"
   },
   "103":{  
-    "name":"Fire Blast",
     "bars":"1",
     "damage":"100",
     "cooldown":"4.10",
@@ -728,7 +637,6 @@
     "dps":"24.39"
   },
   "104":{  
-    "name":"Brine",
     "bars":"4",
     "damage":"25",
     "cooldown":"2.40",
@@ -736,7 +644,6 @@
     "dps":"10.42"
   },
   "105":{  
-    "name":"Water Pulse",
     "bars":"4",
     "damage":"35",
     "cooldown":"3.30",
@@ -744,7 +651,6 @@
     "dps":"10.61"
   },
   "106":{  
-    "name":"Scald",
     "bars":"3",
     "damage":"55",
     "cooldown":"4.00",
@@ -752,7 +658,6 @@
     "dps":"13.75"
   },
   "107":{  
-    "name":"Hydro Pump",
     "bars":"1",
     "damage":"90",
     "cooldown":"3.80",
@@ -760,7 +665,6 @@
     "dps":"23.68"
   },
   "108":{  
-    "name":"Psychic",
     "bars":"2",
     "damage":"55",
     "cooldown":"2.80",
@@ -768,7 +672,6 @@
     "dps":"19.64"
   },
   "110":{  
-    "name":"Ice Shard",
     "bars":1,
     "damage":"15",
     "cooldown":"1.40",
@@ -776,7 +679,6 @@
     "dps":"10.71"
   },
   "111":{  
-    "name":"Icy Wind",
     "bars":"5",
     "damage":"25",
     "cooldown":"3.80",
@@ -784,7 +686,6 @@
     "dps":"6.58"
   },
   "112":{  
-    "name":"Frost Breath",
     "bars":1,
     "damage":"9",
     "cooldown":"0.81",
@@ -792,7 +693,6 @@
     "dps":"11.11"
   },
   "115":{  
-    "name":"Fire Punch",
     "bars":"3",
     "damage":"40",
     "cooldown":"2.80",
@@ -800,7 +700,6 @@
     "dps":"14.29"
   },
   "116":{  
-    "name":"Solar Beam",
     "bars":"1",
     "damage":"120",
     "cooldown":"4.90",
@@ -808,7 +707,6 @@
     "dps":"24.49"
   },
   "117":{  
-    "name":"Leaf Blade",
     "bars":"2",
     "damage":"55",
     "cooldown":"2.80",
@@ -816,7 +714,6 @@
     "dps":"19.64"
   },
   "118":{  
-    "name":"Power Whip",
     "bars":"1",
     "damage":"70",
     "cooldown":"2.80",
@@ -824,7 +721,6 @@
     "dps":"25.00"
   },
   "119":{  
-    "name":"Splash",
     "bars":1,
     "damage":"0",
     "cooldown":"1.23",
@@ -832,7 +728,6 @@
     "dps":"0.00"
   },
   "120":{  
-    "name":"Acid",
     "bars":1,
     "damage":"10",
     "cooldown":"1.05",
@@ -840,7 +735,6 @@
     "dps":"9.52"
   },
   "121":{  
-    "name":"Air Cutter",
     "bars":"4",
     "damage":"30",
     "cooldown":"3.30",
@@ -848,7 +742,6 @@
     "dps":"9.09"
   },
   "122":{  
-    "name":"Hurricane",
     "bars":"1",
     "damage":"80",
     "cooldown":"3.20",
@@ -856,7 +749,6 @@
     "dps":"25.00"
   },
   "123":{  
-    "name":"Brick Break",
     "bars":"3",
     "damage":"30",
     "cooldown":"1.60",
@@ -864,7 +756,6 @@
     "dps":"18.75"
   },
   "124":{  
-    "name":"Cut",
     "bars":1,
     "damage":"12",
     "cooldown":"1.13",
@@ -872,7 +763,6 @@
     "dps":"10.62"
   },
   "125":{  
-    "name":"Swift",
     "bars":"4",
     "damage":"30",
     "cooldown":"3.00",
@@ -880,7 +770,6 @@
     "dps":"10.00"
   },
   "126":{  
-    "name":"Horn Attack",
     "bars":"4",
     "damage":"25",
     "cooldown":"2.20",
@@ -888,7 +777,6 @@
     "dps":"11.36"
   },
   "127":{  
-    "name":"Stomp",
     "bars":"4",
     "damage":"30",
     "cooldown":"2.10",
@@ -896,7 +784,6 @@
     "dps":"14.29"
   },
   "129":{  
-    "name":"Hyper Fang",
     "bars":"3",
     "damage":"35",
     "cooldown":"2.10",
@@ -904,7 +791,6 @@
     "dps":"16.67"
   },
   "131":{  
-    "name":"Body Slam",
     "bars":"2",
     "damage":"40",
     "cooldown":"1.56",
@@ -912,7 +798,6 @@
     "dps":"25.64"
   },
   "133":{  
-    "name":"Struggle",
     "bars":"5",
     "damage":"15",
     "cooldown":"1.70",
@@ -920,7 +805,6 @@
     "dps":"8.85"
   },
   "200":{  
-    "name":"Fury Cutter",
     "bars":1,
     "damage":"3",
     "cooldown":"0.40",
@@ -928,7 +812,6 @@
     "dps":"7.50"
   },
   "201":{  
-    "name":"Bug Bite",
     "bars":1,
     "damage":"5",
     "cooldown":"0.45",
@@ -936,7 +819,6 @@
     "dps":"11.11"
   },
   "202":{  
-    "name":"Bite",
     "bars":1,
     "damage":"6",
     "cooldown":"0.50",
@@ -944,7 +826,6 @@
     "dps":"12.00"
   },
   "203":{  
-    "name":"Sucker Punch",
     "bars":1,
     "damage":"7",
     "cooldown":"0.70",
@@ -952,7 +833,6 @@
     "dps":"10.00"
   },
   "204":{  
-    "name":"Dragon Breath",
     "bars":1,
     "damage":"6",
     "cooldown":"0.50",
@@ -960,7 +840,6 @@
     "dps":"12.00"
   },
   "205":{  
-    "name":"Thunder Shock",
     "bars":1,
     "damage":"5",
     "cooldown":"0.60",
@@ -968,7 +847,6 @@
     "dps":"8.33"
   },
   "206":{  
-    "name":"Spark",
     "bars":1,
     "damage":"7",
     "cooldown":"0.70",
@@ -976,7 +854,6 @@
     "dps":"10.00"
   },
   "207":{  
-    "name":"Low Kick",
     "bars":1,
     "damage":"5",
     "cooldown":"0.60",
@@ -984,7 +861,6 @@
     "dps":"8.33"
   },
   "208":{  
-    "name":"Karate Chop",
     "bars":1,
     "damage":"6",
     "cooldown":"0.80",
@@ -992,7 +868,6 @@
     "dps":"7.50"
   },
   "209":{  
-    "name":"Ember",
     "bars":1,
     "damage":"10",
     "cooldown":"1.05",
@@ -1000,7 +875,6 @@
     "dps":"9.52"
   },
   "210":{  
-    "name":"Wing Attack",
     "bars":1,
     "damage":"9",
     "cooldown":"0.75",
@@ -1008,7 +882,6 @@
     "dps":"12.00"
   },
   "211":{  
-    "name":"Peck",
     "bars":1,
     "damage":"10",
     "cooldown":"1.15",
@@ -1016,7 +889,6 @@
     "dps":"8.70"
   },
   "212":{  
-    "name":"Lick",
     "bars":1,
     "damage":"5",
     "cooldown":"0.50",
@@ -1024,7 +896,6 @@
     "dps":"10.00"
   },
   "213":{  
-    "name":"Shadow Claw",
     "bars":1,
     "damage":"11",
     "cooldown":"0.95",
@@ -1032,7 +903,6 @@
     "dps":"11.58"
   },
   "214":{  
-    "name":"Vine Whip",
     "bars":1,
     "damage":"7",
     "cooldown":"0.65",
@@ -1040,7 +910,6 @@
     "dps":"10.77"
   },
   "215":{  
-    "name":"Razor Leaf",
     "bars":1,
     "damage":"15",
     "cooldown":"1.45",
@@ -1048,7 +917,6 @@
     "dps":"10.34"
   },
   "216":{  
-    "name":"Mud Shot",
     "bars":1,
     "damage":"6",
     "cooldown":"0.55",
@@ -1056,7 +924,6 @@
     "dps":"10.91"
   },
   "217":{  
-    "name":"Ice Shard",
     "bars":1,
     "damage":"15",
     "cooldown":"1.40",
@@ -1064,7 +931,6 @@
     "dps":"10.71"
   },
   "218":{  
-    "name":"Frost Breath",
     "bars":1,
     "damage":"9",
     "cooldown":"0.81",
@@ -1072,7 +938,6 @@
     "dps":"11.11"
   },
   "219":{  
-    "name":"Quick Attack",
     "bars":1,
     "damage":"10",
     "cooldown":"1.33",
@@ -1080,7 +945,6 @@
     "dps":"7.52"
   },
   "220":{  
-    "name":"Scratch",
     "bars":1,
     "damage":"6",
     "cooldown":"0.50",
@@ -1088,7 +952,6 @@
     "dps":"12.00"
   },
   "221":{  
-    "name":"Tackle",
     "bars":1,
     "damage":"12",
     "cooldown":"1.10",
@@ -1096,7 +959,6 @@
     "dps":"10.91"
   },
   "222":{  
-    "name":"Pound",
     "bars":1,
     "damage":"7",
     "cooldown":"0.54",
@@ -1104,7 +966,6 @@
     "dps":"12.96"
   },
   "223":{  
-    "name":"Cut",
     "bars":1,
     "damage":"12",
     "cooldown":"1.13",
@@ -1112,7 +973,6 @@
     "dps":"10.62"
   },
   "224":{  
-    "name":"Poison Jab",
     "bars":1,
     "damage":"12",
     "cooldown":"1.05",
@@ -1120,7 +980,6 @@
     "dps":"11.43"
   },
   "225":{  
-    "name":"Acid",
     "bars":1,
     "damage":"10",
     "cooldown":"1.05",
@@ -1128,7 +987,6 @@
     "dps":"9.52"
   },
   "226":{  
-    "name":"Psycho Cut",
     "bars":1,
     "damage":"7",
     "cooldown":"0.57",
@@ -1136,7 +994,6 @@
     "dps":"12.28"
   },
   "227":{  
-    "name":"Rock Throw",
     "bars":1,
     "damage":"12",
     "cooldown":"1.36",
@@ -1144,7 +1001,6 @@
     "dps":"8.82"
   },
   "228":{  
-    "name":"Metal Claw",
     "bars":1,
     "damage":"8",
     "cooldown":"0.63",
@@ -1152,7 +1008,6 @@
     "dps":"12.70"
   },
   "229":{  
-    "name":"Bullet Punch",
     "bars":1,
     "damage":"10",
     "cooldown":"1.20",
@@ -1160,7 +1015,6 @@
     "dps":"8.33"
   },
   "230":{  
-    "name":"Water Gun",
     "bars":1,
     "damage":"6",
     "cooldown":"0.50",
@@ -1168,7 +1022,6 @@
     "dps":"12.00"
   },
   "231":{  
-    "name":"Splash",
     "bars":1,
     "damage":"0",
     "cooldown":"1.23",
@@ -1176,7 +1029,6 @@
     "dps":"0.00"
   },
   "233":{  
-    "name":"Mud Slap",
     "bars":1,
     "damage":"15",
     "cooldown":"1.35",
@@ -1184,7 +1036,6 @@
     "dps":"11.11"
   },
   "234":{  
-    "name":"Zen Headbutt",
     "bars":1,
     "damage":"12",
     "cooldown":"1.05",
@@ -1192,7 +1043,6 @@
     "dps":"11.43"
   },
   "235":{  
-    "name":"Confusion",
     "bars":1,
     "damage":"15",
     "cooldown":"1.51",
@@ -1200,7 +1050,6 @@
     "dps":"9.93"
   },
   "236":{  
-    "name":"Poison Sting",
     "bars":1,
     "damage":"6",
     "cooldown":"0.58",
@@ -1208,7 +1057,6 @@
     "dps":"10.43"
   },
   "237":{  
-    "name":"Bubble",
     "bars":1,
     "damage":"25",
     "cooldown":"2.30",
@@ -1216,7 +1064,6 @@
     "dps":"10.87"
   },
   "238":{  
-    "name":"Feint Attack",
     "bars":1,
     "damage":"12",
     "cooldown":"1.04",
@@ -1224,7 +1071,6 @@
     "dps":"11.54"
   },
   "239":{  
-    "name":"Steel Wing",
     "bars":1,
     "damage":"15",
     "cooldown":"1.33",
@@ -1232,7 +1078,6 @@
     "dps":"11.28"
   },
   "240":{  
-    "name":"Fire Fang",
     "bars":1,
     "damage":"10",
     "cooldown":"0.84",
@@ -1240,7 +1085,6 @@
     "dps":"11.90"
   },
   "241":{  
-    "name":"Rock Smash",
     "bars":1,
     "damage":"15",
     "cooldown":"1.41",
