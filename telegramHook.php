@@ -13,8 +13,19 @@ require_once(__DIR__."/init.php");
 $content = file_get_contents("php://input");
 $update = json_decode($content, true);
 
-$text = $update["message"]["text"];
-$chat_id = $update["message"]["chat"]["id"];
+if (isset($update["message"])) {
+    $text = $update["message"]["text"];
+    $chat_id = $update["message"]["chat"]["id"];
+} else if (isset($update["callback_query"])) {
+    $text = $update["callback_query"]["data"];
+    $chat_id = $update["callback_query"]["message"]["chat"]["id"];
+    $telegram->answerCallbackQuery(array(
+        'callback_query_id' => $update["callback_query"]["id"],
+        'text' => 'Erfolgreich'
+    ));
+} else {
+    die();
+}
 
 $cChat->chat_id = $chat_id;
 $chat = $cChat->Search();
@@ -106,8 +117,10 @@ if(substr(strtolower($text), 0, 4) == "/add"){
 
     $reply = "";
     $selected = explode(",", substr($text, 5));
-    foreach($selected as $select){
-        $id = $pokemon->getID($select);
+    foreach($selected as $id){
+        if (!is_numeric($id)) {
+            $id = $pokemon->getID($id);
+        }
         if($id){
             $cNotifyPokemon->pokemon_id    = $id;
             $cNotifyPokemon->chat_id       = $chat_id;
@@ -133,8 +146,10 @@ if(substr(strtolower($text), 0, 7) == "/remove"){
 
     $reply = "";
     $selected = explode(",", substr($text, 8));
-    foreach($selected as $select) {
-        $id = $pokemon->getID($select);
+    foreach($selected as $id) {
+        if (!is_numeric($id)) {
+            $id = $pokemon->getID($id);
+        }
         if ($id) {
             $cNotifyPokemon->pokemon_id = $id;
             $cNotifyPokemon->chat_id = $chat_id;
@@ -272,6 +287,34 @@ if(substr(strtolower($text), 0, 3) == "/iv"){
 
 
 
+}
+
+/**
+ * Sendet den Sticker des Pokemons
+ */
+if(substr(strtolower($text), 0, 8) == "/sticker"){
+    $id = substr($text, 9);
+    if (!is_numeric($id)) {
+        $id = $pokemon->getID($id);
+    }
+    $bild = array(
+        'chat_id' => $chat_id,
+        'sticker' => $pokemon->getSticker($id)
+    );
+    $telegram->sendSticker($bild);
+}
+
+/**
+ * Sendet die Location des Pokemons
+ */
+if(substr(strtolower($text), 0, 9) == "/location"){
+    list($latitude, $longitude) = explode(' ', substr($text, 10));
+    $location = array(
+        'chat_id' => $chat_id,
+        'latitude' => $latitude,
+        'longitude' => $longitude
+    );
+    $telegram->sendLocation($location);
 }
 
 /**
