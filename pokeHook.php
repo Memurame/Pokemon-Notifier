@@ -57,10 +57,6 @@ if($typ == "pokemon"){
         $chat_id = $notifylist[$i]['chat_id'];
         $time = date("i\m s\s", $msg->disappear_time - time());
 
-        if(empty($notifylist[$i]['iv_val']))
-            { Log::write($chat_id . " hat keine Spezifischen IV-Werte zu diesem Pokemon definiert"); }
-        elseif($notifylist[$i]['iv_val'] > $IV )
-            { Log::write($chat_id . " hat den IV-Wert höher eingestellt"); }
 
         if($notifylist[$i]['iv_val'] <= $IV || empty($notifylist[$i]['iv_val'])){
             /**
@@ -89,8 +85,13 @@ if($typ == "pokemon"){
             if($returnBild['ok'] != 1 || $returnMessage['ok'] != 1 || $returnLocation['ok'] != 1){
                 Log::write("Pokemon " . $pokemon->getName($msg->pokemon_id) . ", Telegram Fehler: " . $returnBild['description'] ." -> " . $chat_id);
             } else {
-                Log::write($chat_id . ", Benachrichtigung gesendet: " . $pokemon->getName($msg->pokemon_id));
+                if(empty($notifylist[$i]['iv_val']))
+                    { Log::write($chat_id . " hat keine Spezifischen IV-Werte zu diesem Pokemon definiert, Benachrichtigung gesendet."); }
+                elseif($notifylist[$i]['iv_val'] <= $IV )
+                    { Log::write($chat_id . ", Benachrichtigung aufgrund zutreffenden IV-Wet gesendet"); }
             }
+        } else {
+            Log::write($chat_id . " hat den IV-Wert höher eingestellt");
         }
 
 
