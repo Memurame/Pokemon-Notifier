@@ -248,6 +248,15 @@ if(substr(strtolower($text), 0, 3) == "/iv"){
                       WHERE chat_id = :chat_id
                       AND pokemon_id = :pokemon_id");
                 }
+
+                $cNotifyPokemon->pokemon_id    = $id;
+                $cNotifyPokemon->chat_id       = $chat_id;
+                $exist = $cNotifyPokemon->search();
+                if(!$exist){
+                    $cNotifyPokemon->chat_id       = $chat_id;
+                    $cNotifyPokemon->pokemon_id    = $id;
+                    $create = $cNotifyPokemon->Create();
+                }
             }
         }
 

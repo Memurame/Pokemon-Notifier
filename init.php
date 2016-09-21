@@ -6,12 +6,9 @@
  */
 
 
-
-
 /**
  * Zeitzone festlegen
  */
-date_default_timezone_set('Europe/Zurich');
 
 $cfg = parse_ini_file(__DIR__."/config/config.ini", TRUE);
 
@@ -36,18 +33,22 @@ require_once(__DIR__."/libs/database.php");
 require_once(__DIR__ ."/libs/log.php");
 require_once(__DIR__ ."/libs/language.php");
 
+$db = new DB();
+
+if(file_exists("database.sql")){
+    $sql= file_get_contents("database.sql");
+    $queries = explode(";",$sql);
+    foreach($queries as $query){ $db->query($query); }
+    Log::write("Datenbank Update");
+    unlink("database.sql");
+}
+
 $cPokemon = new cPokemon();
 $cChat = new cChat();
 $cNotifyPokemon = new cNotifyPokemon();
 $cNotifyIV = new cNotifyIV();
-$db = new DB();
 $pokemon = new Pokemon(__DIR__, $cfg['notifier']['lang']);
 $telegram = new Telegram($cfg['telegram']['bot-id']);
-
-/**
- * Server Adresse auslesen um zu bestimmen welche Region zugreift.
- */
-
 
 
 Lang::set($cfg['notifier']['lang']);
