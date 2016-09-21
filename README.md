@@ -15,9 +15,9 @@ Each user can configure which notification for which Pokémon they want.
 - Clone repository ```git clone https://github.com/n30nl1ght/Pokemon-Notifier.git```
 - Rename ```config.ini.example``` to ```config.ini```
 - Edit ```config.ini``` and enter your db details, language and Telegram Bot API-Key.
+- Check that the directory ```logs/``` has write rights.
 - Define a webhook in your PokemonGo-Map config pointing to your domain, ```https://yourdomain.com/pokeHook.php```.
   HTTPS and a signed and valid SSL certificate are mandatory, these are Telegram API requirements !
-- Open the url where you put your install adding ```/install/index.php```. This will install the required tables to your DB. Remove ```install``` dir.
 - Set your Telegram WebHookURL:
   ```https://api.telegram.org/bot[API-KEY]/setWebhook?url=[URL to your install]/telegramHook.php```.
   As already said, this HAS to be HTTPS and your domain needs a valid SSL certificate.
