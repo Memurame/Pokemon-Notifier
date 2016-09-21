@@ -66,9 +66,6 @@ if($typ == "pokemon"){
             /**
              * Nachricht an telegram senden
              */
-            $bild = array(
-                'chat_id' => $chat_id,
-                'sticker' => $pokemon->getSticker($msg->pokemon_id));
             $name = array(
                 'chat_id' => $chat_id,
                 'text' => "*".$pokemon->getName($msg->pokemon_id) . " *" .  Lang::get("iv") . "*" . number_format($IV, 1, ",", "'").
@@ -76,18 +73,19 @@ if($typ == "pokemon"){
                     "\n\n" .  Lang::get("hit1") . $pokemon->getMoves($msg->move_1) . " (" . $pokemon->getMovesInfo($msg->move_1) . ")".
                     "\n" .  Lang::get("hit2") . $pokemon->getMoves($msg->move_2) . " (" . $pokemon->getMovesInfo($msg->move_2) . ")".
                     "\n\n" .  Lang::get("time") . date("H:i:s", $msg->disappear_time) ." ". "(" . $time . ")",
-                'parse_mode' => 'Markdown');
-            $location = array(
-                'chat_id' => $chat_id,
-                'latitude' => $msg->latitude,
-                'longitude' => $msg->longitude);
+                'parse_mode' => 'Markdown',
+                'reply_markup' => $telegram->buildInlineKeyBoard(array(
+                    array(
+                        $telegram->buildInlineKeyboardButton('Sticker', '', "/sticker $msg->pokemon_id"),
+                        $telegram->buildInlineKeyboardButton('Location', '', "/location $msg->latitude $msg->longitude"),
+                        $telegram->buildInlineKeyboardButton('Remove', '', "/remove $msg->pokemon_id")
+                    )
+                )));
 
-            $returnBild = $telegram->sendSticker($bild);
             $returnMessage = $telegram->sendMessage($name);
-            $returnLocation = $telegram->sendLocation($location);
 
-            if($returnBild['ok'] != 1 || $returnMessage['ok'] != 1 || $returnLocation['ok'] != 1){
-                Log::write("Pokemon " . $pokemon->getName($msg->pokemon_id) . ", Telegram Fehler: " . $returnBild['description'] ." -> " . $chat_id);
+            if($returnMessage['ok'] != 1){
+                Log::write("Pokemon " . $pokemon->getName($msg->pokemon_id) . ", Telegram Fehler: " . $returnMessage['description'] ." -> " . $chat_id);
             } else {
                 Log::write($chat_id . ", Benachrichtigung gesendet: " . $pokemon->getName($msg->pokemon_id));
             }
