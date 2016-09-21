@@ -18,5 +18,7 @@
   "hit1": "Attacke 1: ",
   "hit2": "Attacke 2: ",
   "setiv": "wurde als minimum IV-Wert gesetzt.",
-  "erroriv": "Der Wert muss eine Zahl sein und zwischen 1 und 100 liegen."
+  "erroriv": "Der Wert muss eine Zahl sein und zwischen 1 und 100 liegen.",
+  "addquestion": "Welches Pokémon willst du hinzufügen?",
+  "removequestion": "Welches Pokémon willst du entfernen?"
 }

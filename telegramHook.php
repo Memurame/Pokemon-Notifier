@@ -134,9 +134,26 @@ if(substr(strtolower($text), 0, 4) == "/add"){
         }
     }
 
-    if(!empty($reply)){ $reply .= Lang::get("added"); }
-    $content = array('chat_id' => $chat_id, 'text' => $reply);
-    $telegram->sendMessage($content);
+    if(!empty($reply)){
+        $reply .= Lang::get("added");
+        $content = array('chat_id' => $chat_id, 'text' => $reply);
+        $telegram->sendMessage($content);
+    } else {
+        $keyboardButtons = array();
+        foreach ($pokemon->pokemonArray() as $id => $pokemon) {
+            $cNotifyPokemon->pokemon_id = $id;
+            $cNotifyPokemon->chat_id = $chat_id;
+            if (!$cNotifyPokemon->Search()) {
+                $keyboardButtons[] = array($telegram->buildKeyboardButton("/add $pokemon[Name]"));
+            }
+        }
+        $content = array(
+            'chat_id' => $chat_id,
+            'text' => Lang::get("addquestion"),
+            'reply_markup' => $telegram->buildKeyBoard($keyboardButtons)
+        );
+        $telegram->sendMessage($content);
+    }
 }
 
 /**
@@ -166,6 +183,21 @@ if(substr(strtolower($text), 0, 7) == "/remove"){
     if(!empty($reply)){
         $reply .= Lang::get("removed");
         $content = array('chat_id' => $chat_id, 'text' => $reply);
+        $telegram->sendMessage($content);
+    } else {
+        $keyboardButtons = array();
+        foreach ($pokemon->pokemonArray() as $id => $pokemon) {
+            $cNotifyPokemon->pokemon_id = $id;
+            $cNotifyPokemon->chat_id = $chat_id;
+            if ($cNotifyPokemon->Search()) {
+                $keyboardButtons[] = array($telegram->buildKeyboardButton("/remove $pokemon[Name]"));
+            }
+        }
+        $content = array(
+            'chat_id' => $chat_id,
+            'text' => Lang::get("removequestion"),
+            'reply_markup' => $telegram->buildKeyBoard($keyboardButtons)
+        );
         $telegram->sendMessage($content);
     }
 

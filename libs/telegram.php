@@ -1352,13 +1352,6 @@ class Telegram {
             'request_contact' => $request_contact,
             'request_location' => $request_location
         );
-        if ($url != "") {
-            $replyMarkup['url'] = $url;
-        } else if ($callback_data != "") {
-            $replyMarkup['callback_data'] = $callback_data;
-        } else if ($switch_inline_query != "") {
-            $replyMarkup['switch_inline_query'] = $switch_inline_query;
-        }
         return $replyMarkup;
     }
 
