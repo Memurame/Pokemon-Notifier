@@ -55,8 +55,7 @@ class Log {
      * @param string $message
      */
     static private function edit($log,$date,$message) {
-        $logcontent = "Time : " . $date->format('H:i:s') . " -> " . $message ."\n";
-        $logcontent = file_get_contents($log) . $logcontent;
-        file_put_contents($log, $logcontent);
+        $logcontent = $date->format('H:i:s') . " -> " . $message ."\n";
+        file_put_contents($log, $logcontent, FILE_APPEND);
     }
 }

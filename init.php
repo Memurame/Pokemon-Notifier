@@ -11,7 +11,6 @@
 /**
  * Zeitzone festlegen
  */
-date_default_timezone_set('Europe/Zurich');
 
 $cfg = parse_ini_file(__DIR__."/config/config.ini", TRUE);
 
