@@ -35,12 +35,12 @@ require_once(__DIR__ ."/libs/language.php");
 
 $db = new DB();
 
-if(file_exists("logs/create.sql")){
-    $sql= file_get_contents("logs/create.sql");
+if(file_exists("sql/create.sql")){
+    $sql= file_get_contents("sql/create.sql");
     $queries = explode(";",$sql);
     foreach($queries as $query){ $db->query($query); }
     Log::write("Datenbank Update");
-    unlink("logs/create.sql");
+    unlink("sql/create.sql");
 }
 
 $cPokemon = new cPokemon();
