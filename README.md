@@ -32,9 +32,7 @@ Each user can configure which notification for which Pokémon they want.
 - /stop		= Stop notifications [Your configuration remains intact].
 - /reset	= Reset notifications to default.
 - /start	= Start communication with the bot.
-- /iv       = Setzen des Wertes ab welchem IV-Wert du über dieses Pokémon benachrichtigt werden möchtest.
+- /iv		= Set minimum IV-Value for a Pokémon you want to be notified about.
 
 #### Admin commands
 - /send		= Send a message to all users.
-- /cleandb	= Clean all Pokémon in the db that are not on the map anymore.
-
