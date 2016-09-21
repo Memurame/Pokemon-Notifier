@@ -15,6 +15,7 @@ class Pokemon
     public function __construct($path, $locale = "de") {
         $this->path = $path;
         $this->pokemonJson = $this->path . "/pokemon.json";
+        $this->movesInfoJson = $this->path . "/move-infos.json";
         $this->localeJson = $this->path . "/locales/" . $locale . "_pokemon.json";
         $this->movesJson = $this->path . "/locales/" . $locale . "_moves.json";
     }
@@ -45,6 +46,11 @@ class Pokemon
     public function getMoves($movesid){
         $array = $this->movesArray();
         return $array[$movesid];
+    }
+
+    public function getMovesInfo($movesid, $info = "damage"){
+        $array = $this->movesInfoArray();
+        return $array[$movesid][$info];
     }
 
     /**
@@ -136,6 +142,13 @@ class Pokemon
      */
     protected function movesArray(){
         return $this->getJson($this->movesJson);
+    }
+
+    /**
+     * @return mixed
+     */
+    protected function movesInfoArray(){
+        return $this->getJson($this->movesInfoJson);
     }
 
 
