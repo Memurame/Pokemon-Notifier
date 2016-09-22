@@ -24,7 +24,7 @@ if (isset($update["message"])) {
         'text' => 'Erfolgreich'
     ));
 } else {
-    die();
+    Log::write("TELEGRAM: Fehler beim empfangen der Daten\n" . $update, true);
 }
 
 $cChat->chat_id = $chat_id;
