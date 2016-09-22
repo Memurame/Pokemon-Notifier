@@ -372,4 +372,14 @@ if($chat && $chat[0]['admin']){
         }
 
     }
+
+    /**
+     * Fügt einen neuen Chat in die chats Tabelle und weisst diesem die standart Pokemons zu
+     */
+    if(substr(strtolower($text), 0, 9) == "/addgroup"){
+
+        $text = substr($text, 10);
+
+
+    }
 }
