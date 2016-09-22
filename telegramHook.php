@@ -149,11 +149,11 @@ if(substr(strtolower($text), 0, 4) == "/add"){
         $telegram->sendMessage($content);
     } else {
         $keyboardButtons = array();
-        foreach ($pokemon->pokemonArray() as $id => $pokemon) {
+        foreach ($pokemon->pokemonArray() as $id => $value) {
             $cNotifyPokemon->pokemon_id = $id;
             $cNotifyPokemon->chat_id = $chat_id;
             if (!$cNotifyPokemon->Search()) {
-                $keyboardButtons[] = array($telegram->buildKeyboardButton("/add $pokemon[Name]"));
+                $keyboardButtons[] = array($telegram->buildKeyboardButton("/add ".$pokemon->getName($id)));
             }
         }
         $content = array(
@@ -195,11 +195,11 @@ if(substr(strtolower($text), 0, 7) == "/remove"){
         $telegram->sendMessage($content);
     } else {
         $keyboardButtons = array();
-        foreach ($pokemon->pokemonArray() as $id => $pokemon) {
+        foreach ($pokemon->pokemonArray() as $id => $value) {
             $cNotifyPokemon->pokemon_id = $id;
             $cNotifyPokemon->chat_id = $chat_id;
             if ($cNotifyPokemon->Search()) {
-                $keyboardButtons[] = array($telegram->buildKeyboardButton("/remove $pokemon[Name]"));
+                $keyboardButtons[] = array($telegram->buildKeyboardButton("/remove ".$pokemon->getName($id)));
             }
         }
         $content = array(
@@ -338,8 +338,8 @@ if(substr(strtolower($text), 0, 3) == "/iv"){
             $telegram->sendMessage($content);
         } else {
             $keyboardButtons = array();
-            foreach ($pokemon->pokemonArray() as $id => $pokemon) {
-                $keyboardButtons[] = array($telegram->buildKeyboardButton("/iv $iv $pokemon[Name]"));
+            foreach ($pokemon->pokemonArray() as $id => $value) {
+                $keyboardButtons[] = array($telegram->buildKeyboardButton("/iv $iv ".$pokemon->getName($id)));
             }
 
             $content = array(
