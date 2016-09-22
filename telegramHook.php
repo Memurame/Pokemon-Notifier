@@ -260,6 +260,9 @@ if(strtolower($text) == "/reset") {
     $cNotifyPokemon->chat_id = $chat_id;
     $delete = $cNotifyPokemon->delete();
 
+    $cNotifyIV->chat_id = $chat_id;
+    $delete = $cNotifyIV->delete();
+
     $notify_pokemon = array();
     for($i=1; $i <= count($pokemon->pokemonArray()); $i++){
         if($pokemon->getNotify($i)){
