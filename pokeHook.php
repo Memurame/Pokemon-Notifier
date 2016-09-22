@@ -29,7 +29,11 @@ $typ = $json_decode->type;
  */
 if($typ == "pokemon"){
     Log::write("Pokemon " . $pokemon->getName($msg->pokemon_id) . " per Webhook erhalten");
-    $IV = ($msg->individual_attack + $msg->individual_defense + $msg->individual_stamina)/(15+15+15)*100;
+    $IV = 0;
+
+    if (isset($msg->individual_attack) && isset($msg->individual_defense) && isset($msg->individual_stamina)) {
+        $IV = ($msg->individual_attack + $msg->individual_defense + $msg->individual_stamina)/(15+15+15)*100;
+    }
 
     /**
      * Prüfen welcher chat notifications zum pokemon erhalten möchte
@@ -62,13 +66,17 @@ if($typ == "pokemon"){
             /**
              * Nachricht an telegram senden
              */
+            $text = '*' . $pokemon->getName($msg->pokemon_id) . '*';
+            if ($IV) {
+                $text .= ' ' .  Lang::get('iv') . '*' . number_format($IV, 1, ',', '\'') . "*%\n" .
+                    Lang::get('attack') . $msg->individual_attack . ' / ' .  Lang::get('defense') . $msg->individual_defense . ' / ' .  Lang::get('stamina') . $msg->individual_stamina . "\n\n" .
+                    Lang::get('hit1') . $pokemon->getMoves($msg->move_1) . ' (' . $pokemon->getMovesInfo($msg->move_1) . ")\n" .
+                    Lang::get('hit2') . $pokemon->getMoves($msg->move_2) . ' (' . $pokemon->getMovesInfo($msg->move_2) . ')';
+            }
+            $text .= "\n\n" .  Lang::get('time') . date('H:i:s', $msg->disappear_time) .' '. '(' . $time . ')';
             $name = array(
                 'chat_id' => $chat_id,
-                'text' => "*".$pokemon->getName($msg->pokemon_id) . " *" .  Lang::get("iv") . "*" . number_format($IV, 1, ",", "'").
-                    "*%\n" .  Lang::get("attack") . $msg->individual_attack." / " .  Lang::get("defense") . $msg->individual_defense ." / " .  Lang::get("stamina") . $msg->individual_stamina.
-                    "\n\n" .  Lang::get("hit1") . $pokemon->getMoves($msg->move_1) . " (" . $pokemon->getMovesInfo($msg->move_1) . ")".
-                    "\n" .  Lang::get("hit2") . $pokemon->getMoves($msg->move_2) . " (" . $pokemon->getMovesInfo($msg->move_2) . ")".
-                    "\n\n" .  Lang::get("time") . date("H:i:s", $msg->disappear_time) ." ". "(" . $time . ")",
+                'text' => $text,
                 'parse_mode' => 'Markdown',
                 'reply_markup' => $telegram->buildInlineKeyBoard(array(
                     array(
