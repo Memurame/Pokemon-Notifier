@@ -222,15 +222,31 @@ if(strtolower($text) == "/list") {
 
     $cNotifyPokemon->chat_id = $chat_id;
     $notify = $cNotifyPokemon->search();
-
     foreach($notify as $key){
-        array_push($notify_pokemon, $pokemon->getName($key['pokemon_id']));
+
+        $text = $pokemon->getName($key['pokemon_id']);
+
+        $cNotifyIV->chat_id     = $chat_id;
+        $cNotifyIV->pokemon_id  = $key['pokemon_id'];
+        $find = $cNotifyIV->search();
+        if($find){
+          $text .= "(" . $find[0]['iv_val'] . "%) ";
+        }
+
+        array_push($notify_pokemon, $text);
     }
 
-    $reply = Lang::get("replylist");
-    $reply .= implode(", ", $notify_pokemon);
-    $content = array('chat_id' => $chat_id, 'text' => $reply);
-    $telegram->sendMessage($content);
+    $reply = array(
+        'chat_id' => $chat_id,
+        'text' => Lang::get("replylist") . implode(", ", $notify_pokemon),
+        'reply_markup' => $telegram->buildInlineKeyBoard(array(
+            array(
+                $telegram->buildInlineKeyboardButton('add', '', "/add"),
+                $telegram->buildInlineKeyboardButton('remove', '', "/remove")
+            )
+        )));
+
+    $telegram->sendMessage($reply);
 
 }
 
