@@ -23,10 +23,17 @@ class Lang
         { Log::write("The language file does not exist", true); }
     }
 
-    public static function get($text){
+    public static function get($text, $parameters = array()){
         if(empty(self::$lang)){ Log::write("There was no defined language", true); }
         if(array_key_exists($text, self::$lang))
-        { return self::$lang->$text; }
+        {
+            $text = self::$lang->$text;
+            foreach($parameters as $key => $parameter){
+                $text = str_replace("{".$key."}", $parameter, $text);
+            }
+
+            return $text;
+        }
         else
         { Log::write("The text could not be translated: " . $text); }
 
