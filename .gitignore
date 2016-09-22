@@ -2,7 +2,6 @@
 config/config.ini
 node_modules/
 test.php
-test.txt
-blocked
 logs/*
 !logs/.htaccess
+sql/create.sql.backup

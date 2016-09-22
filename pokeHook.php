@@ -22,47 +22,25 @@ $json_decode = json_decode($data);
 $msg = $json_decode->message;
 $typ = $json_decode->type;
 
-Log::write($place . ": Pokemon " . $pokemon->getName($msg->pokemon_id) . " per Webhook erhalten");
-/**
- * ############################################################
- * Zugriffs Berechtigung prüfen
- * Nur zugriffe mit dem richtigen KEY haben zugriff
- *
- * Prüfen ob der KEY mit dem der Map übereinstimmt
- * Wenn nicht wird der Push verweigert
- *
- * !! Dieser Schutz wird nur aktiv wenn du in der config einen Webhook Key hinterlegt hast!!
- * ############################################################
- */
-if(!empty($cfg['webhook']['key'])){
-    if(isset($_SERVER['HTTP_WEBHOOKKEY'])){
-        if($_SERVER['HTTP_WEBHOOKKEY'] != $cfg['webhook']['key']){
-            http_response_code(401);
-            Log::write("Wrong Webhook KEY.", true);
-        }
-    } else {
-        http_response_code(401);
-        Log::write("No defined Webhook KEY", true);
-    }
-}
 
-/**
- * ############################################################
- * ############################################################
- */
 
 /**
  * Prüffen ob es sich um ein Pokemon handelt
  */
 if($typ == "pokemon"){
-    $IV = ($msg->individual_attack + $msg->individual_defense + $msg->individual_stamina)/(15+15+15)*100;
+    Log::write("Pokemon " . $pokemon->getName($msg->pokemon_id) . " per Webhook erhalten");
+    $IV = 0;
+
+    if (isset($msg->individual_attack) && isset($msg->individual_defense) && isset($msg->individual_stamina)) {
+        $IV = ($msg->individual_attack + $msg->individual_defense + $msg->individual_stamina)/(15+15+15)*100;
+    }
 
     /**
      * Prüfen welcher chat notifications zum pokemon erhalten möchte
      */
 
     $db->bind("pokemon_id", $msg->pokemon_id);
-    $db->bind("place", $place);
+    $db->bind("place", PLACE);
     $notifylist = $db->query("
         SELECT chats.chat_id, chats.place, notify_pokemon.pokemon_id, notify_iv.iv_val 
         FROM notify_pokemon 
@@ -75,44 +53,78 @@ if($typ == "pokemon"){
         ORDER BY priority desc");
     $i = 0;
 
-    if(empty($notifylist)){ Log::write($place . ": Pokemon " . $pokemon->getName($msg->pokemon_id) . ", keine Benachrichtigung zu diesem Pokemon gefunden."); }
+    if(empty($notifylist)){
+        Log::write($pokemon->getName($msg->pokemon_id) .
+            ", keine Benachrichtigungen zu diesem Pokemon gefunden."); }
 
     while($i < count($notifylist)){
+        $chat_id = $notifylist[$i]['chat_id'];
+        $time = date("i\m s\s", $msg->disappear_time - time());
+
+
         if($notifylist[$i]['iv_val'] <= $IV || empty($notifylist[$i]['iv_val'])){
             /**
              * Nachricht an telegram senden
              */
-            $chat_id = $notifylist[$i]['chat_id'];
-            $time = date("i\m s\s", $msg->disappear_time - time());
-            $bild = array(
-                'chat_id' => $chat_id,
-                'sticker' => $pokemon->getSticker($msg->pokemon_id));
+            $text = '*' . $pokemon->getName($msg->pokemon_id) . '*';
+            if ($IV) {
+                $text .= ' ' .  Lang::get('iv') . '*' . number_format($IV, 1, ',', '\'') . "*%\n" .
+                    Lang::get('attack') . $msg->individual_attack . ' / ' .  Lang::get('defense') . $msg->individual_defense . ' / ' .  Lang::get('stamina') . $msg->individual_stamina . "\n\n" .
+                    Lang::get('hit1') . $pokemon->getMoves($msg->move_1) . ' (' . $pokemon->getMovesInfo($msg->move_1) . ")\n" .
+                    Lang::get('hit2') . $pokemon->getMoves($msg->move_2) . ' (' . $pokemon->getMovesInfo($msg->move_2) . ')';
+            }
+            $text .= "\n\n" .  Lang::get('time') . date('H:i:s', $msg->disappear_time) .' '. '(' . $time . ')';
             $name = array(
                 'chat_id' => $chat_id,
-                'text' => "*".$pokemon->getName($msg->pokemon_id) . " *" .  Lang::get("iv") . "*" . number_format($IV, 1, ",", "'").
-                    "*%\n" .  Lang::get("attack") . $msg->individual_attack." / " .  Lang::get("defense") . $msg->individual_defense ." / " .  Lang::get("stamina") . $msg->individual_stamina.
-                    "\n\n" .  Lang::get("hit1") . $pokemon->getMoves($msg->move_1).
-                    "\n" .  Lang::get("hit2") . $pokemon->getMoves($msg->move_2).
-                    "\n\n" .  Lang::get("time") . date("H:i:s", $msg->disappear_time) ." ". "(" . $time . ")",
-                'parse_mode' => 'Markdown');
-            $location = array(
-                'chat_id' => $chat_id,
-                'latitude' => $msg->latitude,
-                'longitude' => $msg->longitude);
+                'text' => $text,
+                'parse_mode' => 'Markdown',
+                'reply_markup' => $telegram->buildInlineKeyBoard(array(
+                    array(
+                        $telegram->buildInlineKeyboardButton('Sticker', '', "/sticker $msg->pokemon_id"),
+                        $telegram->buildInlineKeyboardButton('Location', '', "/location $msg->latitude $msg->longitude"),
+                        $telegram->buildInlineKeyboardButton('Remove', '', "/remove $msg->pokemon_id")
+                    )
+                )));
 
-            $returnBild = $telegram->sendSticker($bild);
-            $returnMessage = $telegram->sendMessage($name);
-            $returnLocation = $telegram->sendLocation($location);
+            /**
+             * reypl_markup entfernen wenne s sich um einen Kanal handelt
+             */
+            if(substr($chat_id, 0, 1) == "@" || $chat_id < 0){
+                unset($name['reply_markup']);
 
-            if($returnBild['ok'] != 1 || $returnMessage['ok'] != 1 || $returnLocation['ok'] != 1){
-                Log::write($place . ": Pokemon " . $pokemon->getName($msg->pokemon_id) . ", Fehler beim senden der Telegram Nachricht");
+                $bild = array(
+                    'chat_id' => $chat_id,
+                    'sticker' => $pokemon->getSticker($msg->pokemon_id));
+
+                $location = array(
+                    'chat_id' => $chat_id,
+                    'latitude' => $msg->latitude,
+                    'longitude' => $msg->longitude);
+
+                $returnBild = $telegram->sendSticker($bild);
+                $returnMessage = $telegram->sendMessage($name);
+                $returnLocation = $telegram->sendLocation($location);
             } else {
-                Log::write($place . ": Pokemon " . $pokemon->getName($msg->pokemon_id) . ", Benachrichtigung gesendet an " . $chat_id);
+                $returnMessage = $telegram->sendMessage($name);
             }
+
+
+
+            if($returnMessage['ok'] != 1){
+                Log::write("Pokemon " . $pokemon->getName($msg->pokemon_id) . ", Telegram Fehler: " . $returnMessage['description'] ." -> " . $chat_id);
+            } else {
+                if(empty($notifylist[$i]['iv_val']))
+                    { Log::write($chat_id . " hat keine Spezifischen IV-Werte zu diesem Pokemon definiert, Benachrichtigung gesendet."); }
+                elseif($notifylist[$i]['iv_val'] <= $IV )
+                    { Log::write($chat_id . ", Benachrichtigung aufgrund zutreffenden IV-Wet gesendet"); }
+            }
+        } else {
+            Log::write($chat_id . " hat den IV-Wert höher eingestellt");
         }
 
 
         $i++;
     }
+    Log::write("_____________________________________________");
 }
 ?>

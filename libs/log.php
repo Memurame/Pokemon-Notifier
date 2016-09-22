@@ -26,16 +26,15 @@ class Log {
      * @param string $message
      */
     static public function write($message, $exit = false) {
+        if(!LOG){ die(); }
         self::$path = self::init();
 
         $date = new DateTime();
-        $log = self::$path . $date->format('Y-m-d').".txt";
+        $log = self::$path . "/" . $date->format('Y-m-d') . "-" . PLACE .".txt";
         if(is_dir(self::$path)) {
             if(!file_exists($log)) {
-                $fh  = fopen($log, 'a+') or die("Fatal Error !");
                 $logcontent = "Time : " . $date->format('H:i:s')."\r\n" . $message ."\r\n";
-                fwrite($fh, $logcontent);
-                fclose($fh);
+                file_put_contents($log, $logcontent, FILE_APPEND);
             }
             else {
                 self::edit($log, $date, $message);
@@ -56,8 +55,7 @@ class Log {
      * @param string $message
      */
     static private function edit($log,$date,$message) {
-        $logcontent = "Time : " . $date->format('H:i:s') . " -> " . $message ."\n";
-        $logcontent = $logcontent . file_get_contents($log);
-        file_put_contents($log, $logcontent);
+        $logcontent = $date->format('H:i:s') . " -> " . $message ."\n";
+        file_put_contents($log, $logcontent, FILE_APPEND);
     }
 }

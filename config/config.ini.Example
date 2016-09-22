@@ -11,9 +11,8 @@ bot-id = "APIKEY"
 admin-id = "TELEGRAMID"
 
 [notifier]
-lang = "de"
+lang = "de"     ; "de" or "en" possible
+log = true
 
-[webhook]
-key = ""
 
 
