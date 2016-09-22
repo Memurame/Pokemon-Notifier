@@ -98,9 +98,18 @@ if(strtolower($text) == "/stop"){
         $cChat->chat_id = $chat_id;
         $delete = $cChat->Delete();
 
-        $reply = Lang::get("stopped");
-        $content = array('chat_id' => $chat_id, 'text' => $reply);
-        $telegram->sendMessage($content);
+
+        $reply = array(
+            'chat_id' => $chat_id,
+            'text' => Lang::get("stopped"),
+            'reply_markup' => $telegram->buildInlineKeyBoard(array(
+                array(
+                    $telegram->buildInlineKeyboardButton('Start', '', "/start")
+                )
+            )));
+        $telegram->sendMessage($reply);
+
+
     } else {
         $reply = Lang::get("botalredystopped");
         $content = array('chat_id' => $chat_id, 'text' => $reply);
