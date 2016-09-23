@@ -66,14 +66,26 @@ if($typ == "pokemon"){
             /**
              * Nachricht an telegram senden
              */
-            $text = '*' . $pokemon->getName($msg->pokemon_id) . '*';
+            $text = '*' . $pokemon->getName($msg->pokemon_id) . "*\n\n";
             if ($IV) {
-                $text .= ' ' .  Lang::get('iv') . '*' . number_format($IV, 1, ',', '\'') . "*%\n" .
-                    Lang::get('attack') . $msg->individual_attack . ' / ' .  Lang::get('defense') . $msg->individual_defense . ' / ' .  Lang::get('stamina') . $msg->individual_stamina . "\n\n" .
-                    Lang::get('hit1') . $pokemon->getMoves($msg->move_1) . ' (' . $pokemon->getMovesInfo($msg->move_1) . ")\n" .
-                    Lang::get('hit2') . $pokemon->getMoves($msg->move_2) . ' (' . $pokemon->getMovesInfo($msg->move_2) . ')';
+                $text .= Lang::get('iv', array("iv" => number_format($IV, 1, ',', '\''))) .
+                    Lang::get('ivsplit', array(
+                        "attack"    => $msg->individual_attack,
+                        "defense"   => $msg->individual_defense,
+                        "stamina"   => $msg->individual_stamina
+                    )).
+                    Lang::get('hit1', array(
+                        "name" => $pokemon->getMoves($msg->move_1),
+                        "wert" => $pokemon->getMovesInfo($msg->move_1)
+                    )).
+                    Lang::get('hit2', array(
+                        "name" => $pokemon->getMoves($msg->move_2),
+                        "wert" => $pokemon->getMovesInfo($msg->move_2)
+                    ));
             }
-            $text .= "\n\n" .  Lang::get('time') . date('H:i:s', $msg->disappear_time) .' '. '(' . $time . ')';
+            $text .= Lang::get('time', array(
+                "time" => date('H:i:s', $msg->disappear_time),
+                "countdown" => $time));
             $name = array(
                 'chat_id' => $chat_id,
                 'text' => $text,
