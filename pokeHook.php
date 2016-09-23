@@ -66,9 +66,9 @@ if($typ == "pokemon"){
             /**
              * Nachricht an telegram senden
              */
-            $text = '*' . $pokemon->getName($msg->pokemon_id) . '*';
+            $text = '*' . $pokemon->getName($msg->pokemon_id) . "*\n\n";
             if ($IV) {
-                $text .= ' ' . Lang::get('iv', array("iv" => number_format($IV, 1, ',', '\''))) .
+                $text .= Lang::get('iv', array("iv" => number_format($IV, 1, ',', '\''))) .
                     Lang::get('ivsplit', array(
                         "attack"    => $msg->individual_attack,
                         "defense"   => $msg->individual_defense,

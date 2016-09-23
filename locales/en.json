@@ -10,7 +10,7 @@
   "replylist": "You receive notifications for the following Pokémon:\n\n{list}",
   "reset": "Configuration reset to default.",
   "adminmsg": "Message from Admin:\n\n{message}",
-  "iv": "with IV: *{iv}%*\n",
+  "iv": "IV: *{iv}%*\n",
   "time": "Remains until: {time} ({countdown})",
   "ivsplit": "Attack: {attack} / Defense: {defense} / Stamina: {stamina}\n\n",
   "hit1": "Attack 1: {name} ({wert})\n",
