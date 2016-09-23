@@ -19,5 +19,5 @@
   "erroriv": "Value has to be numeric and between 1 and 100.",
   "addquestion": "Which Pokémon do you want to add?",
   "removequestion": "Which Pokémon do you want to remove?",
-  "selectivpokemon": "Wähle die Pokémons aus bei denen du den IV-Wert auf {iv}% setzen möchtest."
+  "selectivpokemon": "Choose the Pokémon where you want to set the IV-Value to {iv}%."
 }
