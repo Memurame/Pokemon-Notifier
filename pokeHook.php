@@ -66,7 +66,7 @@ if($typ == "pokemon"){
             /**
              * Nachricht an telegram senden
              */
-            $text = '*' . $pokemon->getName($msg->pokemon_id) . "*\n\n";
+            $text = '*' . $pokemon->getName($msg->pokemon_id) . "* ";
             if ($IV) {
                 $text .= Lang::get('iv', array("iv" => number_format($IV, 1, ',', '\''))) .
                     Lang::get('ivsplit', array(
@@ -82,6 +82,8 @@ if($typ == "pokemon"){
                         "name" => $pokemon->getMoves($msg->move_2),
                         "wert" => $pokemon->getMovesInfo($msg->move_2)
                     ));
+            } else {
+                $text .= "\n";
             }
             $text .= Lang::get('time', array(
                 "time" => date('H:i:s', $msg->disappear_time),
