@@ -115,7 +115,12 @@ if($typ == "pokemon"){
                     'latitude' => $msg->latitude,
                     'longitude' => $msg->longitude);
 
-                $returnBild = $telegram->sendSticker($bild);
+                /**
+                 * Sticker nur senden wenn in der Config eingeschalten
+                 */
+                if($cfg['notifier']['sticker']){
+                    $returnBild = $telegram->sendSticker($bild);
+                }
                 $returnMessage = $telegram->sendMessage($name);
                 $returnLocation = $telegram->sendLocation($location);
             } else {

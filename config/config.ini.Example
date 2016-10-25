@@ -13,6 +13,7 @@ admin-id = "TELEGRAMID"
 [notifier]
 lang = "de"     ; "de" or "en" possible
 log = true
+sticker = true
 
 
 
