@@ -19,5 +19,7 @@
   "erroriv": "Der Wert muss eine Zahl sein und zwischen 1 und 100 liegen.",
   "addquestion": "Welches Pokémon willst du hinzufügen?",
   "removequestion": "Welches Pokémon willst du entfernen?",
-  "selectivpokemon": "Wähle die Pokémons aus bei denen du den IV-Wert auf {iv}% setzen möchtest."
+  "selectivpokemon": "Wähle die Pokémons aus bei denen du den IV-Wert auf {iv}% setzen möchtest.",
+  "groupidexists": "Die Gruppen mit der ID *{id}* existiert bereits",
+  "groupadded": "Die Gruppe *{id}* mit dem Alias *{alias}* wurde hinzugefügt und dem Ort *{place}* zugewiessen."
 }
