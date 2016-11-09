@@ -415,13 +415,23 @@ if($chat && $chat[0]['admin']){
         }
 
     }
+    /**
+     * Hilfe für den Admin
+     */
+    if(substr(strtolower($text), 0, 10) == "/adminhelp"){
+
+        $reply = Lang::get("adminhelp");
+        $content = array('chat_id' => $chat_id, 'text' => $reply);
+        $telegram->sendMessage($content);
+
+    }
 
     /**
      * Fügt einen neuen Chat in die chats Tabelle und weisst diesem die standart Pokemons zu
      */
-    if(substr(strtolower($text), 0, 9) == "/groupadd"){
+    if(substr(strtolower($text), 0, 12) == "/groupcreate"){
 
-        $text = trim(substr($text, 10));
+        $text = trim(substr($text, 13));
         $textArray = array_filter(explode(" ", $text, 3));
         if(!empty($textArray[0]) AND !empty($textArray[1])){
 
