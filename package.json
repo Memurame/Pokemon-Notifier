@@ -1,0 +1,35 @@
+{
+  "name": "pokemon-notifier",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "start": "gulp watch",
+    "build": "gulp default"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/n30nl1ght/Pokemon-Notifier.git"
+  },
+  "author": "Thomas Hirter <t.hirter@outlook.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/n30nl1ght/Pokemon-Notifier/issues"
+  },
+  "homepage": "https://github.com/n30nl1ght/Pokemon-Notifier#readme",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-animate": "^1.5.8",
+    "angular-ui-router": "^1.0.0-beta.2",
+    "bootstrap": "^4.0.0-alpha.4",
+    "browser-sync": "latest",
+    "font-awesome": "^4.6.3",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-concat-css": "^2.3.0",
+    "gulp-sass": "^2.3.2"
+  },
+  "devDependencies": {
+    "gulp-npm-script-sync": "^1.1.0"
+  }
+}

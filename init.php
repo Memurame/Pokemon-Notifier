@@ -12,12 +12,14 @@
 
 $cfg = parse_ini_file(__DIR__."/config/config.ini", TRUE);
 
-$urldecode = explode('.', $_SERVER['SERVER_NAME']);
-if($urldecode[0] == "www"){ array_shift($urldecode); }
+if(isset($_GET['region']) and !empty($_GET['region'])){
+    define("PLACE", strtolower($_GET['region']));
+} else {
+    define("PLACE", "NoPlace");
+}
 
 define("ROOT", __DIR__);
 define("LOG", $cfg['notifier']['log']);
-define("PLACE", strtolower($urldecode[0]));
 
 /**
  * Erforderliche Dateien einbinden und Klassen laden
