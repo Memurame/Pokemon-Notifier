@@ -18,7 +18,7 @@ gulp.task('watch', ['browser-sync', 'sass', 'scriptmerge'], function () {
     gulp.watch('app/*.js', ['scriptmerge']);
     gulp.watch('app/**/*.js', ['scriptmerge']);
     gulp.watch('assets/css/*.css', browserSync.reload);
-    gulp.watch('*.php', browserSync.reload);
+    gulp.watch('*.html', browserSync.reload);
     gulp.watch('app/template/*.html', browserSync.reload);
     gulp.watch('app/template/**/*.html', browserSync.reload);
     gulp.watch('app/*.js', browserSync.reload);

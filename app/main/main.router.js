@@ -5,15 +5,15 @@ app.config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
         .state('welcome', {
             url: '/welcome',
-            templateUrl: 'template/welcome.html'
+            templateUrl: 'app/template/welcome.html'
         })
         .state('about', {
             url: '/about',
-            templateUrl: 'template/about.html'
+            templateUrl: 'app/template/about.html'
         })
         .state('service', {
             url: '/service',
-            templateUrl: 'template/service.html'
+            templateUrl: 'app/template/service.html'
         });
 
 });

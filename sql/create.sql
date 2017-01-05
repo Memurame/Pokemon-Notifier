@@ -4,6 +4,7 @@ CREATE TABLE IF NOT EXISTS `chats` (
   `place` varchar(45) DEFAULT NULL,
   `priority` int(11) DEFAULT NULL,
   `alias` varchar(45) DEFAULT NULL,
+  `active` int(1) DEFAULT '1',
   PRIMARY KEY (`chat_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 CREATE TABLE IF NOT EXISTS `notify_iv` (
