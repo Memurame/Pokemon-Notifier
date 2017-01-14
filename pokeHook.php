@@ -93,7 +93,16 @@ if($typ == "pokemon"){
 
     while($i < count($notifylist)){
         $chat_id = $notifylist[$i]['chat_id'];
-        $time = date("i\m s\s", $msg->disappear_time - time());
+
+        $msg->disappear_time = $msg->disappear_time;
+
+        $time = $msg->disappear_time -time();
+        if($time <= 0){
+            $countdown = "*Zeit Abgelaufen*";
+        } else {
+            $countdown = date("H\h i\m s\s", $time);
+        }
+
 
 
         if($notifylist[$i]['iv_val'] <= $IV || empty($notifylist[$i]['iv_val'])){
