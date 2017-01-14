@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS `notify_pokemon` (
   `pokemon_id` int(11) NOT NULL,
   PRIMARY KEY (`chat_id`,`pokemon_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-CREATE TABLE `pokemonhistory` (
+CREATE TABLE  IF NOT EXISTS `pokemonhistory` (
   `encounter_id` varchar(200) NOT NULL,
   `pokemon_id` int(4) NOT NULL,
   `spawnpoint_id` varchar(50) NOT NULL,
