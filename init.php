@@ -15,7 +15,7 @@ $cfg = parse_ini_file(__DIR__."/config/config.ini", TRUE);
 if(isset($_GET['region']) and !empty($_GET['region'])){
     define("PLACE", strtolower($_GET['region']));
 } else {
-    define("PLACE", "NoPlace");
+    define("PLACE", $cfg['notifier']['place']);
 }
 
 define("ROOT", __DIR__);
@@ -27,7 +27,6 @@ define("LOG", $cfg['notifier']['log']);
 
 require_once(__DIR__."/libs/pokemon.php");
 require_once(__DIR__."/libs/telegram.php");
-require_once(__DIR__."/libs/cPokemon.php");
 require_once(__DIR__."/libs/cChat.php");
 require_once(__DIR__."/libs/cNotifyPokemon.php");
 require_once(__DIR__."/libs/cNotifyIV.php");
@@ -45,7 +44,6 @@ if(file_exists("sql/create.sql")){
     unlink("sql/create.sql");
 }
 
-$cPokemon = new cPokemon();
 $cChat = new cChat();
 $cNotifyPokemon = new cNotifyPokemon();
 $cNotifyIV = new cNotifyIV();
