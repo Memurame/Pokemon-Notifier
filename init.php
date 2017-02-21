@@ -5,19 +5,19 @@
  * @git https://github.com/n30nl1ght/Pokemon-Notifier
  */
 
-
 /**
- * Zeitzone festlegen
+ * COnfig Laden
  */
-
 $cfg = parse_ini_file(__DIR__."/config/config.ini", TRUE);
 
-$urldecode = explode('.', $_SERVER['SERVER_NAME']);
-if($urldecode[0] == "www"){ array_shift($urldecode); }
+if(isset($_GET['region']) and !empty($_GET['region'])){
+    define("PLACE", strtolower($_GET['region']));
+} else {
+    define("PLACE", $cfg['notifier']['place']);
+}
 
 define("ROOT", __DIR__);
 define("LOG", $cfg['notifier']['log']);
-define("PLACE", strtolower($urldecode[0]));
 
 /**
  * Erforderliche Dateien einbinden und Klassen laden
@@ -25,7 +25,6 @@ define("PLACE", strtolower($urldecode[0]));
 
 require_once(__DIR__."/libs/pokemon.php");
 require_once(__DIR__."/libs/telegram.php");
-require_once(__DIR__."/libs/cPokemon.php");
 require_once(__DIR__."/libs/cChat.php");
 require_once(__DIR__."/libs/cNotifyPokemon.php");
 require_once(__DIR__."/libs/cNotifyIV.php");
@@ -43,7 +42,6 @@ if(file_exists("sql/create.sql")){
     unlink("sql/create.sql");
 }
 
-$cPokemon = new cPokemon();
 $cChat = new cChat();
 $cNotifyPokemon = new cNotifyPokemon();
 $cNotifyIV = new cNotifyIV();

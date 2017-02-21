@@ -28,12 +28,45 @@ $typ = $json_decode->type;
  * Prüffen ob es sich um ein Pokemon handelt
  */
 if($typ == "pokemon"){
-    Log::write("Pokemon " . $pokemon->getName($msg->pokemon_id) . " per Webhook erhalten");
+    Log::write($data);
     $IV = 0;
-
     if (isset($msg->individual_attack) && isset($msg->individual_defense) && isset($msg->individual_stamina)) {
         $IV = ($msg->individual_attack + $msg->individual_defense + $msg->individual_stamina)/(15+15+15)*100;
     }
+
+    /**
+     * Prüfen ob da Pokemon bereits per Webhook empfangen wurde.
+     * Wenn Bereits ein eintrag vorhanden wird das Script abgebrochen damit keine Doppelten benachrichtigungen gesendet werden.
+     */
+    $db->bind("pokemon_id", $msg->pokemon_id);
+    $db->bind("encounter_id", $msg->encounter_id);
+    $db->bind("spawnpoint_id", $msg->spawnpoint_id);
+    $db->bind("disappear_time", $msg->disappear_time);
+    $checkDuplicate = $db->query("SELECT * FROM pokemonhistory
+        WHERE pokemon_id = :pokemon_id
+        AND encounter_id = :encounter_id
+        AND spawnpoint_id = :spawnpoint_id
+        AND disappear_time = :disappear_time");
+
+    if(!empty($checkDuplicate)){
+        Log::write("Doppelter Webhook eintrag erhalten.",true);
+    }
+
+
+    $db->bind("pokemon_id", $msg->pokemon_id);
+    $db->bind("encounter_id", $msg->encounter_id);
+    $db->bind("spawnpoint_id", $msg->spawnpoint_id);
+    $db->bind("disappear_time", $msg->disappear_time);
+    $insertPokemon = $db->query("INSERT INTO pokemonhistory SET 
+        pokemon_id = :pokemon_id,
+        encounter_id = :encounter_id,
+        spawnpoint_id = :spawnpoint_id,
+        disappear_time = :disappear_time");
+
+
+
+
+
 
     /**
      * Prüfen welcher chat notifications zum pokemon erhalten möchte
@@ -42,7 +75,7 @@ if($typ == "pokemon"){
     $db->bind("pokemon_id", $msg->pokemon_id);
     $db->bind("place", PLACE);
     $notifylist = $db->query("
-        SELECT chats.chat_id, chats.place, notify_pokemon.pokemon_id, notify_iv.iv_val 
+        SELECT chats.chat_id, chats.place, chats.active, notify_pokemon.pokemon_id, notify_iv.iv_val 
         FROM notify_pokemon 
         LEFT JOIN chats 
         ON notify_pokemon.chat_id = chats.chat_id 
@@ -50,6 +83,7 @@ if($typ == "pokemon"){
         ON notify_pokemon.chat_id = notify_iv.chat_id AND notify_pokemon.pokemon_id = notify_iv.pokemon_id
         WHERE notify_pokemon.pokemon_id = :pokemon_id
         AND chats.place = :place
+        AND chats.active = '1'
         ORDER BY priority desc");
     $i = 0;
 
@@ -59,7 +93,16 @@ if($typ == "pokemon"){
 
     while($i < count($notifylist)){
         $chat_id = $notifylist[$i]['chat_id'];
-        $time = date("i\m s\s", $msg->disappear_time - time());
+
+        $msg->disappear_time = $msg->disappear_time;
+
+        $time = $msg->disappear_time -time();
+        if($time <= 0){
+            $countdown = "*Zeit Abgelaufen*";
+        } else {
+            $countdown = date("H\h i\m s\s", $time);
+        }
+
 
 
         if($notifylist[$i]['iv_val'] <= $IV || empty($notifylist[$i]['iv_val'])){
@@ -144,6 +187,5 @@ if($typ == "pokemon"){
 
         $i++;
     }
-    Log::write("_____________________________________________");
 }
 ?>

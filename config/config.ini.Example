@@ -14,6 +14,8 @@ admin-id = "TELEGRAMID"
 lang = "de"     ; "de" or "en" possible
 log = true
 sticker = true
+place = Default
 
-
+[webinterface]
+password = 1388
 
