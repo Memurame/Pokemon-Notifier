@@ -14,8 +14,7 @@ class Pokemon
      */
     public function __construct($path, $locale = "de") {
         $this->path = $path;
-        $this->pokemonJson = $this->path . "/pokemon.json";
-        $this->movesInfoJson = $this->path . "/move-infos.json";
+        $this->sticker = $this->path . "/stickers.json";
         $this->localeJson = $this->path . "/locales/" . $locale . "_pokemon.json";
         $this->movesJson = $this->path . "/locales/" . $locale . "_moves.json";
     }
@@ -26,18 +25,10 @@ class Pokemon
      * @return mixed
      */
     public function getSticker($pokemonid){
-        return $this->getPokemon($pokemonid, "Sticker");
+        $sticker = $this->stickerArray();
+        return $sticker[$pokemonid];
     }
 
-    /**
-     * Liest die Rarität angabe aus und gibt diese zurück.
-     * @param int $pokemonid
-     * @return string
-     */
-    public function getNotify($pokemonid){
-            return $this->getPokemon($pokemonid, "Notify");
-
-    }
 
     /**
      * @param $movesid
@@ -46,11 +37,6 @@ class Pokemon
     public function getMoves($movesid){
         $array = $this->movesArray();
         return $array[$movesid];
-    }
-
-    public function getMovesInfo($movesid, $info = "damage"){
-        $array = $this->movesInfoArray();
-        return $array[$movesid][$info];
     }
 
     /**
@@ -63,30 +49,6 @@ class Pokemon
         return $array[$pokemonid];
     }
 
-    /**
-     * Sucht anhand der Pokemon ID den Namen
-     * @param int $pokemonid
-     * @return string
-     */
-    public function getRarity($pokemonid){
-        switch( $this->getPokemon($pokemonid, "Rarity") ){
-            case "Common":
-                return "Häufig";
-                break;
-            case "Uncommon":
-                return "Nicht Häufig";
-                break;
-            case "Rare":
-                return "Selten";
-                break;
-            case "Very Rare":
-                return "Sehr Selten";
-                break;
-            case "Ultra Rare":
-                return "Ultra Selten";
-                break;
-        }
-    }
 
     /**
      * Sucht anhand des Pokemon Namen die ID
@@ -101,17 +63,6 @@ class Pokemon
         }
     }
 
-    /**
-     * Bereitet das Pokemon Array für den zugriff vor
-     * @param int $pokemonid
-     * @param string $info
-     * @return array
-     */
-    protected function getPokemon($pokemonid, $info){
-        $pokemon = $this->pokemonArray();
-        return $pokemon[$pokemonid][$info];
-
-    }
 
     /**
      * @param $pokemonid
@@ -124,10 +75,10 @@ class Pokemon
     }
 
     /**
-     * @return array
+     * @return mixed
      */
-    public function pokemonArray(){
-        return $this->getJson($this->pokemonJson);
+    protected function stickerArray(){
+        return $this->getJson($this->sticker);
     }
 
     /**
@@ -142,13 +93,6 @@ class Pokemon
      */
     protected function movesArray(){
         return $this->getJson($this->movesJson);
-    }
-
-    /**
-     * @return mixed
-     */
-    protected function movesInfoArray(){
-        return $this->getJson($this->movesInfoJson);
     }
 
 

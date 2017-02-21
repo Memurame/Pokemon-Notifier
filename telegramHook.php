@@ -48,22 +48,8 @@ if (strtolower($text) == "/start") {
 
         $cNotifyPokemon->chat_id = $chat_id;
         if(empty($cNotifyPokemon->Search())){
-            $notify_pokemon = array();
-            for($i=1; $i <= count($pokemon->pokemonArray()); $i++){
-                if($pokemon->getNotify($i)){
-                    array_push($notify_pokemon, $pokemon->getName($i));
-
-                    $cNotifyPokemon->chat_id       = $chat_id;
-                    $cNotifyPokemon->pokemon_id    = $i;
-                    $create = $cNotifyPokemon->Create();
-                }
-            }
 
             $reply = Lang::get("welcome");
-            $content = array('chat_id' => $chat_id, 'text' => $reply);
-            $telegram->sendMessage($content);
-
-            $reply = implode(", ", $notify_pokemon);
             $content = array('chat_id' => $chat_id, 'text' => $reply);
             $telegram->sendMessage($content);
 
@@ -263,16 +249,7 @@ if(strtolower($text) == "/reset") {
     $cNotifyIV->chat_id = $chat_id;
     $delete = $cNotifyIV->delete();
 
-    $notify_pokemon = array();
-    for($i=1; $i <= count($pokemon->pokemonArray()); $i++){
-        if($pokemon->getNotify($i)){
-            array_push($notify_pokemon, $pokemon->getName($i));
-
-            $cNotifyPokemon->chat_id       = $chat_id;
-            $cNotifyPokemon->pokemon_id    = $i;
-            $create = $cNotifyPokemon->create();
-        }
-    }
+    // Noch alle Pokemon und IV einstellungen aus der DB löschen
 
 
     $reply = Lang::get("reset");
@@ -415,69 +392,5 @@ if($chat && $chat[0]['admin']){
         }
 
     }
-    /**
-     * Hilfe für den Admin
-     */
-    if(substr(strtolower($text), 0, 10) == "/adminhelp"){
 
-        $reply = Lang::get("adminhelp");
-        $content = array('chat_id' => $chat_id, 'text' => $reply);
-        $telegram->sendMessage($content);
-
-    }
-
-    /**
-     * Fügt einen neuen Chat in die chats Tabelle und weisst diesem die standart Pokemons zu
-     */
-    if(substr(strtolower($text), 0, 12) == "/groupcreate"){
-
-        $text = trim(substr($text, 13));
-        $textArray = array_filter(explode(" ", $text, 3));
-        if(!empty($textArray[0]) AND !empty($textArray[1])){
-
-            $place = isset($textArray[2]) ? trim($textArray[2]) : PLACE;
-
-            $cChat->chat_id = $textArray[0];
-            if(!$cChat->search()) {
-
-                $cChat->chat_id = trim($textArray[0]);
-                $cChat->place = $place;
-                $cChat->alias = trim($textArray[1]);
-                $cChat->priority = "1";
-                $create = $cChat->Create();
-
-                $cNotifyPokemon->chat_id = $textArray[0];
-                if(empty($cNotifyPokemon->Search())) {
-                    $notify_pokemon = array();
-                    for ($i = 1; $i <= count($pokemon->pokemonArray()); $i++) {
-                        if ($pokemon->getNotify($i)) {
-                            array_push($notify_pokemon, $pokemon->getName($i));
-
-                            $cNotifyPokemon->chat_id = trim($textArray[0]);
-                            $cNotifyPokemon->pokemon_id = $i;
-                            $create = $cNotifyPokemon->Create();
-                        }
-                    }
-                }
-                $reply = Lang::get("groupadded", array(
-                    "id" => $textArray[0],
-                    "alias" => $textArray[1],
-                    "place" => $place));
-                $content = array(
-                    'chat_id' => $chat_id,
-                    'text' => $reply,
-                    'parse_mode' => 'Markdown');
-                $telegram->sendMessage($content);
-            } else {
-                $reply = Lang::get("groupidexists", array("id" => $textArray[0]));
-                $content = array(
-                    'chat_id' => $chat_id,
-                    'text' => $reply,
-                    'parse_mode' => 'Markdown');
-                $telegram->sendMessage($content);
-            }
-        }
-
-
-    }
 }

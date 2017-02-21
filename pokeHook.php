@@ -34,39 +34,6 @@ if($typ == "pokemon"){
         $IV = ($msg->individual_attack + $msg->individual_defense + $msg->individual_stamina)/(15+15+15)*100;
     }
 
-    /**
-     * Prüfen ob da Pokemon bereits per Webhook empfangen wurde.
-     * Wenn Bereits ein eintrag vorhanden wird das Script abgebrochen damit keine Doppelten benachrichtigungen gesendet werden.
-     */
-    $db->bind("pokemon_id", $msg->pokemon_id);
-    $db->bind("encounter_id", $msg->encounter_id);
-    $db->bind("spawnpoint_id", $msg->spawnpoint_id);
-    $db->bind("disappear_time", $msg->disappear_time);
-    $checkDuplicate = $db->query("SELECT * FROM pokemonhistory
-        WHERE pokemon_id = :pokemon_id
-        AND encounter_id = :encounter_id
-        AND spawnpoint_id = :spawnpoint_id
-        AND disappear_time = :disappear_time");
-
-    if(!empty($checkDuplicate)){
-        Log::write("Doppelter Webhook eintrag erhalten.",true);
-    }
-
-
-    $db->bind("pokemon_id", $msg->pokemon_id);
-    $db->bind("encounter_id", $msg->encounter_id);
-    $db->bind("spawnpoint_id", $msg->spawnpoint_id);
-    $db->bind("disappear_time", $msg->disappear_time);
-    $insertPokemon = $db->query("INSERT INTO pokemonhistory SET 
-        pokemon_id = :pokemon_id,
-        encounter_id = :encounter_id,
-        spawnpoint_id = :spawnpoint_id,
-        disappear_time = :disappear_time");
-
-
-
-
-
 
     /**
      * Prüfen welcher chat notifications zum pokemon erhalten möchte
@@ -118,12 +85,10 @@ if($typ == "pokemon"){
                         "stamina"   => $msg->individual_stamina
                     )).
                     Lang::get('hit1', array(
-                        "name" => $pokemon->getMoves($msg->move_1),
-                        "wert" => $pokemon->getMovesInfo($msg->move_1)
+                        "name" => $pokemon->getMoves($msg->move_1)
                     )).
                     Lang::get('hit2', array(
-                        "name" => $pokemon->getMoves($msg->move_2),
-                        "wert" => $pokemon->getMovesInfo($msg->move_2)
+                        "name" => $pokemon->getMoves($msg->move_2)
                     ));
             } else {
                 $text .= "\n";

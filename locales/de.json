@@ -13,14 +13,11 @@
   "iv": "mit IV: *{iv}%*\n",
   "time": "Verfügbar bis: {time} ({countdown})",
   "ivsplit": "Angriff: {attack} / Verteidigung: {defense} / Ausdauer: {stamina}\n\n",
-  "hit1": "Attacke 1: {name} ({wert})\n",
-  "hit2": "Attacke 2: {name} ({wert})\n\n",
+  "hit1": "Attacke 1: {name}\n",
+  "hit2": "Attacke 2: {name}\n\n",
   "setiv": "{iv}% wurde als minimum IV-Wert gesetzt.",
   "erroriv": "Der Wert muss eine Zahl sein und zwischen 1 und 100 liegen.",
   "addquestion": "Welches Pokémon willst du hinzufügen?",
   "removequestion": "Welches Pokémon willst du entfernen?",
-  "selectivpokemon": "Wähle die Pokémons aus bei denen du den IV-Wert auf {iv}% setzen möchtest.",
-  "groupidexists": "Die Gruppen mit der ID *{id}* existiert bereits",
-  "groupadded": "Die Gruppe *{id}* mit dem Alias *{alias}* wurde hinzugefügt und dem Ort *{place}* zugewiessen.",
-  "adminhelp": "Folgende Befehle stehen dir zur verfügung:\n/send = Nachricht an alle Gruppen und User schicken.\n/groupcreate = Gruppe hinzufügen\n\nBeispiel:\n/groupcreate @gruppenid gruppenalias"
-}
+  "selectivpokemon": "Wähle die Pokémons aus bei denen du den IV-Wert auf {iv}% setzen möchtest."
+  }
