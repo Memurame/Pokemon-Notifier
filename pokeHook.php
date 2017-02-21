@@ -102,7 +102,7 @@ if($typ == "pokemon"){
                 'parse_mode' => 'Markdown',
                 'reply_markup' => $telegram->buildInlineKeyBoard(array(
                     array(
-                        $telegram->buildInlineKeyboardButton('Sticker', '', "/sticker $msg->pokemon_id"),
+                        $telegram->buildInlineKeyboardButton('IV', '', "/ivpokemon " . $pokemon->getName($msg->pokemon_id)),
                         $telegram->buildInlineKeyboardButton('Location', '', "/location $msg->latitude $msg->longitude"),
                         $telegram->buildInlineKeyboardButton('Remove', '', "/remove $msg->pokemon_id")
                     )

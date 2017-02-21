@@ -65,16 +65,6 @@ class Pokemon
 
 
     /**
-     * @param $pokemonid
-     * @return mixed
-     */
-    protected function getLocale($pokemonid){
-        $pokemon = $this->localeArray();
-        return $pokemon[$pokemonid];
-
-    }
-
-    /**
      * @return mixed
      */
     protected function stickerArray(){
@@ -84,7 +74,7 @@ class Pokemon
     /**
      * @return mixed
      */
-    protected function localeArray(){
+    public function localeArray(){
         return $this->getJson($this->localeJson);
     }
 

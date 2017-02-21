@@ -26,6 +26,7 @@ define("LOG", $cfg['notifier']['log']);
 require_once(__DIR__."/libs/pokemon.php");
 require_once(__DIR__."/libs/telegram.php");
 require_once(__DIR__."/libs/cChat.php");
+require_once(__DIR__."/libs/cPlace.php");
 require_once(__DIR__."/libs/cNotifyPokemon.php");
 require_once(__DIR__."/libs/cNotifyIV.php");
 require_once(__DIR__."/libs/database.php");
@@ -43,6 +44,7 @@ if(file_exists("sql/create.sql")){
 }
 
 $cChat = new cChat();
+$cPlace = new cPlace();
 $cNotifyPokemon = new cNotifyPokemon();
 $cNotifyIV = new cNotifyIV();
 $pokemon = new Pokemon(__DIR__, $cfg['notifier']['lang']);
